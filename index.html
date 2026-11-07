@@ -55,7 +55,13 @@
     <div class="marks">
       <button id="mkGreat" data-mark="great">✓ Totally empty — great</button>
       <button id="mkRevisit" data-mark="revisit">? Worth revisiting</button>
-      <button id="mkSkip" data-mark="skip">✕ Shared lot — skip</button>
+      <button id="mkSkip" data-mark="skip">✕ Can't use — skip</button>
+    </div>
+    <div id="skipWhy" class="skipwhy hidden">
+      <div class="skipq">Why skip it?</div>
+      <button data-why="Shared lot">Shared lot</button><button data-why="Chained / gated">Chained / gated</button><button data-why="Fenced off">Fenced off</button>
+      <button data-why="Too busy">Too busy</button><button data-why="No trespassing signs">No trespassing</button><button data-why="Too small / bad surface">Too small / rough</button>
+      <button data-why="">Other</button>
     </div>
     <div class="notes">
       <div id="cNotes" class="notelist"></div>
@@ -66,6 +72,7 @@
     </div>
     <div class="btns">
       <button id="cNav" class="primary">➤ NAVIGATE</button>
+      <a id="cStreet" class="secondary" href="#" target="_blank" rel="noopener">👁 STREET VIEW</a>
       <button id="cDelSpot" class="ghost hidden">Remove this spot</button>
       <div class="credit">Map imagery © Esri, Maxar, Earthstar Geographics · Photos © Google</div>
     </div>

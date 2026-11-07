@@ -110,3 +110,10 @@ a{color:inherit}
 .chips.attn button{animation:wiggle 1.1s ease-in-out infinite}
 .chips.attn button:nth-child(2){animation-delay:.14s}.chips.attn button:nth-child(3){animation-delay:.28s}.chips.attn button:nth-child(4){animation-delay:.42s}
 @keyframes wiggle{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.08) rotate(-2deg)}50%{transform:scale(1) rotate(0)}75%{transform:scale(1.08) rotate(2deg)}}
+
+.secondary{display:block;width:100%;margin-top:10px;background:var(--glass2);border:1px solid var(--edge);color:inherit;font-weight:800;letter-spacing:.5px;border-radius:18px;padding:15px;font-size:15px;text-align:center;text-decoration:none}
+.secondary:active{transform:scale(.98)}
+.skipwhy{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:-4px 0 12px}
+.skipwhy.hidden{display:none}
+.skipq{grid-column:1/-1;font-size:13px;font-weight:700;opacity:.8}
+.skipwhy button{background:var(--glass2);border:1px solid var(--edge);border-radius:12px;padding:10px 4px;font-size:12px;font-weight:700}

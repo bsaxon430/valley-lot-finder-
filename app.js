@@ -136,12 +136,22 @@ function openCard(id){
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
   const hasSrc = !!(l.source && l.source.url); $('cSrc').style.display = hasSrc ? '' : 'none'; if (hasSrc){ $('cSrc').textContent = (l.source.label || 'Source') + ' ↗'; $('cSrc').href = l.source.url; }
   $('cNav').onclick = () => openNav(l);
+  $('cStreet').href = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${l.lat.toFixed(6)},${l.lng.toFixed(6)}`;
   renderMarks(l);
-  document.querySelectorAll('.marks button').forEach(b => b.onclick = () => {
-    const v = b.dataset.mark; const cur = marks.get(l.id); const next = cur===v ? null : v; marks.set(l.id, next); renderMarks(l); refresh(); updateStatus();
+  $('skipWhy').classList.add('hidden');
+  const applyMark = next => { marks.set(l.id, next); renderMarks(l); refresh(); updateStatus();
     if (next==='skip' && view==='all') { closeCard(); toast('Removed from the map — find it under SKIPPED'); }
     else if (next===null && view!=='all') { closeCard(); toast('Put back on the main map'); }
     else if (next==='great') toast('Marked great');
+  };
+  document.querySelectorAll('.marks button').forEach(b => b.onclick = () => {
+    const v = b.dataset.mark; const cur = marks.get(l.id); const next = cur===v ? null : v;
+    // skipping asks why first (shared, chained, fenced...), and the reason is saved as a note everyone sees
+    if (next==='skip'){ $('skipWhy').classList.toggle('hidden'); return; }
+    $('skipWhy').classList.add('hidden'); applyMark(next);
+  });
+  document.querySelectorAll('#skipWhy button').forEach(b => b.onclick = () => {
+    $('skipWhy').classList.add('hidden'); if (b.dataset.why) { notes.add(l.id, 'Skipped: ' + b.dataset.why); renderNotes(l); } applyMark('skip');
   });
   renderNotes(l); $('noteForm').onsubmit = e => { e.preventDefault(); const t = $('noteText').value.trim(); if (!t) return; notes.add(l.id, t); $('noteText').value=''; renderNotes(l); };
   setPhoto(l);
@@ -265,11 +275,24 @@ function setPhoto(l){
   const load = (src, tag, onfail) => { const img = new Image(); img.alt = tag; img.onload = () => show(img, tag); img.onerror = onfail; img.src = src; if (img.complete && img.naturalWidth) show(img, tag); };
   const aerial = () => load(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${l.lng-0.0012},${l.lat-0.0007},${l.lng+0.0012},${l.lat+0.0007}&bboxSR=4326&size=720,420&format=jpg&f=image`, 'Aerial · © Esri', () => box.innerHTML = '<div class="photo-empty">No photo available</div>');
   if (!C.googleKey) return aerial();
-  fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${l.lat},${l.lng}&source=outdoor&key=${encodeURIComponent(C.googleKey)}`).then(r=>r.json()).then(m => {
+  const legacy = () => fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${l.lat},${l.lng}&source=outdoor&key=${encodeURIComponent(C.googleKey)}`).then(r=>r.json()).then(m => {
     if (m.status !== 'OK') return aerial();
     load(`https://maps.googleapis.com/maps/api/streetview?size=720x420&location=${l.lat},${l.lng}&fov=90&source=outdoor&key=${encodeURIComponent(C.googleKey)}`, `Street View${m.date?' · '+m.date:''} · may be outdated`, aerial);
   }).catch(aerial);
+  try {
+    const svs = new google.maps.StreetViewService();
+    const want = { location:{ lat:l.lat, lng:l.lng }, radius:120, preference:google.maps.StreetViewPreference.NEAREST, sources:[google.maps.StreetViewSource.GOOGLE] };
+    svs.getPanorama(want, (data, st) => {
+      if (st !== google.maps.StreetViewStatus.OK || !data || !data.location) return legacy();
+      const p = data.location.latLng, pano = data.location.pano;
+      const heading = google.maps.geometry ? google.maps.geometry.spherical.computeHeading(p, new google.maps.LatLng(l.lat, l.lng)) : bearing(p.lat(), p.lng(), l.lat, l.lng);
+      const date = data.imageDate || '';
+      $('cStreet').href = `https://www.google.com/maps/@?api=1&map_action=pano&pano=${encodeURIComponent(pano)}&heading=${Math.round(heading)}&pitch=0&fov=90`;
+      load(`https://maps.googleapis.com/maps/api/streetview?size=720x420&pano=${encodeURIComponent(pano)}&heading=${heading.toFixed(1)}&pitch=0&fov=90&key=${encodeURIComponent(C.googleKey)}`, `Street View${date?' · '+date:''}`, legacy);
+    });
+  } catch(e){ legacy(); }
 }
+function bearing(a1,o1,a2,o2){ const r=Math.PI/180, y=Math.sin((o2-o1)*r)*Math.cos(a2*r), x=Math.cos(a1*r)*Math.sin(a2*r)-Math.sin(a1*r)*Math.cos(a2*r)*Math.cos((o2-o1)*r); return (Math.atan2(y,x)/r+360)%360; }
 function openNav(l){
   const lat=l.lat.toFixed(6), lng=l.lng.toFixed(6), q=encodeURIComponent(l.name);
   const apple=`https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d&q=${q}`, g=`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`, waze=`https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
