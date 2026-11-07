@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="icon" href="icons/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=29">
+<link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
 <div id="map"></div>
@@ -62,6 +62,7 @@
     </div>
     <div class="btns">
       <button id="cNav" class="primary">➤ NAVIGATE</button>
+      <button id="cDelSpot" class="ghost hidden">Remove this spot</button>
       <div class="credit">Map imagery © Esri, Maxar, Earthstar Geographics · Photos © Google</div>
     </div>
   </div>
@@ -81,11 +82,22 @@
   <div id="navBody" class="listbody"></div>
 </div>
 
+<!-- Add a spot (long-press on the map) -->
+<div id="add" class="sheet hidden">
+  <div class="grab"></div>
+  <div class="row pad"><div class="title">Add a spot here</div><button id="addClose" class="x" aria-label="Close">✕</button></div>
+  <form id="addForm" class="addform">
+    <div id="addAddr" class="addr">Finding address…</div>
+    <input id="addName" placeholder="What is it? (e.g. Empty Kmart lot)" autocomplete="off" maxlength="80" required>
+    <button type="submit" class="primary">＋ ADD SPOT</button>
+  </form>
+</div>
+
 <div id="toast" class="toast hidden"></div>
 
 <script src="https://unpkg.com/@googlemaps/markerclusterer@2.5.3/dist/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="config.js?v=29"></script>
-<script src="app.js?v=29"></script>
+<script src="config.js?v=30"></script>
+<script src="app.js?v=30"></script>
 </body>
 </html>

@@ -91,3 +91,10 @@ a{color:inherit}
 .toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(var(--sat) + 100px);background:rgba(10,12,18,.8);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);color:#fff;padding:11px 16px;border-radius:999px;font-size:13px;font-weight:600;z-index:60;max-width:90vw;text-align:center;box-shadow:var(--shadow)}
 
 /* google maps */
+
+.ghost{display:block;width:100%;margin-top:10px;background:transparent;color:var(--muted);border:1px solid var(--edge2);border-radius:18px;padding:13px;font-size:14px;font-weight:600}
+.ghost.hidden{display:none}
+.addform{padding:0 18px 10px;display:grid;gap:12px}
+.addform .addr{font-size:13px;color:var(--muted)}
+.addform input{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--edge2);border-radius:14px;padding:14px;color:#fff;font-size:16px}
+#addPin{pointer-events:none}

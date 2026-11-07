@@ -7,7 +7,7 @@ const C = Object.assign({ googleKey:'', includeOsm:true }, window.VLF_CONFIG || 
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const METRO = { s:33.20, w:-112.65, n:33.80, e:-111.50 };
 const PIN = '#ff8a00';
-const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', closed:'CLOSED' };
+const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', closed:'CLOSED', spot:'TEAM SPOT' };
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -44,6 +44,8 @@ async function init(){
   document.querySelectorAll('.view').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('cClose').onclick = closeCard; $('listClose').onclick = () => $('list').classList.add('hidden'); $('navClose').onclick = () => $('nav').classList.add('hidden');
   window.addEventListener('hashchange', openFromHash);
+  $('addClose').onclick = closeAdd; $('addForm').onsubmit = submitAdd; $('cDelSpot').onclick = () => { if (selected && confirm('Remove this spot for everyone?')) spots.remove(selected); };
+  setupLongPress();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
   await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
 }
@@ -140,7 +142,8 @@ function openCard(id){
   renderNotes(l); $('noteForm').onsubmit = e => { e.preventDefault(); const t = $('noteText').value.trim(); if (!t) return; notes.add(l.id, t); $('noteText').value=''; renderNotes(l); };
   setPhoto(l);
   $('card').classList.remove('hidden');
-  if (l.kind==='confirmed') history.replaceState(null, '', '#' + l.id);
+  if (l.kind!=='osm') history.replaceState(null, '', '#' + l.id);
+  $('cDelSpot').classList.toggle('hidden', l.kind!=='spot');
   if (map.getZoom() < 16) map.setZoom(16); map.panTo({ lat:l.lat, lng:l.lng }); map.panBy(0, 180);
 }
 // Marks (great / revisit / skip) and notes. Local cache always; shared Supabase table when configured.
@@ -157,7 +160,8 @@ const marks = {
 async function syncShared(){
   if (!sb) return;
   try {
-    const [{ data: m }, { data: n }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('id,lot_id,text,created_at').order('created_at') ]);
+    const [{ data: m }, { data: n }, { data: s }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('id,lot_id,text,created_at').order('created_at'), sb.from('spots').select('id,name,address,lat,lng,created_at') ]);
+    if (s) spots.applyRemote(s);
     if (m) { cache.marks = {}; m.forEach(r => { if (r.mark) cache.marks[r.lot_id] = r.mark; }); }
     if (n) { cache.notes = {}; n.forEach(r => (cache.notes[r.lot_id] = cache.notes[r.lot_id] || []).push({ t: Date.parse(r.created_at), text: r.text, sid: r.id })); }
     persist(); refresh(); updateStatus(); if (selected) renderMarksAndNotes(selected);
@@ -187,6 +191,68 @@ function renderNotes(l){
   const list = notes.get(l.id);
   $('cNotes').innerHTML = list.slice().reverse().map(n => `<div><span>${esc(n.text)}<small>${new Date(n.t).toLocaleDateString()} ${new Date(n.t).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small></span><button class="nx" data-t="${n.t}" aria-label="Delete note">✕</button></div>`).join('');
   $('cNotes').querySelectorAll('.nx').forEach(b => b.onclick = () => { notes.remove(l.id, Number(b.dataset.t)); renderNotes(l); });
+}
+// ---------- team spots (long-press on the map) ----------
+const spots = {
+  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:'spot', note:'Added by the team', source:null, added:r.created_at||null }; },
+  local(){ try { return JSON.parse(localStorage.getItem('vlf-spots')||'[]'); } catch(e){ return []; } },
+  saveLocal(arr){ try { localStorage.setItem('vlf-spots', JSON.stringify(arr)); } catch(e){} },
+  applyRemote(rows){
+    const keep = lots.filter(l => l.kind!=='spot'); const ids = new Set(rows.map(r=>r.id));
+    lots = keep.concat(rows.map(spots.mk)); spots.saveLocal(rows);
+    for (const [id, m] of markers) if (id.startsWith('spot-') && !ids.has(id)) { m.setMap(null); markers.delete(id); }
+    refresh(); updateStatus();
+  },
+  add(r){
+    lots.push(spots.mk(r)); spots.saveLocal(spots.local().concat([r])); refresh(); updateStatus();
+    if (sb) sb.from('spots').insert(r).then(({error}) => { if (error) toast(error.code==='42P01' ? 'Spot saved on this phone — shared table not set up yet' : 'Shared save failed — kept on this phone', 4000); else toast('Spot added for the whole team'); });
+    else toast('Spot saved on this phone');
+  },
+  remove(id){
+    lots = lots.filter(l => l.id!==id); spots.saveLocal(spots.local().filter(r=>r.id!==id));
+    const m = markers.get(id); if (m){ clusterer.removeMarker(m, true); m.setMap(null); markers.delete(id); }
+    closeCard(); refresh(); updateStatus();
+    if (sb) sb.from('spots').delete().eq('id', id).then(({error}) => { if (error) toast('Shared delete failed'); });
+  }
+};
+let addPin = null, addPos = null;
+function setupLongPress(){
+  spots.local().forEach(r => lots.push(spots.mk(r)));
+  let t = null, start = null;
+  const cancel = () => { clearTimeout(t); t = null; };
+  // overlay gives us pixel → lat/lng for raw touch events
+  const ov = new google.maps.OverlayView(); ov.onAdd = ov.draw = ov.onRemove = () => {}; ov.setMap(map);
+  const el = $('map');
+  const toLatLng = (x, y) => { const p = ov.getProjection(); if (!p) return null; const r = el.getBoundingClientRect(); return p.fromContainerPixelToLatLng(new google.maps.Point(x - r.left, y - r.top)); };
+  const arm = (x, y) => { cancel(); start = [x, y]; t = setTimeout(() => { t = null; const ll = toLatLng(x, y); if (ll) beginAdd(ll); }, 600); };
+  el.addEventListener('touchstart', e => { if (e.touches.length===1) arm(e.touches[0].clientX, e.touches[0].clientY); else cancel(); }, { passive:true });
+  el.addEventListener('touchmove', e => { if (!t || !start) return; const dx = e.touches[0].clientX-start[0], dy = e.touches[0].clientY-start[1]; if (dx*dx+dy*dy > 100) cancel(); }, { passive:true });
+  el.addEventListener('touchend', cancel, { passive:true }); el.addEventListener('touchcancel', cancel, { passive:true });
+  el.addEventListener('mousedown', e => { if (e.button===0 && !('ontouchstart' in window)) arm(e.clientX, e.clientY); });
+  el.addEventListener('mouseup', cancel); el.addEventListener('mousemove', e => { if (t && start && Math.hypot(e.clientX-start[0], e.clientY-start[1]) > 10) cancel(); });
+  ['dragstart','zoom_changed'].forEach(ev => map.addListener(ev, cancel));
+}
+function beginAdd(latLng){
+  if (navigator.vibrate) navigator.vibrate(30);
+  addPos = { lat: latLng.lat(), lng: latLng.lng() };
+  if (!addPin) addPin = new google.maps.Marker({ map, zIndex:3000, clickable:false, icon:pinIcon('none', true), animation:google.maps.Animation.DROP });
+  addPin.setPosition(addPos); addPin.setMap(map);
+  $('card').classList.add('hidden'); $('list').classList.add('hidden'); $('nav').classList.add('hidden');
+  $('addAddr').textContent = 'Finding address…'; $('addName').value = '';
+  $('add').classList.remove('hidden');
+  map.panTo(addPos); map.panBy(0, 120);
+  try { new google.maps.Geocoder().geocode({ location: addPos }, (res, st) => {
+    $('addAddr').textContent = (st==='OK' && res && res[0]) ? res[0].formatted_address.replace(/, USA$/,'') : `${addPos.lat.toFixed(5)}, ${addPos.lng.toFixed(5)}`;
+  }); } catch(e){ $('addAddr').textContent = `${addPos.lat.toFixed(5)}, ${addPos.lng.toFixed(5)}`; }
+  setTimeout(() => $('addName').focus(), 300);
+}
+function closeAdd(){ $('add').classList.add('hidden'); if (addPin) addPin.setMap(null); addPos = null; }
+function submitAdd(e){
+  e.preventDefault(); if (!addPos) return;
+  const name = $('addName').value.trim(); if (!name) return;
+  const addr = $('addAddr').textContent; const id = 'spot-' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+  const r = { id, name, address: /Finding/.test(addr) ? null : addr, lat: addPos.lat, lng: addPos.lng, created_at: new Date().toISOString() };
+  closeAdd(); spots.add(r); openCard(id);
 }
 function closeCard(){ $('card').classList.add('hidden'); selected=null; refresh(); history.replaceState(null,'',' '); }
 function setPhoto(l){
@@ -222,6 +288,6 @@ document.querySelectorAll('.sheet').forEach(sheet => {
   sheet.addEventListener('touchstart', e => { const body = e.target.closest('.card-body,.listbody'); if (body && body.scrollTop > 0) return; y0 = e.touches[0].clientY; dy = 0; sheet.style.transition='none'; }, {passive:true});
   sheet.addEventListener('touchmove', e => { if (y0==null) return; dy = Math.max(0, e.touches[0].clientY - y0); sheet.style.transform = `translateY(${dy}px)`; }, {passive:true});
   sheet.addEventListener('touchend', () => { if (y0==null) return; sheet.style.transition=''; sheet.style.transform='';
-    if (dy > 90) { if (sheet.id==='card') closeCard(); else sheet.classList.add('hidden'); } y0=null; });
+    if (dy > 90) { if (sheet.id==='card') closeCard(); else if (sheet.id==='add') closeAdd(); else sheet.classList.add('hidden'); } y0=null; });
 });
 document.addEventListener('DOMContentLoaded', init);
