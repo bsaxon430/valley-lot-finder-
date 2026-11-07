@@ -71,3 +71,12 @@ a{color:inherit}
 .maplibregl-ctrl-bottom-left,.maplibregl-ctrl-bottom-right{bottom:calc(var(--sab) + 100px)}
 .maplibregl-user-location-dot{background:#3b82f6}
 @media (min-width:900px){.sheet{left:12px;right:auto;width:420px;bottom:12px;border-radius:22px}.bottom{left:auto;right:12px;width:320px}}
+
+.marks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:4px 0 12px}
+.marks button{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 4px;font-size:12px;font-weight:600;line-height:1.2}
+.marks button.on[data-mark=great]{background:#22c55e;color:#042b12;border-color:#22c55e}
+.marks button.on[data-mark=revisit]{background:#facc15;color:#2b2100;border-color:#facc15}
+.marks button.on[data-mark=skip]{background:#8b8f99;color:#0b0d12;border-color:#8b8f99}
+.views{display:flex;gap:6px;margin-bottom:8px}
+.view{flex:1;background:rgba(23,26,35,.9);border:1px solid var(--line);border-radius:999px;padding:8px 0;font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--muted)}
+.view.on{background:var(--text);color:#0f1117;border-color:var(--text)}

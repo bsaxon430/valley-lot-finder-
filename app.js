@@ -16,7 +16,8 @@ const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', cl
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let map, lots = [], userPos = null, userMarker = null, selected = null;
+let map, lots = [], userPos = null, userMarker = null, selected = null, view = 'all';
+const MARKCOLOR = { great:'#22c55e', revisit:'#facc15', skip:'#8b8f99' };
 let toastT; const toast = (m, ms=2800) => { const t=$('toast'); t.textContent=m; t.classList.remove('hidden'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.add('hidden'), ms); };
 const status = m => $('status').textContent = m;
 const mi = (a,b) => { const R=3958.8,r=Math.PI/180,dLat=(b[1]-a[1])*r,dLng=(b[0]-a[0])*r,h=Math.sin(dLat/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(dLng/2)**2; return 2*R*Math.asin(Math.sqrt(h)); };
@@ -34,6 +35,7 @@ async function init(){
   ['pins','clusters'].forEach(l => { map.on('mouseenter', l, ()=>map.getCanvas().style.cursor='pointer'); map.on('mouseleave', l, ()=>map.getCanvas().style.cursor=''); });
   $('btnLocate').onclick = () => locate(false);
   $('btnNearest').onclick = nearest;
+  document.querySelectorAll('.view').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('cClose').onclick = closeCard; $('listClose').onclick = () => $('list').classList.add('hidden'); $('navClose').onclick = () => $('nav').classList.add('hidden');
   window.addEventListener('hashchange', openFromHash);
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
@@ -50,7 +52,7 @@ function addLayers(){
 const fc = () => ({ type:'FeatureCollection', features:[] });
 function refresh(){
   const src = map.getSource('lots'); if (!src) return;
-  src.setData({ type:'FeatureCollection', features: lots.map(l => ({ type:'Feature', geometry:{ type:'Point', coordinates:[l.lng,l.lat] }, properties:{ id:l.id, color:COLOR[l.status]||'#8b8f99', sel:selected===l.id } })) });
+  src.setData({ type:'FeatureCollection', features: visible().map(l => ({ type:'Feature', geometry:{ type:'Point', coordinates:[l.lng,l.lat] }, properties:{ id:l.id, color:colorOf(l), sel:selected===l.id } })) });
 }
 
 // ---------- data ----------
@@ -58,7 +60,7 @@ async function loadLots(){
   status('Loading confirmed lots…');
   try { const r = await fetch('lots.json?v=' + Date.now()); const j = await r.json(); lots = (j.lots||[]).map(l => Object.assign({ kind:'confirmed' }, l)); }
   catch(e){ toast('Could not load lots.json'); }
-  refresh(); status(`${lots.length} lots on the map`);
+  refresh(); updateStatus();
   if (C.includeOsm) loadOsm();
 }
 async function loadOsm(){
@@ -81,10 +83,10 @@ async function loadOsm(){
           source:{ label:'OpenStreetMap (© OSM contributors, ODbL)', url:`https://www.openstreetmap.org/${el.type}/${el.id}` }, added:null });
         n++;
       });
-      refresh(); status(`${lots.length} lots on the map`); return;
+      refresh(); updateStatus(); return;
     } catch(e){}
   }
-  status(`${lots.length} lots on the map`);
+  updateStatus();
 }
 
 // ---------- location ----------
@@ -111,12 +113,31 @@ function openCard(id){
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
   $('cSrc').textContent = (l.source?.label || 'Source') + ' ↗'; $('cSrc').href = l.source?.url || '#';
   $('cNav').onclick = () => openNav(l);
+  renderMarks(l);
+  document.querySelectorAll('.marks button').forEach(b => b.onclick = () => {
+    const v = b.dataset.mark; const cur = marks.get(l.id); const next = cur===v ? null : v; marks.set(l.id, next); renderMarks(l); refresh(); updateStatus();
+    if (next==='skip' && view==='all') { closeCard(); toast('Removed from the map — find it under SKIPPED'); }
+    else if (next===null && view!=='all') { closeCard(); toast('Put back on the main map'); }
+    else if (next==='great') toast('Marked great');
+  });
   renderNotes(l); $('noteForm').onsubmit = e => { e.preventDefault(); const t = $('noteText').value.trim(); if (!t) return; notes.add(l.id, t); $('noteText').value=''; renderNotes(l); };
   setPhoto(l);
   $('card').classList.remove('hidden');
   if (l.kind==='confirmed') history.replaceState(null, '', '#' + l.id);
   map.easeTo({ center:[l.lng, l.lat], zoom:Math.max(map.getZoom(), 16), padding:{ bottom:360 } });
 }
+// Marks: great / revisit / skip. On-device for now (same swap point as notes for a shared database).
+const marks = {
+  _all(){ try { return JSON.parse(localStorage.getItem('vlf-marks') || '{}'); } catch(e){ return {}; } },
+  get(id){ return this._all()[id] || null; },
+  set(id, v){ const a=this._all(); if (v) a[id]=v; else delete a[id]; try { localStorage.setItem('vlf-marks', JSON.stringify(a)); } catch(e){ toast('Could not save on this phone'); } },
+  count(v){ return Object.values(this._all()).filter(x=>x===v).length; }
+};
+function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
+function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : (COLOR[l.status]||'#8b8f99'); }
+function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
+function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); }
+function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
 // Notes store. On-device for now; swap these three functions for a shared database (e.g. Supabase) to sync across phones.
 const notes = {
   _all(){ try { return JSON.parse(localStorage.getItem('vlf-notes') || '{}'); } catch(e){ return {}; } },
@@ -148,8 +169,8 @@ function openNav(l){
 }
 async function nearest(){
   if (!userPos){ await locate(false); if (!userPos) return; }
-  const arr = lots.map(l => ({ l, d:dist(l) })).sort((a,b) => a.d-b.d).slice(0, 25);
-  $('listBody').innerHTML = arr.length ? arr.map(({l,d}) => `<div class="item" data-id="${esc(l.id)}"><div class="dot" style="background:${COLOR[l.status]}"></div><div class="t"><b>${esc(l.name)}</b><small>${esc(l.address)} · ${fmtMi(d)}${l.kind==='osm'?' · OSM':''}</small></div><button class="go">GO</button></div>`).join('') : '<div class="item">No lots yet.</div>';
+  const arr = visible().map(l => ({ l, d:dist(l) })).sort((a,b) => a.d-b.d).slice(0, 25);
+  $('listBody').innerHTML = arr.length ? arr.map(({l,d}) => `<div class="item" data-id="${esc(l.id)}"><div class="dot" style="background:${colorOf(l)}"></div><div class="t"><b>${esc(l.name)}</b><small>${esc(l.address)} · ${fmtMi(d)}${l.kind==='osm'?' · OSM':''}</small></div><button class="go">GO</button></div>`).join('') : '<div class="item">No lots yet.</div>';
   $('listBody').querySelectorAll('.item[data-id]').forEach(el => { el.onclick = e => { if (e.target.classList.contains('go')) openNav(lot(el.dataset.id)); else openCard(el.dataset.id); }; });
   $('card').classList.add('hidden'); $('list').classList.remove('hidden');
 }

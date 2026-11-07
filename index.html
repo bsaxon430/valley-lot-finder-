@@ -35,6 +35,12 @@
 
 <div class="bottom">
   <div id="status" class="status">Loading…</div>
+  <div class="views">
+    <button class="view on" data-view="all">ALL</button>
+    <button class="view" data-view="great">GREAT</button>
+    <button class="view" data-view="revisit">REVISIT</button>
+    <button class="view" data-view="skip">SKIPPED</button>
+  </div>
   <button id="btnNearest" class="primary">⌖ NEAREST LOTS</button>
 </div>
 
@@ -48,6 +54,11 @@
     <div id="cAddr" class="addr">—</div>
     <div id="cMeta" class="meta">—</div>
     <a id="cSrc" class="src" href="#" target="_blank" rel="noopener">Source ↗</a>
+    <div class="marks">
+      <button id="mkGreat" data-mark="great">✓ Totally empty — great</button>
+      <button id="mkRevisit" data-mark="revisit">? Worth revisiting</button>
+      <button id="mkSkip" data-mark="skip">✕ Shared lot — skip</button>
+    </div>
     <div class="notes">
       <div id="cNotes" class="notelist"></div>
       <form id="noteForm" class="noteform">
