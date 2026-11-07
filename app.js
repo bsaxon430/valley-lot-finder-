@@ -35,7 +35,7 @@ async function init(){
   map = new google.maps.Map($('map'), { center:{ lat:33.47, lng:-112.02 }, zoom:11, mapTypeId:'hybrid', disableDefaultUI:true, gestureHandling:'greedy', clickableIcons:false, maxZoom:20, minZoom:8, backgroundColor:'#0b0d12' });
   clusterer = new markerClusterer.MarkerClusterer({ map, markers:[], renderer:{ render({ count, position }){
     const r = count >= 50 ? 26 : count >= 10 ? 20 : 16;
-    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:'#6b8d9e', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
+    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:'#a142f4', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = () => locate(false);
   $('btnLayers').onclick = () => { const sat = map.getMapTypeId() !== 'roadmap'; map.setMapTypeId(sat ? 'roadmap' : 'hybrid'); try { localStorage.setItem('vlf-maptype', sat ? 'roadmap' : 'hybrid'); } catch(e){} };
@@ -48,7 +48,7 @@ async function init(){
   await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
 }
 const GLYPH = { great:'<path d="M13 19.5l-3.6-3.6 1.6-1.6 2 2 4.9-4.9 1.6 1.6z" fill="#fff"/>', revisit:'<text x="16" y="21" text-anchor="middle" font-family="system-ui,Arial" font-weight="700" font-size="15" fill="#3b2a00">?</text>', skip:'<path d="M11.5 11.5l9 9m0-9l-9 9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>', none:'<circle cx="16" cy="16" r="4.5" fill="#fff"/>' };
-const PINCOLOR = { great:'#34a853', revisit:'#fbc02d', skip:'#9aa0a6', none:'#6b8d9e' };
+const PINCOLOR = { great:'#34a853', revisit:'#fbc02d', skip:'#3c4043', none:'#a142f4' };
 const iconCache = {};
 function pinIcon(mark, sel){
   const key = (mark||'none') + (sel?'!':'');
