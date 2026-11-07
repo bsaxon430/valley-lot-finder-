@@ -99,3 +99,9 @@ a{color:inherit}
 .maplibregl-ctrl-bottom-left,.maplibregl-ctrl-bottom-right{bottom:calc(var(--sab) + 180px)}
 .maplibregl-user-location-dot{background:#3b82f6}
 @media (min-width:900px){.sheet{left:14px;right:auto;width:430px;bottom:14px}.bottom{left:auto;right:14px;width:360px}.fabs{right:14px}}
+
+.maplibregl-ctrl-bottom-left{bottom:calc(var(--sab) + 196px);left:6px}
+.maplibregl-ctrl-attrib.maplibregl-compact{background:rgba(14,16,24,.55);color:#cfd3dc;border-radius:999px;min-height:18px}
+.maplibregl-ctrl-attrib.maplibregl-compact .maplibregl-ctrl-attrib-button{width:18px;height:18px;opacity:.6}
+.maplibregl-ctrl-attrib.maplibregl-compact-show{padding:2px 24px 2px 8px;font-size:10px}
+.maplibregl-ctrl-attrib a{color:#cfd3dc}
