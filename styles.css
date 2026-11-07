@@ -98,3 +98,8 @@ a{color:inherit}
 .addform .addr{font-size:13px;color:var(--muted)}
 .addform input{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--edge2);border-radius:14px;padding:14px;color:#fff;font-size:16px}
 #addPin{pointer-events:none}
+
+.chips{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin:8px 0 4px}
+.chips.hidden{display:none}
+.chips button{background:var(--glass2);border:1px solid var(--edge);border-radius:999px;padding:9px 2px;font-size:10px;font-weight:800;letter-spacing:.3px;color:var(--muted)}
+.chips button.on{background:#ff8a00;color:#1a1200;border-color:rgba(255,255,255,.5)}

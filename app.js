@@ -127,7 +127,8 @@ function lot(id){ return lots.find(l => l.id===id); }
 function openCard(id){
   const l = lot(id); if (!l) return; selected = id; refresh();
   $('list').classList.add('hidden'); $('nav').classList.add('hidden');
-  $('cBadge').textContent = LABEL[l.status] || l.status.toUpperCase(); $('cBadge').style.background = PIN; $('cBadge').style.visibility = l.kind==='spot' ? 'hidden' : '';
+  $('cBadge').textContent = LABEL[l.status] || (l.status||'').toUpperCase(); $('cBadge').style.background = PIN; $('cBadge').style.visibility = (l.kind==='spot' && !l.status) ? 'hidden' : '';
+  $('cStatus').classList.toggle('hidden', l.kind!=='spot'); renderStatus(l);
   $('cName').textContent = l.name; $('cAddr').textContent = l.address;
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
   const hasSrc = !!(l.source && l.source.url); $('cSrc').style.display = hasSrc ? '' : 'none'; if (hasSrc){ $('cSrc').textContent = (l.source.label || 'Source') + ' ↗'; $('cSrc').href = l.source.url; }
@@ -160,7 +161,7 @@ const marks = {
 async function syncShared(){
   if (!sb) return;
   try {
-    const [{ data: m }, { data: n }, { data: s }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('id,lot_id,text,created_at').order('created_at'), sb.from('spots').select('id,name,address,lat,lng,created_at') ]);
+    const [{ data: m }, { data: n }, { data: s }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('id,lot_id,text,created_at').order('created_at'), sb.from('spots').select('id,name,address,lat,lng,status,created_at') ]);
     if (s) spots.applyRemote(s);
     if (m) { cache.marks = {}; m.forEach(r => { if (r.mark) cache.marks[r.lot_id] = r.mark; }); }
     if (n) { cache.notes = {}; n.forEach(r => (cache.notes[r.lot_id] = cache.notes[r.lot_id] || []).push({ t: Date.parse(r.created_at), text: r.text, sid: r.id })); }
@@ -170,6 +171,7 @@ async function syncShared(){
 function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
 function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
 function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : PIN; }
+function renderStatus(l){ document.querySelectorAll('#cStatus button').forEach(b => { b.classList.toggle('on', b.dataset.status===l.status); b.onclick = () => { const st = l.status===b.dataset.status ? null : b.dataset.status; spots.setStatus(l.id, st); $('cBadge').textContent = LABEL[st] || ''; $('cBadge').style.visibility = st ? '' : 'hidden'; renderStatus(l); }; }); }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
 function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); fitVisible(); }
 function fitVisible(){
@@ -194,7 +196,7 @@ function renderNotes(l){
 }
 // ---------- team spots (long-press on the map) ----------
 const spots = {
-  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:'spot', note:null, source:{ label:'Search Google for this address', url:'https://www.google.com/search?q=' + encodeURIComponent((r.address||'') + ' for lease') }, added:r.created_at||null }; },
+  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:r.status||null, note:null, source:{ label:'Search Google for this address', url:'https://www.google.com/search?q=' + encodeURIComponent((r.address||'') + ' for lease') }, added:r.created_at||null }; },
   local(){ try { return JSON.parse(localStorage.getItem('vlf-spots')||'[]'); } catch(e){ return []; } },
   saveLocal(arr){ try { localStorage.setItem('vlf-spots', JSON.stringify(arr)); } catch(e){} },
   applyRemote(rows){
@@ -207,6 +209,10 @@ const spots = {
     lots.push(spots.mk(r)); spots.saveLocal(spots.local().concat([r])); refresh(); updateStatus();
     if (sb) sb.from('spots').insert(r).then(({error}) => { if (error) toast(error.code==='42P01' ? 'Spot saved on this phone — shared table not set up yet' : 'Shared save failed — kept on this phone', 4000); else toast('Spot added for the whole team'); });
     else toast('Spot saved on this phone');
+  },
+  setStatus(id, st){
+    const l = lot(id); if (!l) return; l.status = st; spots.saveLocal(spots.local().map(r => r.id===id ? Object.assign(r, { status: st }) : r));
+    if (sb) sb.from('spots').update({ status: st }).eq('id', id).then(({error}) => { if (error) toast('Shared save failed'); });
   },
   remove(id){
     lots = lots.filter(l => l.id!==id); spots.saveLocal(spots.local().filter(r=>r.id!==id));
