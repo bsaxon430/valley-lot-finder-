@@ -150,7 +150,13 @@ function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks
 function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
 function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : PIN; }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
-function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); }
+function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); fitVisible(); }
+function fitVisible(){
+  const pts = visible().map(l=>[l.lng,l.lat]); if (userPos) pts.push(userPos);
+  if (!pts.length) return;
+  const b = pts.reduce((bb,p)=>bb.extend(p), new maplibregl.LngLatBounds(pts[0], pts[0]));
+  map.fitBounds(b, { padding:{ top:90, bottom:200, left:40, right:40 }, maxZoom:14, duration:700 });
+}
 function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
 const notes = {
   get(id){ return cache.notes[id] || []; },
