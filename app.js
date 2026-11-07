@@ -44,7 +44,7 @@ async function init(){
   document.querySelectorAll('.view').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('cClose').onclick = closeCard; $('listClose').onclick = () => $('list').classList.add('hidden'); $('navClose').onclick = () => $('nav').classList.add('hidden');
   window.addEventListener('hashchange', openFromHash);
-  $('addClose').onclick = closeAdd; $('addForm').onsubmit = submitAdd; $('cDelSpot').onclick = () => { if (selected && confirm('Remove this spot for everyone?')) spots.remove(selected); };
+  $('cDelSpot').onclick = () => { if (selected && confirm('Remove this spot for everyone?')) spots.remove(selected); };
   setupLongPress();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
   await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
@@ -194,7 +194,7 @@ function renderNotes(l){
 }
 // ---------- team spots (long-press on the map) ----------
 const spots = {
-  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:'spot', note:'Added by the team', source:null, added:r.created_at||null }; },
+  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:'spot', note:'Added by the team', source:{ label:'Search Google for this address', url:'https://www.google.com/search?q=' + encodeURIComponent((r.address||'') + ' for lease') }, added:r.created_at||null }; },
   local(){ try { return JSON.parse(localStorage.getItem('vlf-spots')||'[]'); } catch(e){ return []; } },
   saveLocal(arr){ try { localStorage.setItem('vlf-spots', JSON.stringify(arr)); } catch(e){} },
   applyRemote(rows){
@@ -215,7 +215,6 @@ const spots = {
     if (sb) sb.from('spots').delete().eq('id', id).then(({error}) => { if (error) toast('Shared delete failed'); });
   }
 };
-let addPin = null, addPos = null;
 function setupLongPress(){
   spots.local().forEach(r => lots.push(spots.mk(r)));
   let t = null, start = null;
@@ -234,25 +233,20 @@ function setupLongPress(){
 }
 function beginAdd(latLng){
   if (navigator.vibrate) navigator.vibrate(30);
-  addPos = { lat: latLng.lat(), lng: latLng.lng() };
-  if (!addPin) addPin = new google.maps.Marker({ map, zIndex:3000, clickable:false, icon:pinIcon('none', true), animation:google.maps.Animation.DROP });
-  addPin.setPosition(addPos); addPin.setMap(map);
-  $('card').classList.add('hidden'); $('list').classList.add('hidden'); $('nav').classList.add('hidden');
-  $('addAddr').textContent = 'Finding address…'; $('addName').value = '';
-  $('add').classList.remove('hidden');
-  map.panTo(addPos); map.panBy(0, 120);
-  try { new google.maps.Geocoder().geocode({ location: addPos }, (res, st) => {
-    $('addAddr').textContent = (st==='OK' && res && res[0]) ? res[0].formatted_address.replace(/, USA$/,'') : `${addPos.lat.toFixed(5)}, ${addPos.lng.toFixed(5)}`;
-  }); } catch(e){ $('addAddr').textContent = `${addPos.lat.toFixed(5)}, ${addPos.lng.toFixed(5)}`; }
-  setTimeout(() => $('addName').focus(), 300);
-}
-function closeAdd(){ $('add').classList.add('hidden'); if (addPin) addPin.setMap(null); addPos = null; }
-function submitAdd(e){
-  e.preventDefault(); if (!addPos) return;
-  const name = $('addName').value.trim(); if (!name) return;
-  const addr = $('addAddr').textContent; const id = 'spot-' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-  const r = { id, name, address: /Finding/.test(addr) ? null : addr, lat: addPos.lat, lng: addPos.lng, created_at: new Date().toISOString() };
-  closeAdd(); spots.add(r); openCard(id);
+  const pos = { lat: latLng.lat(), lng: latLng.lng() };
+  const id = 'spot-' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+  const coords = `${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)}`;
+  const finish = (name, address) => {
+    const r = { id, name, address, lat: pos.lat, lng: pos.lng, created_at: new Date().toISOString() };
+    spots.add(r); openCard(id);
+  };
+  let done = false; const fallback = setTimeout(() => { if (!done){ done = true; finish('Team spot', coords); } }, 2500);
+  try { new google.maps.Geocoder().geocode({ location: pos }, (res, st) => {
+    if (done) return; done = true; clearTimeout(fallback);
+    const hit = st==='OK' && res && res.find(x => x.types.includes('street_address') || x.types.includes('premise')) || (res && res[0]);
+    if (hit){ const full = hit.formatted_address.replace(/, USA$/,''); finish(full.split(',')[0].trim(), full); }
+    else finish('Team spot', coords);
+  }); } catch(e){ if (!done){ done = true; clearTimeout(fallback); finish('Team spot', coords); } }
 }
 function closeCard(){ $('card').classList.add('hidden'); selected=null; refresh(); history.replaceState(null,'',' '); }
 function setPhoto(l){
@@ -288,6 +282,6 @@ document.querySelectorAll('.sheet').forEach(sheet => {
   sheet.addEventListener('touchstart', e => { const body = e.target.closest('.card-body,.listbody'); if (body && body.scrollTop > 0) return; y0 = e.touches[0].clientY; dy = 0; sheet.style.transition='none'; }, {passive:true});
   sheet.addEventListener('touchmove', e => { if (y0==null) return; dy = Math.max(0, e.touches[0].clientY - y0); sheet.style.transform = `translateY(${dy}px)`; }, {passive:true});
   sheet.addEventListener('touchend', () => { if (y0==null) return; sheet.style.transition=''; sheet.style.transform='';
-    if (dy > 90) { if (sheet.id==='card') closeCard(); else if (sheet.id==='add') closeAdd(); else sheet.classList.add('hidden'); } y0=null; });
+    if (dy > 90) { if (sheet.id==='card') closeCard(); else sheet.classList.add('hidden'); } y0=null; });
 });
 document.addEventListener('DOMContentLoaded', init);
