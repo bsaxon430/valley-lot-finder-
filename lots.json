@@ -2,6 +2,20 @@
  "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link. Photos come from Google Street View and may be older than the status \u2014 the photo date is shown on the card.",
  "lots": [
   {
+   "id": "13610-n-black-canyon-hwy-phoenix",
+   "name": "Metro North Corporate Park \u2014 old GE / Honeywell campus",
+   "address": "13610 N Black Canyon Hwy, Phoenix, AZ 85029",
+   "lat": 33.60812,
+   "lng": -112.11873,
+   "status": "abandoned",
+   "note": "~750k sq ft of vacant office buildings on 40+ acres at the SWC of I-17 & Thunderbird. GE tech campus in the 60s, then Honeywell. Sold Sept 2026 ($28.6M); new owner plans to demolish for a 3-building industrial park, so it may become a construction site.",
+   "source": {
+    "label": "Connect CRE \u2014 Dimension industrial park plan (Jul 2026)",
+    "url": "https://www.connectcre.com/stories/dimension-moving-ahead-on-3-building-n-phoenix-industrial-park/"
+   },
+   "added": "2026-11-07"
+  },
+  {
    "id": "801-s-16th-st-phoenix",
    "name": "Industrial building \u2014 801 S 16th St",
    "address": "801 S 16th St, Phoenix, AZ 85034",
