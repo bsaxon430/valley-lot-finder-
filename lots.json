@@ -1,20 +1,20 @@
 {
- "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link. Photos come from Google Street View and may be older than the status — the photo date is shown on the card.",
+ "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link. Photos come from Google Street View and may be older than the status \u2014 the photo date is shown on the card.",
  "lots": [
   {
    "id": "801-s-16th-st-phoenix",
-   "name": "Industrial building — 801 S 16th St",
+   "name": "Industrial building \u2014 801 S 16th St",
    "address": "801 S 16th St, Phoenix, AZ 85034",
    "lat": 33.441333,
    "lng": -112.045611,
    "status": "forlease",
-   "note": "'For lease — industrial space' sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.",
+   "note": "'For lease \u2014 industrial space' sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.",
    "source": null,
    "added": "2026-11-07"
   },
   {
    "id": "2211-s-47th-st-phoenix",
-   "name": "Office building — 2211 S 47th St",
+   "name": "Office building \u2014 2211 S 47th St",
    "address": "2211 S 47th St, Phoenix, AZ 85034 (entrance on E Hilton Ave)",
    "lat": 33.4272775,
    "lng": -111.9793728,
@@ -25,7 +25,7 @@
   },
   {
    "id": "2299-w-obispo-ave-gilbert",
-   "name": "Office building — 2299 W Obispo Ave",
+   "name": "Office building \u2014 2299 W Obispo Ave",
    "address": "2299 W Obispo Ave, Gilbert, AZ 85233",
    "lat": 33.3620722,
    "lng": -111.8392355,
@@ -36,21 +36,21 @@
   },
   {
    "id": "sears-metrocenter-phoenix",
-   "name": "Former Sears — Metrocenter",
+   "name": "Former Sears \u2014 Metrocenter",
    "address": "9803 N Metro Pkwy W, Phoenix, AZ 85051",
    "lat": 33.577375,
    "lng": -112.123144,
    "status": "vacant",
    "note": "Two-story Sears box closed 2020; still standing after the rest of Metrocenter Mall was demolished (2025). ~14.5 ac of empty striped parking around it. Owned by the Sears successor company, not part of the mall redevelopment.",
    "source": {
-    "label": "KJZZ, Sept 2025 — Metrocenter demo done, Sears still standing",
+    "label": "KJZZ, Sept 2025 \u2014 Metrocenter demo done, Sears still standing",
     "url": "https://www.kjzz.org/business/2025-09-25/demo-of-phoenixs-metrocenter-mall-is-finally-done-see-what-the-the-metropolitan-will-look-like"
    },
    "added": "2026-11-07"
   },
   {
    "id": "kmart-2526-w-northern-phoenix",
-   "name": "Former Kmart — 2526 W Northern Ave",
+   "name": "Former Kmart \u2014 2526 W Northern Ave",
    "address": "2526 W Northern Ave, Phoenix, AZ 85051",
    "lat": 33.554224,
    "lng": -112.114159,
@@ -61,68 +61,68 @@
   },
   {
    "id": "frys-electronics-2300-w-baseline-tempe",
-   "name": "Former Fry's Electronics — Tempe",
+   "name": "Former Fry's Electronics \u2014 Tempe",
    "address": "2300 W Baseline Rd, Tempe, AZ 85283",
    "lat": 33.379268,
    "lng": -111.972106,
    "status": "vacant",
    "note": "149,000 SF big box closed Feb 2021 when Fry's Electronics shut down. ~15 ac site west of I-10 by Arizona Mills. A Costco Business Center conversion was proposed in 2022 but stalled. Confirm on arrival.",
    "source": {
-    "label": "ABC15 — Costco plan for former Fry's (2022)",
+    "label": "ABC15 \u2014 Costco plan for former Fry's (2022)",
     "url": "https://www.abc15.com/news/business/costco-could-be-planning-a-new-business-center-in-east-valley"
    },
    "added": "2026-11-07"
   },
   {
    "id": "sears-superstition-springs-mesa",
-   "name": "Former Sears + auto center — Superstition Springs",
+   "name": "Former Sears + auto center \u2014 Superstition Springs",
    "address": "6525 E Southern Ave, Mesa, AZ 85206 (south side of the mall)",
    "lat": 33.389258,
    "lng": -111.691772,
    "status": "vacant",
    "note": "113,837 SF two-story Sears (closed 2018) plus 17,050 SF former auto center on ~12.7 ac, sold at auction as a redevelopment site. Apartments have been proposed for the land.",
    "source": {
-    "label": "CommercialCafe — former Sears auction listing",
+    "label": "CommercialCafe \u2014 former Sears auction listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/redevelopment-opportunity-for-auction-in-mesa/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "safeway-3131-e-thunderbird-phoenix",
-   "name": "Former Safeway — 32nd St & Thunderbird",
+   "name": "Former Safeway \u2014 32nd St & Thunderbird",
    "address": "3131 E Thunderbird Rd, Phoenix, AZ 85032",
    "lat": 33.610249,
    "lng": -112.014533,
    "status": "closed",
    "note": "Safeway closed this store in July 2025. Grocery box on a ~10 ac shopping-center parcel; other tenants in the center may still be open, so expect some traffic.",
    "source": {
-    "label": "ABC15 — Safeway closing 2 Phoenix-area stores (2025)",
+    "label": "ABC15 \u2014 Safeway closing 2 Phoenix-area stores (2025)",
     "url": "https://www.abc15.com/news/state/safeway-albertsons-to-close-3-arizona-locations-including-2-in-phoenix"
    },
    "added": "2026-11-07"
   },
   {
    "id": "safeway-5860-w-thunderbird-glendale",
-   "name": "Former Safeway — 59th Ave & Thunderbird",
+   "name": "Former Safeway \u2014 59th Ave & Thunderbird",
    "address": "5860 W Thunderbird Rd, Glendale, AZ 85306",
    "lat": 33.612364,
    "lng": -112.184261,
    "status": "closed",
    "note": "Safeway closed this store in July 2025. Grocery box on a ~9.6 ac shopping-center parcel; other tenants in the center may still be open.",
    "source": {
-    "label": "ABC15 — Safeway closing 2 Phoenix-area stores (2025)",
+    "label": "ABC15 \u2014 Safeway closing 2 Phoenix-area stores (2025)",
     "url": "https://www.abc15.com/news/state/safeway-albertsons-to-close-3-arizona-locations-including-2-in-phoenix"
    },
    "added": "2026-11-07"
   },
   {
    "id": "bell-canyon-theater-phoenix",
-   "name": "Former movie theater — Bell Canyon Pavilions",
+   "name": "Former movie theater \u2014 Bell Canyon Pavilions",
    "address": "2730 W Bell Rd, Phoenix, AZ 85053",
    "lat": 33.642022,
    "lng": -112.118762,
    "status": "forlease",
-   "note": "Theater at the back of the Bell Canyon Pavilions center, closed since 2020; the 32,640 SF building is listed for lease. Shared center lot — quieter at the theater end.",
+   "note": "Theater at the back of the Bell Canyon Pavilions center, closed since 2020; the 32,640 SF building is listed for lease. Shared center lot \u2014 quieter at the theater end.",
    "source": {
     "label": "Search the listing",
     "url": "https://www.google.com/search?q=2730%20W%20Bell%20Rd%20Phoenix%20for%20lease"
@@ -159,7 +159,7 @@
   },
   {
    "id": "2807-north-power-road-mesa",
-   "name": "Retail building – 2807 North Power Road",
+   "name": "Retail building \u2013 2807 North Power Road",
    "address": "2807 N Power Rd, Mesa, AZ",
    "lat": 33.466869131904836,
    "lng": -111.68321713875268,
@@ -173,7 +173,7 @@
   },
   {
    "id": "1535-e-university-dr-mesa",
-   "name": "Retail building – 1535 E University Dr",
+   "name": "Retail building \u2013 1535 E University Dr",
    "address": "1535 E University Dr, Mesa, AZ",
    "lat": 33.42209697894175,
    "lng": -111.79827717584068,
@@ -187,7 +187,7 @@
   },
   {
    "id": "2009-n-stapley-dr-mesa",
-   "name": "Retail building – 2009 N Stapley Dr",
+   "name": "Retail building \u2013 2009 N Stapley Dr",
    "address": "2009 N Stapley Dr, Mesa, AZ",
    "lat": 33.45204596104995,
    "lng": -111.80416038934119,
@@ -201,57 +201,57 @@
   },
   {
    "id": "1911-w-broadway-rd-mesa",
-   "name": "Retail building – 1911 W Broadway Rd",
+   "name": "Retail building \u2013 1911 W Broadway Rd",
    "address": "1911 W Broadway Rd, Mesa, AZ",
    "lat": 33.40713999778753,
    "lng": -111.87261122342254,
    "status": "forlease",
    "note": "5,000 SF listed for lease (retail). Lot ~2.07 ac. County parcel 134-30-001Y. Street View 2025-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1911%20W%20Broadway%20Rd%20Mesa%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/1911-w-broadway-rd-1/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "1151-e-mckellips-rd-mesa",
-   "name": "Retail building – 1151 E Mckellips Rd",
+   "name": "Retail building \u2013 1151 E Mckellips Rd",
    "address": "1151 E Mckellips Rd, Mesa, AZ",
    "lat": 33.450950453207085,
    "lng": -111.8054343194057,
    "status": "forlease",
    "note": "13,050 SF listed for lease (retail). Lot ~1.06 ac. County parcel 136-25-698N. Street View 2021-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1151%20E%20Mckellips%20Rd%20Mesa%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/1151-e-mckellips-rd/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "903-933-e-main-st-mesa",
-   "name": "Retail building – 903-933 E Main St",
+   "name": "Retail building \u2013 903-933 E Main St",
    "address": "903 E Main St, Mesa, AZ",
    "lat": 33.414582562217454,
    "lng": -111.81138047085398,
    "status": "forlease",
    "note": "9,200 SF listed for lease (retail). Lot ~1.93 ac. County parcel 138-18-066C. Street View 2022-05.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=903%20E%20Main%20St%20Mesa%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/mesa-matrix/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "6315-east-southern-avenue-mesa",
-   "name": "Retail building – 6315 East Southern Avenue",
+   "name": "Retail building \u2013 6315 East Southern Avenue",
    "address": "6315 E Southern Ave, Mesa, AZ",
    "lat": 33.39263856608466,
    "lng": -111.69499596973307,
    "status": "forlease",
    "note": "21,320 SF listed for lease (retail). Lot ~6.04 ac. County parcel 141-54-041. Street View 2024-05.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=6315%20E%20Southern%20Ave%20Mesa%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/6315-east-southern-avenue/"
    },
    "added": "2026-11-07"
   },
@@ -271,7 +271,7 @@
   },
   {
    "id": "485-north-juniper-drive-chandler",
-   "name": "Office building – 485 North Juniper Drive",
+   "name": "Office building \u2013 485 North Juniper Drive",
    "address": "485 N Juniper Dr, Chandler, AZ",
    "lat": 33.311738637020575,
    "lng": -111.91511713442772,
@@ -285,29 +285,29 @@
   },
   {
    "id": "2051-w-chandler-blvd-chandler",
-   "name": "Retail building – 2051 W Chandler Blvd",
+   "name": "Retail building \u2013 2051 W Chandler Blvd",
    "address": "2051 W Chandler Blvd, Chandler, AZ",
    "lat": 33.30538457575395,
    "lng": -111.8779620760021,
    "status": "forlease",
    "note": "12,000 SF listed for lease (retail). Lot ~1.98 ac. County parcel 303-63-300. Street View 2024-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=2051%20W%20Chandler%20Blvd%20Chandler%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/2051-w-chandler-blvd-3/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "930-e-pecos-rd-chandler",
-   "name": "Retail building – 930 E Pecos Rd",
+   "name": "Retail building \u2013 930 E Pecos Rd",
    "address": "930 E Pecos Rd, Chandler, AZ",
    "lat": 33.29221215104427,
    "lng": -111.82627738887429,
    "status": "forlease",
    "note": "11,895 SF listed for lease (retail). Lot ~1.67 ac. County parcel 303-14-536. Street View 2021-03.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=930%20E%20Pecos%20Rd%20Chandler%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/930-e-pecos-rd/"
    },
    "added": "2026-11-07"
   },
@@ -327,7 +327,7 @@
   },
   {
    "id": "7810-s-priest-dr-tempe",
-   "name": "Retail building – 7810 S Priest Dr",
+   "name": "Retail building \u2013 7810 S Priest Dr",
    "address": "7810 S Priest Dr, Tempe, AZ",
    "lat": 33.34656921999325,
    "lng": -111.9649074293564,
@@ -341,54 +341,54 @@
   },
   {
    "id": "825-s-48th-st-tempe",
-   "name": "Retail building – 825 S 48th St",
+   "name": "Retail building \u2013 825 S 48th St",
    "address": "825 S 48Th St, Tempe, AZ",
    "lat": 33.42087496324153,
    "lng": -111.97657412182903,
    "status": "forlease",
    "note": "9,276 SF listed for lease (retail). Lot ~1.72 ac. County parcel 124-56-050A. Street View 2018-07.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=825%20S%2048Th%20St%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/sec-sr-143-university-drive/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "1001-east-playa-del-norte-drive-tempe",
-   "name": "Retail building – 1001 East Playa Del Norte Drive",
+   "name": "Retail building \u2013 1001 East Playa Del Norte Drive",
    "address": "1001 E Playa Del Norte Dr, Tempe, AZ",
    "lat": 33.43295688912969,
    "lng": -111.92211354982844,
    "status": "forlease",
    "note": "7,000 SF listed for lease (retail). Lot ~55.39 ac. County parcel 132-31-005C. Street View 2019-06.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1001%20E%20Playa%20Del%20Norte%20Dr%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/1001-e-playa-del-norte-dr/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "1850-w-rio-salado-parkway-tempe",
-   "name": "Office building – 1850 W Rio Salado Parkway",
+   "name": "Office building \u2013 1850 W Rio Salado Parkway",
    "address": "1850 W Rio Salado Pkwy, Tempe, AZ",
    "lat": 33.430473914931106,
    "lng": -111.90585044224255,
    "status": "forlease",
    "note": "38,081 SF listed for lease (office). Lot ~10.5 ac. County parcel 132-35-964. Street View 2022-04.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1850%20W%20Rio%20Salado%20Pkwy%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/liberty-center-at-rio-salado-2/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "5105-w-thunderbird-rd-glendale",
-   "name": "Retail building – 5105 W Thunderbird Rd",
+   "name": "Retail building \u2013 5105 W Thunderbird Rd",
    "address": "5105 W Thunderbird Rd, Glendale, AZ",
    "lat": 33.61035346752755,
    "lng": -112.1690995381943,
    "status": "forlease",
-   "note": "4,028–37,026 SF listed for lease (retail). Lot ~0.85 ac. County parcel 200-75-935. Street View 2022-05.",
+   "note": "4,028\u201337,026 SF listed for lease (retail). Lot ~0.85 ac. County parcel 200-75-935. Street View 2022-05.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/5105-w-thunderbird/"
@@ -411,7 +411,7 @@
   },
   {
    "id": "5340-west-glendale-avenue-glendale",
-   "name": "Retail building – 5340 West Glendale Avenue",
+   "name": "Retail building \u2013 5340 West Glendale Avenue",
    "address": "5340 W Glendale Ave, Glendale, AZ",
    "lat": 33.53915711889701,
    "lng": -112.17431741174622,
@@ -425,7 +425,7 @@
   },
   {
    "id": "5957-w-northern-ave-glendale",
-   "name": "Retail building – 5957 W Northern Ave",
+   "name": "Retail building \u2013 5957 W Northern Ave",
    "address": "5957 W Northern Ave, Glendale, AZ",
    "lat": 33.552660379472236,
    "lng": -112.18973409537921,
@@ -439,7 +439,7 @@
   },
   {
    "id": "5880-west-bell-road-glendale",
-   "name": "Retail building – 5880 West Bell Road",
+   "name": "Retail building \u2013 5880 West Bell Road",
    "address": "5880 W Bell Rd, Glendale, AZ",
    "lat": 33.6412416712695,
    "lng": -112.18488394935332,
@@ -453,7 +453,7 @@
   },
   {
    "id": "4932-w-colter-st-glendale",
-   "name": "Industrial building – 4932 W Colter St",
+   "name": "Industrial building \u2013 4932 W Colter St",
    "address": "4932 W Colter St, Glendale, AZ",
    "lat": 33.514141914681694,
    "lng": -112.16605473649494,
@@ -467,7 +467,7 @@
   },
   {
    "id": "12445-w-glendale-ave-glendale",
-   "name": "Industrial building – 12445 W Glendale Ave",
+   "name": "Industrial building \u2013 12445 W Glendale Ave",
    "address": "12445 W Glendale Ave, Glendale, AZ",
    "lat": 33.53564942078001,
    "lng": -112.32756364872937,
@@ -481,7 +481,7 @@
   },
   {
    "id": "5107-n-51st-ave-glendale",
-   "name": "Retail building – 5107 N 51st Ave",
+   "name": "Retail building \u2013 5107 N 51st Ave",
    "address": "5107 N 51St Ave, Glendale, AZ",
    "lat": 33.51220041521485,
    "lng": -112.16763999455934,
@@ -495,21 +495,21 @@
   },
   {
    "id": "7631-east-indian-school-road-scottsdale",
-   "name": "Retail building – 7631 East Indian School Road",
+   "name": "Retail building \u2013 7631 East Indian School Road",
    "address": "7631 E Indian School Rd, Scottsdale, AZ",
    "lat": 33.49442737765939,
    "lng": -111.91604683033928,
    "status": "forlease",
    "note": "13,750 SF listed for lease (retail). Lot ~0.88 ac. County parcel 130-26-001K. Street View 2020-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=7631%20E%20Indian%20School%20Rd%20Scottsdale%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/scottsdale/7631-east-indian-school-road/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "710-w-bell-rd-phoenix",
-   "name": "Retail building – 710 W Bell Rd",
+   "name": "Retail building \u2013 710 W Bell Rd",
    "address": "710 W Bell Rd, Phoenix, AZ",
    "lat": 33.64112976761681,
    "lng": -112.08350745872514,
@@ -523,7 +523,7 @@
   },
   {
    "id": "17232-n-19th-ave-phoenix",
-   "name": "Retail building – 17232 N 19th Ave",
+   "name": "Retail building \u2013 17232 N 19th Ave",
    "address": "17232 N 19Th Ave, Phoenix, AZ",
    "lat": 33.64145642573561,
    "lng": -112.10145732578744,
@@ -537,21 +537,21 @@
   },
   {
    "id": "5400-e-carefree-hwy-phoenix",
-   "name": "Retail building – 5400 E Carefree Hwy",
+   "name": "Retail building \u2013 5400 E Carefree Hwy",
    "address": "5400 E Carefree Hwy, Cave Creek, AZ",
    "lat": 33.79978675550331,
    "lng": -111.96441320803206,
    "status": "forlease",
    "note": "13,813 SF listed for lease (retail). Lot ~2.8 ac. County parcel 211-47-006G. Street View 2023-02.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=5400%20E%20Carefree%20Hwy%20Cave%20Creek%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/carefree/5400-e-carefree-hwy/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "2820-w-dove-valley-rd-phoenix",
-   "name": "Retail building – 2820 W Dove Valley Rd",
+   "name": "Retail building \u2013 2820 W Dove Valley Rd",
    "address": "2820 W Dove Valley Rd, Phoenix, AZ",
    "lat": 33.78437687995068,
    "lng": -112.12010239436151,
@@ -565,21 +565,21 @@
   },
   {
    "id": "601-s-55th-ave-phoenix",
-   "name": "Industrial building – 601 S 55th Ave",
+   "name": "Industrial building \u2013 601 S 55th Ave",
    "address": "601 S 55Th Ave, Phoenix, AZ",
    "lat": 33.441432996060605,
    "lng": -112.17718192024091,
    "status": "forlease",
    "note": "100,000 SF listed for lease (industrial). Lot ~4.78 ac. County parcel 104-20-026C. Street View 2026-01.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=601%20S%2055Th%20Ave%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/100-000-sf-freestanding-building-w-large-yard/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "4101-w-van-buren-st-phoenix",
-   "name": "Industrial building – 4101 W Van Buren St",
+   "name": "Industrial building \u2013 4101 W Van Buren St",
    "address": "4101 W Van Buren St, Phoenix, AZ",
    "lat": 33.45092201945678,
    "lng": -112.14807598891103,
@@ -607,7 +607,7 @@
   },
   {
    "id": "1615-east-elwood-street-phoenix",
-   "name": "Industrial building – 1615 East Elwood Street",
+   "name": "Industrial building \u2013 1615 East Elwood Street",
    "address": "1615 E Elwood St, Phoenix, AZ",
    "lat": 33.41354698709451,
    "lng": -112.04619316435884,
@@ -635,7 +635,7 @@
   },
   {
    "id": "11039-n-cave-creek-rd-phoenix",
-   "name": "Industrial building – 11039 N Cave Creek Rd",
+   "name": "Industrial building \u2013 11039 N Cave Creek Rd",
    "address": "11039 N Cave Creek Rd, Phoenix, AZ",
    "lat": 33.58736556008892,
    "lng": -112.04752159319207,
@@ -649,7 +649,7 @@
   },
   {
    "id": "6743-w-farmer-rd-phoenix",
-   "name": "Industrial building – 6743 W Farmer Rd",
+   "name": "Industrial building \u2013 6743 W Farmer Rd",
    "address": "6743 W Farmer Rd, Phoenix, AZ",
    "lat": 33.44626224186974,
    "lng": -112.20668585087563,
@@ -691,7 +691,7 @@
   },
   {
    "id": "2021-e-jones-ave-phoenix",
-   "name": "Industrial building – 2021 E Jones Ave",
+   "name": "Industrial building \u2013 2021 E Jones Ave",
    "address": "2021 E Jones Ave, Phoenix, AZ",
    "lat": 33.40919023233483,
    "lng": -112.0371621823807,
@@ -726,14 +726,14 @@
    "status": "forlease",
    "note": "39,517 SF listed for lease (industrial). Lot ~6.71 ac. County parcel 103-32-003. Street View 2020-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=4720%20W%20Van%20Buren%20St%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/flex-industrial-end-cap-unit-for-sublease-in-phoenix/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "4455-w-camelback-road-phoenix",
-   "name": "Industrial building – 4455 W Camelback Road",
+   "name": "Industrial building \u2013 4455 W Camelback Road",
    "address": "4455 W Camelback Rd, Phoenix, AZ",
    "lat": 33.508389391966475,
    "lng": -112.15465338071502,
@@ -754,8 +754,8 @@
    "status": "forlease",
    "note": "60,000 SF listed for lease (industrial). Lot ~4.03 ac. County parcel 104-15-022. Street View 2026-09.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=7175%20W%20Sherman%20St%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/estrella-commerce-park-1/"
    },
    "added": "2026-11-07"
   },
@@ -768,8 +768,8 @@
    "status": "forlease",
    "note": "77,912 SF listed for lease (industrial). Lot ~3.91 ac. County parcel 115-49-012A. Street View 2024-06.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=824%20E%20University%20Dr%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/industrial-warehouse-for-sublease-in-phoenix-1/"
    },
    "added": "2026-11-07"
   },
@@ -796,8 +796,8 @@
    "status": "forlease",
    "note": "174,769 SF listed for lease (industrial). Lot ~20.94 ac. County parcel 104-29-004F. Street View 2025-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=6825%20W%20Buckeye%20Rd%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/buckeye-logistics-center-1/"
    },
    "added": "2026-11-07"
   },
@@ -817,7 +817,7 @@
   },
   {
    "id": "236-e-pima-st-phoenix",
-   "name": "Industrial building – 236 E. Pima St.",
+   "name": "Industrial building \u2013 236 E. Pima St.",
    "address": "236 E Pima St, Phoenix, AZ",
    "lat": 33.43367878533975,
    "lng": -112.0711244381226,
@@ -831,7 +831,7 @@
   },
   {
    "id": "3906-e-broadway-rd-phoenix",
-   "name": "Industrial building – 3906 E Broadway Rd",
+   "name": "Industrial building \u2013 3906 E Broadway Rd",
    "address": "3906 E Broadway Rd, Phoenix, AZ",
    "lat": 33.408981238068506,
    "lng": -111.99702451582078,
@@ -845,7 +845,7 @@
   },
   {
    "id": "3161-n-35th-avenue-phoenix",
-   "name": "Industrial building – 3161 N 35th Avenue",
+   "name": "Industrial building \u2013 3161 N 35th Avenue",
    "address": "3161 N 35Th Ave, Phoenix, AZ",
    "lat": 33.48606730218705,
    "lng": -112.1337619209029,
@@ -873,7 +873,7 @@
   },
   {
    "id": "2255-w-desert-cove-ave-phoenix",
-   "name": "Industrial building – 2255 W Desert Cove Ave",
+   "name": "Industrial building \u2013 2255 W Desert Cove Ave",
    "address": "2255 W Desert Cove Ave, Phoenix, AZ",
    "lat": 33.58497030487629,
    "lng": -112.10629167945629,
@@ -887,7 +887,7 @@
   },
   {
    "id": "4949-s-16th-street-phoenix",
-   "name": "Industrial building – 4949 S 16th Street",
+   "name": "Industrial building \u2013 4949 S 16th Street",
    "address": "4949 S 16Th St, Phoenix, AZ",
    "lat": 33.40151719497897,
    "lng": -112.0462497937125,
@@ -915,7 +915,7 @@
   },
   {
    "id": "3325-east-wier-avenue-phoenix",
-   "name": "Industrial building – 3325 East Wier Avenue",
+   "name": "Industrial building \u2013 3325 East Wier Avenue",
    "address": "3325 E Wier Ave, Phoenix, AZ",
    "lat": 33.40239588205762,
    "lng": -112.00963586739097,
@@ -929,7 +929,7 @@
   },
   {
    "id": "2018-n-23rd-avenue-phoenix",
-   "name": "Industrial building – 2018 N 23rd Avenue",
+   "name": "Industrial building \u2013 2018 N 23rd Avenue",
    "address": "2018 N 23Rd Ave, Phoenix, AZ",
    "lat": 33.470456431853286,
    "lng": -112.10894822525968,
@@ -943,7 +943,7 @@
   },
   {
    "id": "4820-e-mcdowell-rd-phoenix",
-   "name": "Industrial building – 4820 E McDowell Rd",
+   "name": "Industrial building \u2013 4820 E McDowell Rd",
    "address": "4820 E Mcdowell Rd, Phoenix, AZ",
    "lat": 33.46633695393997,
    "lng": -111.97625842382718,
@@ -957,7 +957,7 @@
   },
   {
    "id": "1313-n-25th-ave-phoenix",
-   "name": "Industrial building – 1313 N 25th Ave",
+   "name": "Industrial building \u2013 1313 N 25th Ave",
    "address": "1313 N 25Th Ave, Phoenix, AZ",
    "lat": 33.46272678617226,
    "lng": -112.11223146422635,
@@ -971,7 +971,7 @@
   },
   {
    "id": "475-east-buckeye-road-phoenix",
-   "name": "Industrial building – 475 East Buckeye Road",
+   "name": "Industrial building \u2013 475 East Buckeye Road",
    "address": "475 E Buckeye Rd, Phoenix, AZ",
    "lat": 33.43507979648737,
    "lng": -112.06834933720988,
@@ -985,7 +985,7 @@
   },
   {
    "id": "2222-w-peoria-ave-phoenix",
-   "name": "Industrial building – 2222 W Peoria Ave",
+   "name": "Industrial building \u2013 2222 W Peoria Ave",
    "address": "2222 W Peoria Ave, Phoenix, AZ",
    "lat": 33.58292307616158,
    "lng": -112.10596134969555,
@@ -1027,7 +1027,7 @@
   },
   {
    "id": "2115-w-melinda-ln-phoenix",
-   "name": "Industrial building – 2115 W Melinda Ln",
+   "name": "Industrial building \u2013 2115 W Melinda Ln",
    "address": "2115 W Melinda Ln, Phoenix, AZ",
    "lat": 33.68146124957581,
    "lng": -112.10489288838565,
@@ -1069,7 +1069,7 @@
   },
   {
    "id": "825-e-university-drive-phoenix",
-   "name": "Industrial building – 825 E University Drive",
+   "name": "Industrial building \u2013 825 E University Drive",
    "address": "825 E University Dr, Phoenix, AZ",
    "lat": 33.42255756306573,
    "lng": -112.06195688971279,
@@ -1097,7 +1097,7 @@
   },
   {
    "id": "4022-south-20th-street-phoenix",
-   "name": "Industrial building – 4022 South 20th Street",
+   "name": "Industrial building \u2013 4022 South 20th Street",
    "address": "4022 S 20Th St, Phoenix, AZ",
    "lat": 33.40929888587008,
    "lng": -112.03913299935078,
@@ -1111,7 +1111,7 @@
   },
   {
    "id": "2831-west-indian-school-road-phoenix",
-   "name": "Industrial building – 2831 West Indian School Road",
+   "name": "Industrial building \u2013 2831 West Indian School Road",
    "address": "2831 W Indian School Rd, Phoenix, AZ",
    "lat": 33.49418364766009,
    "lng": -112.12053064698979,
@@ -1125,7 +1125,7 @@
   },
   {
    "id": "200-s-49th-avenue-phoenix",
-   "name": "Industrial building – 200 S 49th Avenue",
+   "name": "Industrial building \u2013 200 S 49th Avenue",
    "address": "200 S 49Th Ave, Phoenix, AZ",
    "lat": 33.445920375821785,
    "lng": -112.16691947683817,
@@ -1139,7 +1139,7 @@
   },
   {
    "id": "1410-e-van-buren-st-phoenix",
-   "name": "Industrial building – 1410 E Van Buren St",
+   "name": "Industrial building \u2013 1410 E Van Buren St",
    "address": "1410 E Van Buren St, Phoenix, AZ",
    "lat": 33.45176831229766,
    "lng": -112.05148429963776,
@@ -1153,7 +1153,7 @@
   },
   {
    "id": "4055-s-sarival-ave-goodyear",
-   "name": "Industrial building – 4055 S Sarival Ave",
+   "name": "Industrial building \u2013 4055 S Sarival Ave",
    "address": "4055 S Sarival Ave, Goodyear, AZ",
    "lat": 33.40952405433264,
    "lng": -112.40843229417196,
@@ -1167,7 +1167,7 @@
   },
   {
    "id": "3510-east-atlanta-avenue-phoenix",
-   "name": "Industrial building – 3510 East Atlanta Avenue",
+   "name": "Industrial building \u2013 3510 East Atlanta Avenue",
    "address": "3510 E Atlanta Ave, Phoenix, AZ",
    "lat": 33.40187128002696,
    "lng": -112.00572061959555,
@@ -1181,7 +1181,7 @@
   },
   {
    "id": "230-n-48th-ave-phoenix",
-   "name": "Industrial building – 230 N 48th Ave",
+   "name": "Industrial building \u2013 230 N 48th Ave",
    "address": "230 N 48Th Ave, Phoenix, AZ",
    "lat": 33.450153646787534,
    "lng": -112.16327126616923,
@@ -1195,7 +1195,7 @@
   },
   {
    "id": "2201-e-university-dr-phoenix",
-   "name": "Industrial building – 2201 E. University Dr.",
+   "name": "Industrial building \u2013 2201 E. University Dr.",
    "address": "2201 E University Dr, Phoenix, AZ",
    "lat": 33.42347613772679,
    "lng": -112.034965051188,
@@ -1223,7 +1223,7 @@
   },
   {
    "id": "1606-east-university-drive-phoenix",
-   "name": "Industrial building – 1606 East University Drive",
+   "name": "Industrial building \u2013 1606 East University Drive",
    "address": "1606 E University Dr, Phoenix, AZ",
    "lat": 33.424559228973884,
    "lng": -112.04721679674923,
@@ -1237,7 +1237,7 @@
   },
   {
    "id": "9103-s-hardy-dr-tempe",
-   "name": "Industrial building – 9103 S Hardy Dr",
+   "name": "Industrial building \u2013 9103 S Hardy Dr",
    "address": "9103 S Hardy Dr, Tempe, AZ",
    "lat": 33.33099555252647,
    "lng": -111.95344892369324,
@@ -1312,7 +1312,7 @@
    "lat": 33.564233054787515,
    "lng": -112.41343184678584,
    "status": "forlease",
-   "note": "245,966 SF listed for lease (industrial). Lot ~54.38 ac. County parcel 501-05-581. No Street View here — aerial shown.",
+   "note": "245,966 SF listed for lease (industrial). Lot ~54.38 ac. County parcel 501-05-581. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/industrial-space-for-sublease-in-glendale-1/"
@@ -1321,7 +1321,7 @@
   },
   {
    "id": "705-south-94th-avenue-tolleson",
-   "name": "Industrial building – 705 South 94th Avenue",
+   "name": "Industrial building \u2013 705 South 94th Avenue",
    "address": "705 S 94Th Ave, Tolleson, AZ",
    "lat": 33.43888309418942,
    "lng": -112.26049096148931,
@@ -1335,7 +1335,7 @@
   },
   {
    "id": "1733-west-parkside-lane-phoenix",
-   "name": "Industrial building – 1733 West Parkside Lane",
+   "name": "Industrial building \u2013 1733 West Parkside Lane",
    "address": "1733 W Parkside Ln, Phoenix, AZ",
    "lat": 33.69495123887176,
    "lng": -112.09690569807323,
@@ -1354,7 +1354,7 @@
    "lat": 33.46162323716645,
    "lng": -112.17613939642649,
    "status": "forlease",
-   "note": "9,030–38,459 SF listed for lease (industrial). Lot ~7.97 ac. County parcel 103-27-061A. Street View 2016-07.",
+   "note": "9,030\u201338,459 SF listed for lease (industrial). Lot ~7.97 ac. County parcel 103-27-061A. Street View 2016-07.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/coronado-commerceplex-phase-iv-2/"
@@ -1391,7 +1391,7 @@
   },
   {
    "id": "8515-e-anderson-dr-scottsdale",
-   "name": "Industrial building – 8515 E Anderson Dr",
+   "name": "Industrial building \u2013 8515 E Anderson Dr",
    "address": "8515 E Anderson Dr, Scottsdale, AZ",
    "lat": 33.643070059648636,
    "lng": -111.89593233645377,
@@ -1419,7 +1419,7 @@
   },
   {
    "id": "2605-e-cessna-drive-chandler",
-   "name": "Industrial building – 2605 E Cessna Drive",
+   "name": "Industrial building \u2013 2605 E Cessna Drive",
    "address": "2605 E Cessna Dr, Chandler, AZ",
    "lat": 33.27219453786945,
    "lng": -111.79613717248658,
@@ -1452,7 +1452,7 @@
    "lat": 33.33127777843008,
    "lng": -111.67359236224529,
    "status": "forlease",
-   "note": "182,606 SF listed for lease (industrial). Lot ~11.42 ac. County parcel 304-30-963. No Street View here — aerial shown.",
+   "note": "182,606 SF listed for lease (industrial). Lot ~11.42 ac. County parcel 304-30-963. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-2-7/"
@@ -1503,7 +1503,7 @@
   },
   {
    "id": "5811-s-46th-ave-laveen",
-   "name": "Industrial building – 5811 S. 46th Ave.",
+   "name": "Industrial building \u2013 5811 S. 46th Ave.",
    "address": "5811 S 46Th Ave, Laveen, AZ",
    "lat": 33.39338649903362,
    "lng": -112.15678961388073,
@@ -1545,7 +1545,7 @@
   },
   {
    "id": "640-s-51st-avenue-phoenix",
-   "name": "Industrial building – 640 S 51st Avenue",
+   "name": "Industrial building \u2013 640 S 51st Avenue",
    "address": "640 S 51St Ave, Phoenix, AZ",
    "lat": 33.44032660143939,
    "lng": -112.17042116916643,
@@ -1587,7 +1587,7 @@
   },
   {
    "id": "15757-north-78th-street-scottsdale",
-   "name": "Industrial building – 15757 North 78th Street",
+   "name": "Industrial building \u2013 15757 North 78th Street",
    "address": "15757 N 78Th St, Scottsdale, AZ",
    "lat": 33.62893221700162,
    "lng": -111.91201303379316,
@@ -1601,7 +1601,7 @@
   },
   {
    "id": "2847-s-48th-street-tempe",
-   "name": "Industrial building – 2847 S 48th Street",
+   "name": "Industrial building \u2013 2847 S 48th Street",
    "address": "2847 S 48Th St, Tempe, AZ",
    "lat": 33.398187365952474,
    "lng": -111.97742149792849,
@@ -1676,7 +1676,7 @@
    "lat": 33.33054277901415,
    "lng": -111.6711781136987,
    "status": "forlease",
-   "note": "130,495 SF listed for lease (industrial). Lot ~10.36 ac. County parcel 304-30-964. No Street View here — aerial shown.",
+   "note": "130,495 SF listed for lease (industrial). Lot ~10.36 ac. County parcel 304-30-964. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-3-1/"
@@ -1718,7 +1718,7 @@
    "lat": 33.35571114126839,
    "lng": -111.66817959033372,
    "status": "forlease",
-   "note": "29,800 SF listed for lease (industrial). Lot ~2.24 ac. County parcel 304-04-994. No Street View here — aerial shown.",
+   "note": "29,800 SF listed for lease (industrial). Lot ~2.24 ac. County parcel 304-04-994. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-business-campus-building-3/"
@@ -1732,7 +1732,7 @@
    "lat": 33.537927048900194,
    "lng": -112.38934638723899,
    "status": "forlease",
-   "note": "838,824 SF listed for lease (industrial). Lot ~108.08 ac. County parcel 501-50-002N. No Street View here — aerial shown.",
+   "note": "838,824 SF listed for lease (industrial). Lot ~108.08 ac. County parcel 501-50-002N. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/litchfield-park/the-cubes-at-glendale-building-f/"
@@ -1783,7 +1783,7 @@
   },
   {
    "id": "20820-n-25th-pl-phoenix",
-   "name": "Industrial building – 20820 N 25th Pl",
+   "name": "Industrial building \u2013 20820 N 25th Pl",
    "address": "20820 N 25Th Pl, Phoenix, AZ",
    "lat": 33.67594163307967,
    "lng": -112.02850756918022,
@@ -1830,7 +1830,7 @@
    "lat": 33.339062039845366,
    "lng": -111.67488882704194,
    "status": "forlease",
-   "note": "136,334 SF listed for lease (industrial). Lot ~8.98 ac. County parcel 304-17-989. No Street View here — aerial shown.",
+   "note": "136,334 SF listed for lease (industrial). Lot ~8.98 ac. County parcel 304-17-989. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/the-hub-at-202-building-2d/"
@@ -1867,7 +1867,7 @@
   },
   {
    "id": "3167-w-armstrong-pl-chandler",
-   "name": "Industrial building – 3167 W Armstrong Pl",
+   "name": "Industrial building \u2013 3167 W Armstrong Pl",
    "address": "3167 W Armstrong Pl, Chandler, AZ",
    "lat": 33.27863538224626,
    "lng": -111.89193992256847,
@@ -1881,7 +1881,7 @@
   },
   {
    "id": "8591-west-jefferson-street-tolleson",
-   "name": "Industrial building – 8591 West Jefferson Street",
+   "name": "Industrial building \u2013 8591 West Jefferson Street",
    "address": "8591 W Jefferson St, Tolleson, AZ",
    "lat": 33.44543775568235,
    "lng": -112.24349460371172,
@@ -1923,7 +1923,7 @@
   },
   {
    "id": "3000-s-99th-ave-tolleson",
-   "name": "Retail building – 3000 S 99th Ave",
+   "name": "Retail building \u2013 3000 S 99th Ave",
    "address": "3000 S 99Th Ave, Tolleson, AZ",
    "lat": 33.41978251003761,
    "lng": -112.27402291230688,
@@ -1937,7 +1937,7 @@
   },
   {
    "id": "1900-e-riverview-dr-phoenix",
-   "name": "Industrial building – 1900 E Riverview Dr",
+   "name": "Industrial building \u2013 1900 E Riverview Dr",
    "address": "1900 E Riverview Dr, Phoenix, AZ",
    "lat": 33.418981648870826,
    "lng": -112.04095902703003,
@@ -1951,7 +1951,7 @@
   },
   {
    "id": "6121-west-van-buren-street-phoenix",
-   "name": "Retail building – 6121 West Van Buren Street",
+   "name": "Retail building \u2013 6121 West Van Buren Street",
    "address": "6121 W Van Buren St, Phoenix, AZ",
    "lat": 33.45051686724108,
    "lng": -112.19194312165853,
@@ -1965,7 +1965,7 @@
   },
   {
    "id": "302-e-university-drive-phoenix",
-   "name": "Industrial building – 302 E University Drive",
+   "name": "Industrial building \u2013 302 E University Drive",
    "address": "302 E University Dr, Phoenix, AZ",
    "lat": 33.424454364753295,
    "lng": -112.06887654851218,
@@ -1993,7 +1993,7 @@
   },
   {
    "id": "920-south-gilbert-road-gilbert",
-   "name": "Retail building – 920 South Gilbert Road",
+   "name": "Retail building \u2013 920 South Gilbert Road",
    "address": "920 S Gilbert Rd, Gilbert, AZ",
    "lat": 33.332868445429796,
    "lng": -111.79086207382143,
@@ -2007,113 +2007,113 @@
   },
   {
    "id": "500-south-gilbert-road-gilbert",
-   "name": "Retail building – 500 South Gilbert Road",
+   "name": "Retail building \u2013 500 South Gilbert Road",
    "address": "500 S Gilbert Rd, Gilbert, AZ",
    "lat": 33.340864625920936,
    "lng": -111.79030473402763,
    "status": "forlease",
    "note": "9,358 SF listed for lease (retail). Lot ~1.1 ac. County parcel 302-35-326. Street View 2020-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=500%20S%20Gilbert%20Rd%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/500-south-gilbert-road/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "1845-east-baseline-road-gilbert",
-   "name": "Retail building – 1845 East Baseline Road",
+   "name": "Retail building \u2013 1845 East Baseline Road",
    "address": "1845 E Baseline Rd, Gilbert, AZ",
    "lat": 33.3774634480128,
    "lng": -111.79102122526865,
    "status": "forlease",
    "note": "30,279 SF listed for lease (retail). Lot ~9.29 ac. County parcel 310-10-150. Street View 2022-06.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1845%20E%20Baseline%20Rd%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/township-plaza-fry-s-marketplace/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "706-north-mcqueen-road-gilbert",
-   "name": "Retail building – 706 North McQueen Road",
+   "name": "Retail building \u2013 706 North McQueen Road",
    "address": "706 N Mcqueen Rd, Gilbert, AZ",
    "lat": 33.36275423077408,
    "lng": -111.82571929384012,
    "status": "forlease",
    "note": "17,000 SF listed for lease (retail). Lot ~4.78 ac. County parcel 302-22-539. Street View 2022-06.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=706%20N%20Mcqueen%20Rd%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/ethan-plaza/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "1150-north-fiesta-blvd-gilbert",
-   "name": "Office building – 1150 North Fiesta Blvd",
+   "name": "Office building \u2013 1150 North Fiesta Blvd",
    "address": "1150 N Fiesta Blvd, Gilbert, AZ",
    "lat": 33.367627092250764,
    "lng": -111.83614246600655,
    "status": "forlease",
    "note": "87,232 SF listed for lease (office). Lot ~11.11 ac. County parcel 302-09-488. Street View 2024-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1150%20N%20Fiesta%20Blvd%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/1150-north-fiesta-blvd/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "2870-south-market-street-gilbert",
-   "name": "Retail building – 2870 South Market Street",
+   "name": "Retail building \u2013 2870 South Market Street",
    "address": "2870 S Market St, Gilbert, AZ",
    "lat": 33.29870357652432,
    "lng": -111.74618982965096,
    "status": "forlease",
    "note": "5,171 SF listed for lease (retail). Lot ~3.74 ac. County parcel 304-46-912. Street View 2024-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=2870%20S%20Market%20St%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/lube-facility-for-lease/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "1352-n-fiesta-blvd-gilbert",
-   "name": "Industrial building – 1352 N Fiesta Blvd",
+   "name": "Industrial building \u2013 1352 N Fiesta Blvd",
    "address": "1352 N Fiesta Blvd, Gilbert, AZ",
    "lat": 33.37369187536781,
    "lng": -111.83698094029343,
    "status": "forlease",
    "note": "59,723 SF listed for lease (industrial). Lot ~5.13 ac. County parcel 302-09-501D. Street View 2025-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1352%20N%20Fiesta%20Blvd%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/1352-n-fiesta-blvd/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "2343-e-queen-creek-rd-gilbert",
-   "name": "Retail building – 2343 E Queen Creek Rd",
+   "name": "Retail building \u2013 2343 E Queen Creek Rd",
    "address": "2343 E Queen Creek Rd, Gilbert, AZ",
    "lat": 33.262431404063406,
    "lng": -111.73915265543114,
    "status": "forlease",
    "note": "31,764 SF listed for lease (retail). Lot ~5.43 ac. County parcel 304-71-044G. Street View 2024-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=2343%20E%20Queen%20Creek%20Rd%20Gilbert%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/victory-plaza-1/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "6739-west-cactus-road-peoria",
-   "name": "Retail building – 6739 West Cactus Road",
+   "name": "Retail building \u2013 6739 West Cactus Road",
    "address": "6739 W Cactus Rd, Peoria, AZ",
    "lat": 33.59554864357044,
    "lng": -112.2034358342589,
    "status": "forlease",
    "note": "15,120 SF listed for lease (retail). Lot ~2.43 ac. County parcel 143-05-002W. Street View 2024-07.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=6739%20W%20Cactus%20Rd%20Peoria%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/peoria/6739-west-cactus-road/"
    },
    "added": "2026-11-07"
   },
@@ -2133,15 +2133,15 @@
   },
   {
    "id": "15800-north-litchfield-road-surprise",
-   "name": "Office building – 15800 North Litchfield Road",
+   "name": "Office building \u2013 15800 North Litchfield Road",
    "address": "15800 N Litchfield Rd, Surprise, AZ",
    "lat": 33.62685961608491,
    "lng": -112.36067568174674,
    "status": "forlease",
    "note": "15,000 SF listed for lease (office). Lot ~5.25 ac. County parcel 501-18-548. Street View 2024-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=15800%20N%20Litchfield%20Rd%20Surprise%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/surprise/marketplace-at-the-city/"
    },
    "added": "2026-11-07"
   },
@@ -2175,7 +2175,7 @@
   },
   {
    "id": "10210-west-van-buren-street-avondale",
-   "name": "Industrial building – 10210 West Van Buren Street",
+   "name": "Industrial building \u2013 10210 West Van Buren Street",
    "address": "10210 W Van Buren St, Avondale, AZ",
    "lat": 33.45197451016072,
    "lng": -112.2790179068913,
@@ -2189,12 +2189,12 @@
   },
   {
    "id": "1777-s-99th-avenue-tolleson",
-   "name": "Industrial building – 1777 S 99th Avenue",
+   "name": "Industrial building \u2013 1777 S 99th Avenue",
    "address": "1777 S 99Th Ave, Tolleson, AZ",
    "lat": 33.43022783487443,
    "lng": -112.26635588144347,
    "status": "forlease",
-   "note": "54,059 SF listed for lease (industrial). Lot ~45.5 ac. County parcel 101-14-581. No Street View here — aerial shown.",
+   "note": "54,059 SF listed for lease (industrial). Lot ~45.5 ac. County parcel 101-14-581. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tolleson/go-99-6/"
@@ -2203,35 +2203,35 @@
   },
   {
    "id": "1466-n-eliseo-c-felix-jr-way-avondale",
-   "name": "Industrial building – 1466 N Eliseo C Felix Jr Way",
+   "name": "Industrial building \u2013 1466 N Eliseo C Felix Jr Way",
    "address": "1466 N Eliseo C Felix Jr Way, Avondale, AZ",
    "lat": 33.452804444433504,
    "lng": -112.33738741052868,
    "status": "forlease",
    "note": "45,200 SF listed for lease (industrial). Lot ~2.46 ac. County parcel 500-02-112. Street View 2024-10.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1466%20N%20Eliseo%20C%20Felix%20Jr%20Way%20Avondale%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/avondale/cascade-avondale/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "9920-w-van-buren-st-avondale",
-   "name": "Industrial building – 9920 W Van Buren St",
+   "name": "Industrial building \u2013 9920 W Van Buren St",
    "address": "9920 W Van Buren St, Tolleson, AZ",
    "lat": 33.45066379517527,
    "lng": -112.27312923000561,
    "status": "forlease",
    "note": "23,556 SF listed for lease (industrial). Lot ~1.06 ac. County parcel 102-54-097. Street View 2021-02.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=9920%20W%20Van%20Buren%20St%20Tolleson%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/avondale/99th-ave-van-buren-st-nwc/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "204-230-e-bell-road-phoenix",
-   "name": "Retail building – 204-230 E. Bell Road",
+   "name": "Retail building \u2013 204-230 E. Bell Road",
    "address": "204 E Bell Rd, Phoenix, AZ",
    "lat": 33.64125467169112,
    "lng": -112.07145163571029,
@@ -2259,21 +2259,21 @@
   },
   {
    "id": "2601-east-indian-school-road-phoenix",
-   "name": "Retail building – 2601 East Indian School Road",
+   "name": "Retail building \u2013 2601 East Indian School Road",
    "address": "2601 E Indian School Rd, Phoenix, AZ",
    "lat": 33.49442013511796,
    "lng": -112.02554529209978,
    "status": "forlease",
    "note": "12,668 SF listed for lease (retail). Lot ~1.18 ac. County parcel 119-03-076C. Street View 2016-06.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=2601%20E%20Indian%20School%20Rd%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2601-east-indian-school-road/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "615-west-deer-valley-drive-phoenix",
-   "name": "Retail building – 615 West Deer Valley Drive",
+   "name": "Retail building \u2013 615 West Deer Valley Drive",
    "address": "615 W Deer Valley Dr, Phoenix, AZ",
    "lat": 33.68318398719897,
    "lng": -112.08101462872187,
@@ -2287,21 +2287,21 @@
   },
   {
    "id": "5802-w-thomas-road-phoenix",
-   "name": "Retail building – 5802 W Thomas Road",
+   "name": "Retail building \u2013 5802 W Thomas Road",
    "address": "5802 W Thomas Rd, Phoenix, AZ",
    "lat": 33.48165906817395,
    "lng": -112.18503665024816,
    "status": "forlease",
    "note": "15,800 SF listed for lease (retail). Lot ~7.48 ac. County parcel 103-10-101. Street View 2022-01.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=5802%20W%20Thomas%20Rd%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/su-casa-shopping-center-2/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "3514-west-peoria-avenue-phoenix",
-   "name": "Retail building – 3514 West Peoria Avenue",
+   "name": "Retail building \u2013 3514 West Peoria Avenue",
    "address": "3514 W Peoria Ave, Phoenix, AZ",
    "lat": 33.5831930697019,
    "lng": -112.13524103953874,
@@ -2315,7 +2315,7 @@
   },
   {
    "id": "13636-north-tatum-blvd-phoenix",
-   "name": "Retail building – 13636 North Tatum Blvd",
+   "name": "Retail building \u2013 13636 North Tatum Blvd",
    "address": "13636 N Tatum Blvd, Phoenix, AZ",
    "lat": 33.6109204415235,
    "lng": -111.97891060882021,
@@ -2329,7 +2329,7 @@
   },
   {
    "id": "5829-south-central-avenue-phoenix",
-   "name": "Retail building – 5829 South Central Avenue",
+   "name": "Retail building \u2013 5829 South Central Avenue",
    "address": "5829 S Central Ave, Phoenix, AZ",
    "lat": 33.39286838192075,
    "lng": -112.07193537019376,
@@ -2350,8 +2350,8 @@
    "status": "forlease",
    "note": "25,315 SF listed for lease (retail). Lot ~3.14 ac. County parcel 211-35-020. Street View 2023-02.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=4710%20E%20Lone%20Mountain%20Rd%20Cave%20Creek%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/cave-creek/nec-cave-creek-rd-lone-mountain-rd-2/"
    },
    "added": "2026-11-07"
   },
@@ -2378,42 +2378,42 @@
    "status": "forlease",
    "note": "21,642 SF listed for lease (office). Lot ~1.61 ac. County parcel 126-02-038B. Street View 2020-12.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=2600%20N%2044Th%20St%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/camelhead-business-center/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "4020-s-15th-ave-phoenix",
-   "name": "Office building – 4020 S 15th Ave",
+   "name": "Office building \u2013 4020 S 15th Ave",
    "address": "4020 S 15Th Ave, Phoenix, AZ",
    "lat": 33.40958414773627,
    "lng": -112.0921336104024,
    "status": "forlease",
    "note": "18,824 SF listed for lease (office). Lot ~3.13 ac. County parcel 105-53-011A. Street View 2022-09.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=4020%20S%2015Th%20Ave%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/4020-s-15th-ave-2/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "9305-west-thomas-road-phoenix",
-   "name": "Office building – 9305 West Thomas Road",
+   "name": "Office building \u2013 9305 West Thomas Road",
    "address": "9305 W Thomas Rd, Phoenix, AZ",
    "lat": 33.47799875130268,
    "lng": -112.26037387012747,
    "status": "forlease",
    "note": "18,706 SF listed for lease (office). Lot ~0.76 ac. County parcel 102-34-021A. Street View 2020-05.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=9305%20W%20Thomas%20Rd%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/estrella-medical-plaza-1/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "120-north-44th-street-phoenix",
-   "name": "Office building – 120 North 44th Street",
+   "name": "Office building \u2013 120 North 44th Street",
    "address": "120 N 44Th St, Phoenix, AZ",
    "lat": 33.450069978783844,
    "lng": -111.98774547302476,
@@ -2434,22 +2434,22 @@
    "status": "forlease",
    "note": "43,229 SF listed for lease (office). Lot ~5.4 ac. County parcel 207-42-272. Street View 2021-02.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=16610%20N%20Black%20Canyon%20Hwy%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/bell-28-9/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "2114-west-7th-street-tempe",
-   "name": "Office building – 2114 West 7th Street",
+   "name": "Office building \u2013 2114 West 7th Street",
    "address": "2114 W 7Th St, Tempe, AZ",
    "lat": 33.42391242625506,
    "lng": -111.9708436611314,
    "status": "forlease",
    "note": "37,140 SF listed for lease (office). Lot ~4.03 ac. County parcel 124-39-055A. Street View 2021-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=2114%20W%207Th%20St%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/2114-w-7th-st/"
    },
    "added": "2026-11-07"
   },
@@ -2490,22 +2490,22 @@
    "status": "forlease",
    "note": "69,561 SF listed for lease (office). Lot ~5.09 ac. County parcel 134-23-017E. Street View 2025-11.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=827%20W%20Grove%20Ave%20Mesa%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/827-w-grove-ave/"
    },
    "added": "2026-11-07"
   },
   {
    "id": "7420-south-kyrene-road-tempe",
-   "name": "Office building – 7420 South Kyrene Road",
+   "name": "Office building \u2013 7420 South Kyrene Road",
    "address": "7420 S Kyrene Rd, Tempe, AZ",
    "lat": 33.35052438604417,
    "lng": -111.9469266558215,
    "status": "forlease",
    "note": "20,998 SF listed for lease (office). Lot ~5.53 ac. County parcel 301-90-025. Street View 2021-03.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=7420%20S%20Kyrene%20Rd%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/tempe-commerce-park-7420-south-kyrene-road/"
    },
    "added": "2026-11-07"
   },
@@ -2518,8 +2518,8 @@
    "status": "forlease",
    "note": "26,058 SF listed for lease (office). Lot ~1.65 ac. County parcel 131-17-014P. Street View 2019-02.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1355%20N%20Scottsdale%20Rd%20Scottsdale%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/scottsdale/skysong-4-12/"
    },
    "added": "2026-11-07"
   },
@@ -2586,7 +2586,7 @@
    "lat": 33.28925740754821,
    "lng": -111.6154709574026,
    "status": "forlease",
-   "note": "269,500 SF listed for lease (industrial). Lot ~18.18 ac. County parcel 304-63-976. No Street View here — aerial shown.",
+   "note": "269,500 SF listed for lease (industrial). Lot ~18.18 ac. County parcel 304-63-976. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/queen-creek/cube-at-mesa-gateway-building-b/"
@@ -2614,7 +2614,7 @@
    "lat": 33.267426690174716,
    "lng": -111.79131624651784,
    "status": "forlease",
-   "note": "49,980–93,620 SF listed for lease (industrial). Lot ~13.78 ac. County parcel 303-31-770. Street View 2024-12.",
+   "note": "49,980\u201393,620 SF listed for lease (industrial). Lot ~13.78 ac. County parcel 303-31-770. Street View 2024-12.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/the-hub-chandler-building-a/"
@@ -2628,7 +2628,7 @@
    "lat": 33.265006988864904,
    "lng": -111.82712577549314,
    "status": "forlease",
-   "note": "169,795 SF listed for lease (industrial). Lot ~11.95 ac. County parcel 303-33-992. No Street View here — aerial shown.",
+   "note": "169,795 SF listed for lease (industrial). Lot ~11.95 ac. County parcel 303-33-992. No Street View here \u2014 aerial shown.",
    "source": {
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/queens-crossing-bldg-c/"
@@ -2679,15 +2679,15 @@
   },
   {
    "id": "4500-east-cotton-center-blvd-phoenix",
-   "name": "Office building – 4500 East Cotton Center Blvd",
+   "name": "Office building \u2013 4500 East Cotton Center Blvd",
    "address": "4500 E Cotton Center Blvd, Phoenix, AZ",
    "lat": 33.40431466622999,
    "lng": -111.98336290321888,
    "status": "forlease",
    "note": "139,403 SF listed for lease (office). Lot ~12.03 ac. County parcel 123-06-004D. Street View 2019-03.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=4500%20E%20Cotton%20Center%20Blvd%20Phoenix%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/the-cotton-center-4500-east-cotton-center-blvd/"
    },
    "added": "2026-11-07"
   },
@@ -2714,8 +2714,8 @@
    "status": "forlease",
    "note": "41,050 SF listed for lease (office). Lot ~5.01 ac. County parcel 124-22-016. Street View 2025-10.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=350%20W%20Washington%20St%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/papago-gateway-center/"
    },
    "added": "2026-11-07"
   },
@@ -2728,8 +2728,8 @@
    "status": "forlease",
    "note": "37,589 SF listed for lease (office). Lot ~9.5 ac. County parcel 124-78-020. Street View 2019-03.",
    "source": {
-    "label": "Search the listing",
-    "url": "https://www.google.com/search?q=1910%20W%20Rio%20Salado%20Pkwy%20Tempe%20for%20lease"
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/liberty-center-at-rio-salado-4/"
    },
    "added": "2026-11-07"
   }
