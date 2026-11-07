@@ -39,7 +39,7 @@ async function init(){
   $('cClose').onclick = closeCard; $('listClose').onclick = () => $('list').classList.add('hidden'); $('navClose').onclick = () => $('nav').classList.add('hidden');
   window.addEventListener('hashchange', openFromHash);
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
-  await loadLots(); locate(true); openFromHash();
+  await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
 }
 function addLayers(){
   if (map.getSource('lots')) return;
@@ -126,23 +126,36 @@ function openCard(id){
   if (l.kind==='confirmed') history.replaceState(null, '', '#' + l.id);
   map.easeTo({ center:[l.lng, l.lat], zoom:Math.max(map.getZoom(), 16), padding:{ bottom:360 } });
 }
-// Marks: great / revisit / skip. On-device for now (same swap point as notes for a shared database).
+// Marks (great / revisit / skip) and notes. Local cache always; shared Supabase table when configured.
+const sb = (C.supabaseUrl && C.supabaseKey && window.supabase) ? window.supabase.createClient(C.supabaseUrl, C.supabaseKey) : null;
+const cache = { marks: {}, notes: {} };
+try { cache.marks = JSON.parse(localStorage.getItem('vlf-marks') || '{}'); cache.notes = JSON.parse(localStorage.getItem('vlf-notes') || '{}'); } catch(e){}
+function persist(){ try { localStorage.setItem('vlf-marks', JSON.stringify(cache.marks)); localStorage.setItem('vlf-notes', JSON.stringify(cache.notes)); } catch(e){} }
 const marks = {
-  _all(){ try { return JSON.parse(localStorage.getItem('vlf-marks') || '{}'); } catch(e){ return {}; } },
-  get(id){ return this._all()[id] || null; },
-  set(id, v){ const a=this._all(); if (v) a[id]=v; else delete a[id]; try { localStorage.setItem('vlf-marks', JSON.stringify(a)); } catch(e){ toast('Could not save on this phone'); } },
-  count(v){ return Object.values(this._all()).filter(x=>x===v).length; }
+  get(id){ return cache.marks[id] || null; },
+  set(id, v){ if (v) cache.marks[id]=v; else delete cache.marks[id]; persist();
+    if (sb) (v ? sb.from('marks').upsert({ lot_id:id, mark:v, updated_at:new Date().toISOString() }) : sb.from('marks').delete().eq('lot_id', id)).then(({error}) => { if (error) toast('Shared save failed — kept on this phone'); }); },
+  count(v){ return Object.values(cache.marks).filter(x=>x===v).length; }
 };
+async function syncShared(){
+  if (!sb) return;
+  try {
+    const [{ data: m }, { data: n }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('lot_id,text,created_at').order('created_at') ]);
+    if (m) { cache.marks = {}; m.forEach(r => { if (r.mark) cache.marks[r.lot_id] = r.mark; }); }
+    if (n) { cache.notes = {}; n.forEach(r => (cache.notes[r.lot_id] = cache.notes[r.lot_id] || []).push({ t: Date.parse(r.created_at), text: r.text })); }
+    persist(); refresh(); updateStatus(); if (selected) renderMarksAndNotes(selected);
+  } catch(e){}
+}
+function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
 function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
 function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : (COLOR[l.status]||'#8b8f99'); }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
 function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); }
 function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
-// Notes store. On-device for now; swap these three functions for a shared database (e.g. Supabase) to sync across phones.
 const notes = {
-  _all(){ try { return JSON.parse(localStorage.getItem('vlf-notes') || '{}'); } catch(e){ return {}; } },
-  get(id){ return this._all()[id] || []; },
-  add(id, text){ const a = this._all(); (a[id] = a[id] || []).push({ t: Date.now(), text }); try { localStorage.setItem('vlf-notes', JSON.stringify(a)); } catch(e){ toast('Could not save on this phone'); } }
+  get(id){ return cache.notes[id] || []; },
+  add(id, text){ (cache.notes[id] = cache.notes[id] || []).push({ t: Date.now(), text }); persist();
+    if (sb) sb.from('notes').insert({ lot_id:id, text }).then(({error}) => { if (error) toast('Shared save failed — kept on this phone'); }); }
 };
 function renderNotes(l){
   const list = notes.get(l.id);
