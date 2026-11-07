@@ -3,13 +3,30 @@
   "lots": [
     {
       "id": "801-s-16th-st-phoenix",
-      "name": "Industrial building — 801 S 16th St",
+      "name": "Industrial building \u2014 801 S 16th St",
       "address": "801 S 16th St, Phoenix, AZ 85034",
       "lat": 33.441333,
       "lng": -112.045611,
       "status": "forlease",
-      "note": "'For lease — industrial space' sign on the fence facing E Grant St (visible in Jan 2026 Street View). County parcel 115-14-185C, ~24 ac, City of Phoenix land (Sky Harbor Center). Gated/fenced lot.",
-      "source": { "label": "Street View sign, Jan 2026 (reported by Brandon)", "url": "https://www.google.com/maps?q=&layer=c&cbll=33.441333,-112.045611" },
+      "note": "'For lease \u2014 industrial space' sign on the fence facing E Grant St (visible in Jan 2026 Street View). County parcel 115-14-185C, ~24 ac, City of Phoenix land (Sky Harbor Center). Gated/fenced lot.",
+      "source": {
+        "label": "Street View sign, Jan 2026 (reported by Brandon)",
+        "url": "https://www.google.com/maps?q=&layer=c&cbll=33.441333,-112.045611"
+      },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "2211-s-47th-st-phoenix",
+      "name": "Office building \u2014 2211 S 47th St",
+      "address": "2211 S 47th St, Phoenix, AZ 85034 (entrance on E Hilton Ave)",
+      "lat": 33.4272775,
+      "lng": -111.9793728,
+      "status": "vacant",
+      "note": "Reported vacant by Brandon (Nov 2026). Gated entrance with arm barriers off E Hilton Ave; large covered parking lot. County parcel 124-44-034, ~7.8 ac, built 1997. Note: Oct 2025 Street View still shows cars in the lot \u2014 confirm on arrival.",
+      "source": {
+        "label": "Brandon \u2014 known vacant, Nov 2026",
+        "url": "https://www.google.com/maps?q=&layer=c&cbll=33.4272775,-111.9793728"
+      },
       "added": "2026-11-07"
     }
   ]
