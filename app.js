@@ -110,7 +110,7 @@ function openCard(id){
   $('cBadge').textContent = LABEL[l.status] || l.status.toUpperCase(); $('cBadge').style.background = PIN;
   $('cName').textContent = l.name; $('cAddr').textContent = l.address;
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
-  $('cSrc').textContent = (l.source?.label || 'Source') + ' ↗'; $('cSrc').href = l.source?.url || '#';
+  const hasSrc = !!(l.source && l.source.url); $('cSrc').style.display = hasSrc ? '' : 'none'; if (hasSrc){ $('cSrc').textContent = (l.source.label || 'Source') + ' ↗'; $('cSrc').href = l.source.url; }
   $('cNav').onclick = () => openNav(l);
   renderMarks(l);
   document.querySelectorAll('.marks button').forEach(b => b.onclick = () => {

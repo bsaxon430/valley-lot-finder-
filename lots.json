@@ -9,10 +9,7 @@
    "lng": -112.045611,
    "status": "forlease",
    "note": "'For lease — industrial space' sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.",
-   "source": {
-    "label": "Street View, Jan 2026",
-    "url": "https://www.google.com/maps?q=&layer=c&cbll=33.441333,-112.045611"
-   },
+   "source": null,
    "added": "2026-11-07"
   },
   {
@@ -23,10 +20,7 @@
    "lng": -111.9793728,
    "status": "vacant",
    "note": "Vacant office building. Gated entrance with arm barriers off E Hilton Ave; large covered parking lot, ~7.8 ac.",
-   "source": {
-    "label": "Street View",
-    "url": "https://www.google.com/maps?q=&layer=c&cbll=33.4272775,-111.9793728"
-   },
+   "source": null,
    "added": "2026-11-07"
   },
   {
@@ -37,10 +31,7 @@
    "lng": -111.8392355,
    "status": "vacant",
    "note": "Vacant multi-story office. Open surface parking in front, no gate at the Obispo Ave entrance, ~6.7 ac.",
-   "source": {
-    "label": "Street View",
-    "url": "https://www.google.com/maps?q=&layer=c&cbll=33.3620722,-111.8392355"
-   },
+   "source": null,
    "added": "2026-11-07"
   },
   {
@@ -65,10 +56,7 @@
    "lng": -112.114159,
    "status": "vacant",
    "note": "Kmart closed 2017; building still vacant with an 'AVAILABLE' banner on the front. ~8.3 ac lot. County records show the City of Phoenix now owns the parcel.",
-   "source": {
-    "label": "Street View, Feb 2021 — 'AVAILABLE' banner",
-    "url": "https://www.google.com/maps?q=&layer=c&cbll=33.554224,-112.114159"
-   },
+   "source": null,
    "added": "2026-11-07"
   },
   {
