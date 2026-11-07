@@ -4,7 +4,11 @@
    Tap a pin → photo (Google Street View if a key is set, else aerial), address, NAVIGATE. */
 'use strict';
 const C = Object.assign({ googleKey:'', includeOsm:true }, window.VLF_CONFIG || {});
-const STYLE = 'https://tiles.openfreemap.org/styles/dark';
+const STYLE = { version:8, glyphs:'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+  sources:{ sat:{ type:'raster', tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize:256, maxzoom:19, attribution:'Imagery © Esri, Maxar, Earthstar Geographics' },
+            roads:{ type:'raster', tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}'], tileSize:256, maxzoom:19 },
+            labels:{ type:'raster', tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'], tileSize:256, maxzoom:19 } },
+  layers:[ { id:'sat', type:'raster', source:'sat' }, { id:'roads', type:'raster', source:'roads' }, { id:'labels', type:'raster', source:'labels' } ] };
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const METRO = { s:33.20, w:-112.65, n:33.80, e:-111.50 };
 const COLOR = { forlease:'#ff8a00', vacant:'#a855f7', abandoned:'#8b8f99', closed:'#ef4444' };
@@ -38,9 +42,9 @@ async function init(){
 function addLayers(){
   if (map.getSource('lots')) return;
   map.addSource('lots', { type:'geojson', data:fc(), cluster:true, clusterRadius:40, clusterMaxZoom:14 });
-  map.addLayer({ id:'clusters', type:'circle', source:'lots', filter:['has','point_count'], paint:{ 'circle-color':'#ff8a00', 'circle-radius':['step',['get','point_count'],16,10,20,50,26], 'circle-stroke-width':2, 'circle-stroke-color':'#0f1117' } });
+  map.addLayer({ id:'clusters', type:'circle', source:'lots', filter:['has','point_count'], paint:{ 'circle-color':'#ff8a00', 'circle-radius':['step',['get','point_count'],16,10,20,50,26], 'circle-stroke-width':3, 'circle-stroke-color':'#ffffff' } });
   map.addLayer({ id:'cluster-count', type:'symbol', source:'lots', filter:['has','point_count'], layout:{ 'text-field':'{point_count_abbreviated}', 'text-size':12, 'text-font':['Noto Sans Bold'] }, paint:{ 'text-color':'#1a1200' } });
-  map.addLayer({ id:'pins', type:'circle', source:'lots', filter:['!',['has','point_count']], paint:{ 'circle-color':['get','color'], 'circle-radius':['case',['boolean',['get','sel'],false],12,9], 'circle-stroke-width':2.5, 'circle-stroke-color':'#0f1117' } });
+  map.addLayer({ id:'pins', type:'circle', source:'lots', filter:['!',['has','point_count']], paint:{ 'circle-color':['get','color'], 'circle-radius':['case',['boolean',['get','sel'],false],12,9], 'circle-stroke-width':3, 'circle-stroke-color':'#ffffff' } });
   refresh();
 }
 const fc = () => ({ type:'FeatureCollection', features:[] });
