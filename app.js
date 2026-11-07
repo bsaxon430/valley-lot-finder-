@@ -171,7 +171,7 @@ async function syncShared(){
 function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
 function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
 function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : PIN; }
-function renderStatus(l){ document.querySelectorAll('#cStatus button').forEach(b => { b.classList.toggle('on', b.dataset.status===l.status); b.onclick = () => { const st = l.status===b.dataset.status ? null : b.dataset.status; spots.setStatus(l.id, st); $('cBadge').textContent = LABEL[st] || ''; $('cBadge').style.visibility = st ? '' : 'hidden'; renderStatus(l); }; }); }
+function renderStatus(l){ const need = l.kind==='spot' && !l.status; $('cChoose').classList.toggle('hidden', !need); $('cStatus').classList.toggle('attn', need); document.querySelectorAll('#cStatus button').forEach(b => { b.classList.toggle('on', b.dataset.status===l.status); b.onclick = () => { const st = l.status===b.dataset.status ? null : b.dataset.status; spots.setStatus(l.id, st); $('cBadge').textContent = LABEL[st] || ''; $('cBadge').style.visibility = st ? '' : 'hidden'; renderStatus(l); }; }); }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
 function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); fitVisible(); }
 function fitVisible(){
@@ -244,6 +244,7 @@ function beginAdd(latLng){
   const coords = `${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)}`;
   const finish = (name, address) => {
     const r = { id, name, address, lat: pos.lat, lng: pos.lng, created_at: new Date().toISOString() };
+    if (view!=='all'){ view='all'; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view==='all')); }
     spots.add(r); openCard(id);
   };
   let done = false; const fallback = setTimeout(() => { if (!done){ done = true; finish('Team spot', coords); } }, 2500);

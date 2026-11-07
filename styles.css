@@ -103,3 +103,10 @@ a{color:inherit}
 .chips.hidden{display:none}
 .chips button{background:var(--glass2);border:1px solid var(--edge);border-radius:999px;padding:9px 2px;font-size:10px;font-weight:800;letter-spacing:.3px;color:var(--muted)}
 .chips button.on{background:#ff8a00;color:#1a1200;border-color:rgba(255,255,255,.5)}
+
+.choose{margin-top:10px;font-size:12px;font-weight:800;letter-spacing:.4px;color:#ff8a00;animation:blink 1.2s ease-in-out infinite}
+.choose.hidden{display:none}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+.chips.attn button{animation:wiggle 1.1s ease-in-out infinite}
+.chips.attn button:nth-child(2){animation-delay:.14s}.chips.attn button:nth-child(3){animation-delay:.28s}.chips.attn button:nth-child(4){animation-delay:.42s}
+@keyframes wiggle{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.08) rotate(-2deg)}50%{transform:scale(1) rotate(0)}75%{transform:scale(1.08) rotate(2deg)}}
