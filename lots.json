@@ -1,0 +1,16 @@
+{
+  "_about": "Confirmed candidate lots. Every entry was added by a person from a real listing, sign, or site visit. status: forlease | vacant | abandoned | closed. Never add a place without a source.",
+  "lots": [
+    {
+      "id": "801-s-16th-st-phoenix",
+      "name": "Industrial building — 801 S 16th St",
+      "address": "801 S 16th St, Phoenix, AZ 85034",
+      "lat": 33.441333,
+      "lng": -112.045611,
+      "status": "forlease",
+      "note": "'For lease — industrial space' sign on the fence facing E Grant St (visible in Jan 2026 Street View). County parcel 115-14-185C, ~24 ac, City of Phoenix land (Sky Harbor Center). Gated/fenced lot.",
+      "source": { "label": "Street View sign, Jan 2026 (reported by Brandon)", "url": "https://www.google.com/maps?q=&layer=c&cbll=33.441333,-112.045611" },
+      "added": "2026-11-07"
+    }
+  ]
+}

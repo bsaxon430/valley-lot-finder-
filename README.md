@@ -1,5 +1,22 @@
 # Valley Lot Finder
 
+Simple map of **confirmed** for-lease / vacant / abandoned / closed properties in the Phoenix metro, for vehicle-testing crews. Tap a pin → photo + address → NAVIGATE.
+
+Live: https://bsaxon430.github.io/valley-lot-finder-/
+
+## How pins get on the map
+- `lots.json` — human-confirmed entries (listing, sign, or site visit). Every entry needs a `source`.
+- OpenStreetMap buildings tagged vacant/disused/abandoned (optional, `config.js` → `includeOsm`).
+
+## Photos
+Set `googleKey` in `config.js` (Street View Static API, key restricted to this site) for Street View. Without a key the card shows Esri aerial imagery and a Street View link.
+
+## Full-featured build
+The earlier county-parcel explorer (filters, field reports, nearest-lot search over all commercial parcels) is kept at `/full/`.
+
+---
+
+
 Phoenix-metro parking-lot discovery map for vehicle-testing crews. Open the link on a phone, see your GPS
 location, find nearby candidate lots from real county parcel data, preview them, and tap NAVIGATE.
 
