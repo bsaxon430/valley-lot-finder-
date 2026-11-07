@@ -106,7 +106,6 @@ function openCard(id){
   $('cName').textContent = l.name; $('cAddr').textContent = l.address;
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
   $('cSrc').textContent = (l.source?.label || 'Source') + ' ↗'; $('cSrc').href = l.source?.url || '#';
-  $('cSv').href = `https://www.google.com/maps?q=&layer=c&cbll=${l.lat},${l.lng}`;
   $('cNav').onclick = () => openNav(l);
   renderNotes(l); $('noteForm').onsubmit = e => { e.preventDefault(); const t = $('noteText').value.trim(); if (!t) return; notes.add(l.id, t); $('noteText').value=''; renderNotes(l); };
   setPhoto(l);
