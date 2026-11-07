@@ -54,7 +54,7 @@ async function loadLots(){
   status('Loading confirmed lots…');
   try { const r = await fetch('lots.json?v=' + Date.now()); const j = await r.json(); lots = (j.lots||[]).map(l => Object.assign({ kind:'confirmed' }, l)); }
   catch(e){ toast('Could not load lots.json'); }
-  refresh(); status(`${lots.length} confirmed lot${lots.length===1?'':'s'}`);
+  refresh(); status(`${lots.length} lots on the map`);
   if (C.includeOsm) loadOsm();
 }
 async function loadOsm(){
@@ -77,10 +77,10 @@ async function loadOsm(){
           source:{ label:'OpenStreetMap (© OSM contributors, ODbL)', url:`https://www.openstreetmap.org/${el.type}/${el.id}` }, added:null });
         n++;
       });
-      refresh(); status(`${lots.filter(l=>l.kind==='confirmed').length} confirmed · ${n} from OpenStreetMap`); return;
+      refresh(); status(`${lots.length} lots on the map`); return;
     } catch(e){}
   }
-  status(`${lots.length} confirmed lots · OpenStreetMap unavailable`);
+  status(`${lots.length} lots on the map`);
 }
 
 // ---------- location ----------
@@ -108,10 +108,21 @@ function openCard(id){
   $('cSrc').textContent = (l.source?.label || 'Source') + ' ↗'; $('cSrc').href = l.source?.url || '#';
   $('cSv').href = `https://www.google.com/maps?q=&layer=c&cbll=${l.lat},${l.lng}`;
   $('cNav').onclick = () => openNav(l);
+  renderNotes(l); $('noteForm').onsubmit = e => { e.preventDefault(); const t = $('noteText').value.trim(); if (!t) return; notes.add(l.id, t); $('noteText').value=''; renderNotes(l); };
   setPhoto(l);
   $('card').classList.remove('hidden');
   if (l.kind==='confirmed') history.replaceState(null, '', '#' + l.id);
   map.easeTo({ center:[l.lng, l.lat], zoom:Math.max(map.getZoom(), 16), padding:{ bottom:360 } });
+}
+// Notes store. On-device for now; swap these three functions for a shared database (e.g. Supabase) to sync across phones.
+const notes = {
+  _all(){ try { return JSON.parse(localStorage.getItem('vlf-notes') || '{}'); } catch(e){ return {}; } },
+  get(id){ return this._all()[id] || []; },
+  add(id, text){ const a = this._all(); (a[id] = a[id] || []).push({ t: Date.now(), text }); try { localStorage.setItem('vlf-notes', JSON.stringify(a)); } catch(e){ toast('Could not save on this phone'); } }
+};
+function renderNotes(l){
+  const list = notes.get(l.id);
+  $('cNotes').innerHTML = list.slice().reverse().map(n => `<div>${esc(n.text)}<small>${new Date(n.t).toLocaleDateString()} ${new Date(n.t).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small></div>`).join('');
 }
 function closeCard(){ $('card').classList.add('hidden'); selected=null; refresh(); history.replaceState(null,'',' '); }
 function setPhoto(l){

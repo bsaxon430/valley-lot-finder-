@@ -42,6 +42,14 @@ a{color:inherit}
 .addr{color:var(--muted);font-size:14px;margin-top:3px}
 .meta{font-size:13px;color:var(--muted);margin-top:6px}
 .src{display:inline-block;color:#22d3ee;font-size:13px;margin:8px 0 12px;text-decoration:none}
+.notes{margin-bottom:12px}
+.notelist{display:grid;gap:6px;margin-bottom:8px}
+.notelist div{background:var(--panel2);border-radius:10px;padding:8px 10px;font-size:13px}
+.notelist small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.noteform{display:flex;gap:6px}
+.noteform input{flex:1;font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.noteform input:focus{outline:2px solid var(--accent);border-color:transparent}
+.noteform button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:0 14px;font-weight:600}
 .btns{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;margin-bottom:4px}
 .listbody{overflow:auto;padding:0 12px;-webkit-overflow-scrolling:touch}
 .item{display:flex;gap:10px;align-items:center;background:var(--panel2);border-radius:14px;padding:12px;margin-bottom:8px}

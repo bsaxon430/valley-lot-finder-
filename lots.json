@@ -1,46 +1,104 @@
 {
-  "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link.",
+  "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link. Photos come from Google Street View and may be older than the status — the photo date is shown on the card.",
   "lots": [
     {
       "id": "801-s-16th-st-phoenix",
-      "name": "Industrial building \u2014 801 S 16th St",
+      "name": "Industrial building — 801 S 16th St",
       "address": "801 S 16th St, Phoenix, AZ 85034",
-      "lat": 33.441333,
-      "lng": -112.045611,
+      "lat": 33.441333, "lng": -112.045611,
       "status": "forlease",
-      "note": "'For lease \u2014 industrial space' sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.",
-      "source": {
-        "label": "Street View, Jan 2026",
-        "url": "https://www.google.com/maps?q=&layer=c&cbll=33.441333,-112.045611"
-      },
+      "note": "'For lease — industrial space' sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.",
+      "source": { "label": "Street View, Jan 2026", "url": "https://www.google.com/maps?q=&layer=c&cbll=33.441333,-112.045611" },
       "added": "2026-11-07"
     },
     {
       "id": "2211-s-47th-st-phoenix",
-      "name": "Office building \u2014 2211 S 47th St",
+      "name": "Office building — 2211 S 47th St",
       "address": "2211 S 47th St, Phoenix, AZ 85034 (entrance on E Hilton Ave)",
-      "lat": 33.4272775,
-      "lng": -111.9793728,
+      "lat": 33.4272775, "lng": -111.9793728,
       "status": "vacant",
       "note": "Vacant office building. Gated entrance with arm barriers off E Hilton Ave; large covered parking lot, ~7.8 ac.",
-      "source": {
-        "label": "Street View",
-        "url": "https://www.google.com/maps?q=&layer=c&cbll=33.4272775,-111.9793728"
-      },
+      "source": { "label": "Street View", "url": "https://www.google.com/maps?q=&layer=c&cbll=33.4272775,-111.9793728" },
       "added": "2026-11-07"
     },
     {
       "id": "2299-w-obispo-ave-gilbert",
-      "name": "Office building \u2014 2299 W Obispo Ave",
+      "name": "Office building — 2299 W Obispo Ave",
       "address": "2299 W Obispo Ave, Gilbert, AZ 85233",
-      "lat": 33.3620722,
-      "lng": -111.8392355,
+      "lat": 33.3620722, "lng": -111.8392355,
       "status": "vacant",
       "note": "Vacant multi-story office. Open surface parking in front, no gate at the Obispo Ave entrance, ~6.7 ac.",
-      "source": {
-        "label": "Street View",
-        "url": "https://www.google.com/maps?q=&layer=c&cbll=33.3620722,-111.8392355"
-      },
+      "source": { "label": "Street View", "url": "https://www.google.com/maps?q=&layer=c&cbll=33.3620722,-111.8392355" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "sears-metrocenter-phoenix",
+      "name": "Former Sears — Metrocenter",
+      "address": "9803 N Metro Pkwy W, Phoenix, AZ 85051",
+      "lat": 33.577375, "lng": -112.123144,
+      "status": "vacant",
+      "note": "Two-story Sears box closed 2020; still standing after the rest of Metrocenter Mall was demolished (2025). ~14.5 ac of empty striped parking around it. Owned by the Sears successor company, not part of the mall redevelopment.",
+      "source": { "label": "KJZZ, Sept 2025 — Metrocenter demo done, Sears still standing", "url": "https://www.kjzz.org/business/2025-09-25/demo-of-phoenixs-metrocenter-mall-is-finally-done-see-what-the-the-metropolitan-will-look-like" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "kmart-2526-w-northern-phoenix",
+      "name": "Former Kmart — 2526 W Northern Ave",
+      "address": "2526 W Northern Ave, Phoenix, AZ 85051",
+      "lat": 33.554224, "lng": -112.114159,
+      "status": "vacant",
+      "note": "Kmart closed 2017; building still vacant with an 'AVAILABLE' banner on the front. ~8.3 ac lot. County records show the City of Phoenix now owns the parcel.",
+      "source": { "label": "Street View, Feb 2021 — 'AVAILABLE' banner", "url": "https://www.google.com/maps?q=&layer=c&cbll=33.554224,-112.114159" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "frys-electronics-2300-w-baseline-tempe",
+      "name": "Former Fry's Electronics — Tempe",
+      "address": "2300 W Baseline Rd, Tempe, AZ 85283",
+      "lat": 33.379268, "lng": -111.972106,
+      "status": "vacant",
+      "note": "149,000 SF big box closed Feb 2021 when Fry's Electronics shut down. ~15 ac site west of I-10 by Arizona Mills. A Costco Business Center conversion was proposed in 2022 but stalled. Confirm on arrival.",
+      "source": { "label": "ABC15 — Costco plan for former Fry's (2022)", "url": "https://www.abc15.com/news/business/costco-could-be-planning-a-new-business-center-in-east-valley" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "sears-superstition-springs-mesa",
+      "name": "Former Sears + auto center — Superstition Springs",
+      "address": "6525 E Southern Ave, Mesa, AZ 85206 (south side of the mall)",
+      "lat": 33.389258, "lng": -111.691772,
+      "status": "vacant",
+      "note": "113,837 SF two-story Sears (closed 2018) plus 17,050 SF former auto center on ~12.7 ac, sold at auction as a redevelopment site. Apartments have been proposed for the land.",
+      "source": { "label": "CommercialCafe — former Sears auction listing", "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/redevelopment-opportunity-for-auction-in-mesa/" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "safeway-3131-e-thunderbird-phoenix",
+      "name": "Former Safeway — 32nd St & Thunderbird",
+      "address": "3131 E Thunderbird Rd, Phoenix, AZ 85032",
+      "lat": 33.610249, "lng": -112.014533,
+      "status": "closed",
+      "note": "Safeway closed this store in July 2025. Grocery box on a ~10 ac shopping-center parcel; other tenants in the center may still be open, so expect some traffic.",
+      "source": { "label": "ABC15 — Safeway closing 2 Phoenix-area stores (2025)", "url": "https://www.abc15.com/news/state/safeway-albertsons-to-close-3-arizona-locations-including-2-in-phoenix" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "safeway-5860-w-thunderbird-glendale",
+      "name": "Former Safeway — 59th Ave & Thunderbird",
+      "address": "5860 W Thunderbird Rd, Glendale, AZ 85306",
+      "lat": 33.612364, "lng": -112.184261,
+      "status": "closed",
+      "note": "Safeway closed this store in July 2025. Grocery box on a ~9.6 ac shopping-center parcel; other tenants in the center may still be open.",
+      "source": { "label": "ABC15 — Safeway closing 2 Phoenix-area stores (2025)", "url": "https://www.abc15.com/news/state/safeway-albertsons-to-close-3-arizona-locations-including-2-in-phoenix" },
+      "added": "2026-11-07"
+    },
+    {
+      "id": "bell-canyon-theater-phoenix",
+      "name": "Former movie theater — Bell Canyon Pavilions",
+      "address": "2730 W Bell Rd, Phoenix, AZ 85053",
+      "lat": 33.642022, "lng": -112.118762,
+      "status": "forlease",
+      "note": "Theater at the back of the Bell Canyon Pavilions center, closed since 2020; the 32,640 SF building is listed for lease. Shared center lot — quieter at the theater end.",
+      "source": { "label": "CommercialCafe — 2710 W Bell Rd, 32,640 SF for lease", "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/phoenix/" },
       "added": "2026-11-07"
     }
   ]
