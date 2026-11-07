@@ -140,9 +140,9 @@ const marks = {
 async function syncShared(){
   if (!sb) return;
   try {
-    const [{ data: m }, { data: n }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('lot_id,text,created_at').order('created_at') ]);
+    const [{ data: m }, { data: n }] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('id,lot_id,text,created_at').order('created_at') ]);
     if (m) { cache.marks = {}; m.forEach(r => { if (r.mark) cache.marks[r.lot_id] = r.mark; }); }
-    if (n) { cache.notes = {}; n.forEach(r => (cache.notes[r.lot_id] = cache.notes[r.lot_id] || []).push({ t: Date.parse(r.created_at), text: r.text })); }
+    if (n) { cache.notes = {}; n.forEach(r => (cache.notes[r.lot_id] = cache.notes[r.lot_id] || []).push({ t: Date.parse(r.created_at), text: r.text, sid: r.id })); }
     persist(); refresh(); updateStatus(); if (selected) renderMarksAndNotes(selected);
   } catch(e){}
 }
@@ -160,12 +160,15 @@ function fitVisible(){
 function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
 const notes = {
   get(id){ return cache.notes[id] || []; },
-  add(id, text){ (cache.notes[id] = cache.notes[id] || []).push({ t: Date.now(), text }); persist();
-    if (sb) sb.from('notes').insert({ lot_id:id, text }).then(({error}) => { if (error) toast('Shared save failed — kept on this phone'); }); }
+  add(id, text){ const n = { t: Date.now(), text }; (cache.notes[id] = cache.notes[id] || []).push(n); persist();
+    if (sb) sb.from('notes').insert({ lot_id:id, text }).select('id').single().then(({data, error}) => { if (error) toast('Shared save failed — kept on this phone'); else if (data) n.sid = data.id; }); },
+  remove(id, t){ const list = cache.notes[id] || []; const i = list.findIndex(n => n.t === t); if (i < 0) return; const [n] = list.splice(i, 1); persist();
+    if (sb) { const q = n.sid ? sb.from('notes').delete().eq('id', n.sid) : sb.from('notes').delete().eq('lot_id', id).eq('text', n.text); q.then(({error}) => { if (error) toast('Shared delete failed'); }); } }
 };
 function renderNotes(l){
   const list = notes.get(l.id);
-  $('cNotes').innerHTML = list.slice().reverse().map(n => `<div>${esc(n.text)}<small>${new Date(n.t).toLocaleDateString()} ${new Date(n.t).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small></div>`).join('');
+  $('cNotes').innerHTML = list.slice().reverse().map(n => `<div><span>${esc(n.text)}<small>${new Date(n.t).toLocaleDateString()} ${new Date(n.t).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small></span><button class="nx" data-t="${n.t}" aria-label="Delete note">✕</button></div>`).join('');
+  $('cNotes').querySelectorAll('.nx').forEach(b => b.onclick = () => { notes.remove(l.id, Number(b.dataset.t)); renderNotes(l); });
 }
 function closeCard(){ $('card').classList.add('hidden'); selected=null; refresh(); history.replaceState(null,'',' '); }
 function setPhoto(l){

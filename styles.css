@@ -67,7 +67,9 @@ a{color:inherit}
 .marks button.on[data-mark=skip]{background:linear-gradient(145deg,#a3a7b3,#7d8190);color:#0b0d12;border-color:rgba(255,255,255,.5)}
 .notes{margin-bottom:12px}
 .notelist{display:grid;gap:6px;margin-bottom:8px}
-.notelist div{background:var(--glass2);border:1px solid var(--edge);border-radius:12px;padding:9px 12px;font-size:13px}
+.notelist div{display:flex;align-items:flex-start;gap:8px;background:var(--glass2);border:1px solid var(--edge);border-radius:12px;padding:9px 12px;font-size:13px}
+.notelist span{flex:1;min-width:0;word-break:break-word}
+.notelist .nx{background:none;border:0;color:var(--muted);font-size:14px;padding:2px 4px;line-height:1}
 .notelist small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
 .noteform{display:flex;gap:8px}
 .noteform input{flex:1;font:inherit;color:var(--text);background:var(--glass2);border:1px solid var(--edge);border-radius:14px;padding:12px 14px;font-size:15px}
