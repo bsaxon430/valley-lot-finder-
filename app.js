@@ -11,7 +11,7 @@ const STYLE = { version:8, glyphs:'https://tiles.openfreemap.org/fonts/{fontstac
   layers:[ { id:'sat', type:'raster', source:'sat' }, { id:'roads', type:'raster', source:'roads' }, { id:'labels', type:'raster', source:'labels' } ] };
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const METRO = { s:33.20, w:-112.65, n:33.80, e:-111.50 };
-const COLOR = { forlease:'#ff8a00', vacant:'#a855f7', abandoned:'#8b8f99', closed:'#ef4444' };
+const PIN = '#ff8a00';
 const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', closed:'CLOSED' };
 
 const $ = id => document.getElementById(id);
@@ -108,7 +108,7 @@ function lot(id){ return lots.find(l => l.id===id); }
 function openCard(id){
   const l = lot(id); if (!l) return; selected = id; refresh();
   $('list').classList.add('hidden'); $('nav').classList.add('hidden');
-  $('cBadge').textContent = LABEL[l.status] || l.status.toUpperCase(); $('cBadge').style.background = COLOR[l.status] || '#8b8f99';
+  $('cBadge').textContent = LABEL[l.status] || l.status.toUpperCase(); $('cBadge').style.background = PIN;
   $('cName').textContent = l.name; $('cAddr').textContent = l.address;
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
   $('cSrc').textContent = (l.source?.label || 'Source') + ' ↗'; $('cSrc').href = l.source?.url || '#';
@@ -148,7 +148,7 @@ async function syncShared(){
 }
 function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
 function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
-function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : (COLOR[l.status]||'#8b8f99'); }
+function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : PIN; }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
 function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); }
 function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
