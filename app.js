@@ -48,6 +48,9 @@ async function init(){
   setupLongPress();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
   await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
+  // coming back from the home screen / background: pull the latest team data + any app update right away
+  const resume = () => { if (document.hidden) return; syncShared(); if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistration().then(r => r && r.update()).catch(()=>{}); };
+  document.addEventListener('visibilitychange', resume); window.addEventListener('pageshow', resume); window.addEventListener('focus', resume);
 }
 const GLYPH = { great:'<path d="M13 19.5l-3.6-3.6 1.6-1.6 2 2 4.9-4.9 1.6 1.6z" fill="#fff"/>', revisit:'<text x="16" y="21" text-anchor="middle" font-family="system-ui,Arial" font-weight="700" font-size="15" fill="#3b2a00">?</text>', skip:'<path d="M11.5 11.5l9 9m0-9l-9 9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>', none:'<circle cx="16" cy="16" r="4.5" fill="#fff"/>' };
 const PINCOLOR = { great:'#34a853', revisit:'#fbc02d', skip:'#3c4043', none:'#a142f4' };
