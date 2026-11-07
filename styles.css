@@ -88,12 +88,4 @@ a{color:inherit}
 .navlink small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:2px}
 .toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(var(--sat) + 100px);background:rgba(10,12,18,.8);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);color:#fff;padding:11px 16px;border-radius:999px;font-size:13px;font-weight:600;z-index:60;max-width:90vw;text-align:center;box-shadow:var(--shadow)}
 
-/* maplibre */
-.maplibregl-ctrl-top-right{top:calc(var(--sat) + 96px);right:14px}
-.maplibregl-ctrl-group{background:var(--glass)!important;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);border-radius:16px!important;box-shadow:var(--shadow)!important;overflow:hidden}
-.maplibregl-ctrl-group button{width:42px;height:42px;background:transparent!important}
-.maplibregl-ctrl-group button+button{border-top:1px solid var(--edge)!important}
-.maplibregl-ctrl button .maplibregl-ctrl-icon{filter:invert(1) brightness(1.2)}
-.maplibregl-ctrl-attrib{background:rgba(10,12,18,.55)!important;backdrop-filter:blur(8px);color:var(--muted);font-size:10px;border-radius:8px 0 0 0}
-.maplibregl-ctrl-attrib a{color:var(--muted)}
-.credit{color:var(--muted);font-size:10px;text-align:center;margin-top:10px;opacity:.7}
+/* google maps */

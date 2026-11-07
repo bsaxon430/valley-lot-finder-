@@ -4,11 +4,6 @@
    Tap a pin → photo (Google Street View if a key is set, else aerial), address, NAVIGATE. */
 'use strict';
 const C = Object.assign({ googleKey:'', includeOsm:true }, window.VLF_CONFIG || {});
-const STYLE = { version:8, glyphs:'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
-  sources:{ sat:{ type:'raster', tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize:256, maxzoom:19, attribution:'Imagery © Esri, Maxar, Earthstar Geographics' },
-            roads:{ type:'raster', tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}'], tileSize:256, maxzoom:19 },
-            labels:{ type:'raster', tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'], tileSize:256, maxzoom:19 } },
-  layers:[ { id:'sat', type:'raster', source:'sat' }, { id:'roads', type:'raster', source:'roads' }, { id:'labels', type:'raster', source:'labels' } ] };
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const METRO = { s:33.20, w:-112.65, n:33.80, e:-111.50 };
 const PIN = '#ff8a00';
@@ -16,7 +11,7 @@ const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', cl
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let map, lots = [], userPos = null, userMarker = null, selected = null, view = 'all';
+let map, lots = [], userPos = null, userMarker = null, selected = null, view = 'all', clusterer = null; const markers = new Map();
 const MARKCOLOR = { great:'#22c55e', revisit:'#facc15', skip:'#8b8f99' };
 let toastT; const toast = (m, ms=2800) => { const t=$('toast'); t.textContent=m; t.classList.remove('hidden'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.add('hidden'), ms); };
 const status = m => $('status').textContent = m;
@@ -26,12 +21,22 @@ const dist = l => userPos ? mi(userPos,[l.lng,l.lat]) : null;
 const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
 const isAndroid = () => /Android/i.test(navigator.userAgent);
 
+function loadGoogle(){
+  return new Promise((res, rej) => {
+    if (window.google && google.maps) return res();
+    window.__vlfReady = res;
+    const s = document.createElement('script');
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(C.googleKey)}&callback=__vlfReady&loading=async&v=weekly`;
+    s.onerror = rej; document.head.appendChild(s);
+  });
+}
 async function init(){
-  map = new maplibregl.Map({ container:'map', style:STYLE, center:[-112.02,33.47], zoom:10.3, attributionControl:false, maxZoom:19 });
-  map.on('style.load', addLayers);
-  map.on('click', 'pins', e => openCard(e.features[0].properties.id));
-  map.on('click', 'clusters', e => { const f=e.features[0]; map.getSource('lots').getClusterExpansionZoom(f.properties.cluster_id).then(z => map.easeTo({ center:f.geometry.coordinates, zoom:z })); });
-  ['pins','clusters'].forEach(l => { map.on('mouseenter', l, ()=>map.getCanvas().style.cursor='pointer'); map.on('mouseleave', l, ()=>map.getCanvas().style.cursor=''); });
+  await loadGoogle();
+  map = new google.maps.Map($('map'), { center:{ lat:33.47, lng:-112.02 }, zoom:11, mapTypeId:'hybrid', disableDefaultUI:true, gestureHandling:'greedy', clickableIcons:false, maxZoom:20, minZoom:8, backgroundColor:'#0b0d12' });
+  clusterer = new markerClusterer.MarkerClusterer({ map, markers:[], renderer:{ render({ count, position }){
+    const r = count >= 50 ? 26 : count >= 10 ? 20 : 16;
+    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:PIN, fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#1a1200', fontSize:'12px', fontWeight:'700', fontFamily:'system-ui' } });
+  } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = () => locate(false);
   $('btnNearest').onclick = nearest;
   document.querySelectorAll('.view').forEach(b => b.onclick = () => setView(b.dataset.view));
@@ -40,18 +45,17 @@ async function init(){
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
   await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
 }
-function addLayers(){
-  if (map.getSource('lots')) return;
-  map.addSource('lots', { type:'geojson', data:fc(), cluster:true, clusterRadius:40, clusterMaxZoom:14 });
-  map.addLayer({ id:'clusters', type:'circle', source:'lots', filter:['has','point_count'], paint:{ 'circle-color':'#ff8a00', 'circle-radius':['step',['get','point_count'],16,10,20,50,26], 'circle-stroke-width':3, 'circle-stroke-color':'#ffffff' } });
-  map.addLayer({ id:'cluster-count', type:'symbol', source:'lots', filter:['has','point_count'], layout:{ 'text-field':'{point_count_abbreviated}', 'text-size':12, 'text-font':['Noto Sans Bold'] }, paint:{ 'text-color':'#1a1200' } });
-  map.addLayer({ id:'pins', type:'circle', source:'lots', filter:['!',['has','point_count']], paint:{ 'circle-color':['get','color'], 'circle-radius':['case',['boolean',['get','sel'],false],12,9], 'circle-stroke-width':3, 'circle-stroke-color':'#ffffff' } });
-  refresh();
-}
-const fc = () => ({ type:'FeatureCollection', features:[] });
+const pinIcon = (color, sel) => ({ path:google.maps.SymbolPath.CIRCLE, scale: sel ? 12 : 9, fillColor:color, fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 });
 function refresh(){
-  const src = map.getSource('lots'); if (!src) return;
-  src.setData({ type:'FeatureCollection', features: visible().map(l => ({ type:'Feature', geometry:{ type:'Point', coordinates:[l.lng,l.lat] }, properties:{ id:l.id, color:colorOf(l), sel:selected===l.id } })) });
+  if (!clusterer) return;
+  const list = [];
+  for (const l of visible()){
+    let m = markers.get(l.id);
+    if (!m){ m = new google.maps.Marker({ position:{ lat:l.lat, lng:l.lng }, title:l.name }); m.addListener('click', () => openCard(l.id)); markers.set(l.id, m); }
+    m.setIcon(pinIcon(colorOf(l), selected===l.id)); m.setZIndex(selected===l.id ? 999 : 1);
+    list.push(m);
+  }
+  clusterer.clearMarkers(true); clusterer.addMarkers(list);
 }
 
 // ---------- data ----------
@@ -94,9 +98,9 @@ function locate(silent){
     if (!navigator.geolocation){ if(!silent) toast('Location not supported'); return res(); }
     navigator.geolocation.getCurrentPosition(p => {
       userPos = [p.coords.longitude, p.coords.latitude];
-      if (!userMarker){ const el=document.createElement('div'); el.className='maplibregl-user-location-dot'; userMarker=new maplibregl.Marker({element:el}).setLngLat(userPos).addTo(map); } else userMarker.setLngLat(userPos);
+      const pos = { lat:userPos[1], lng:userPos[0] }; if (!userMarker){ userMarker = new google.maps.Marker({ map, position:pos, zIndex:2000, clickable:false, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:9, fillColor:'#3b82f6', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 } }); } else userMarker.setPosition(pos);
       $('btnLocate').classList.add('active');
-      if (!silent || !location.hash) map.flyTo({ center:userPos, zoom:Math.max(map.getZoom(), 12.5), speed:1.4 });
+      if (!silent || !location.hash){ map.panTo(pos); if (map.getZoom() < 12.5) map.setZoom(13); }
       res();
     }, err => { if(!silent) toast(err.code===1 ? 'Location permission denied' : 'Could not get location'); res(); }, { enableHighAccuracy:true, timeout:12000, maximumAge:30000 });
   });
@@ -123,7 +127,7 @@ function openCard(id){
   setPhoto(l);
   $('card').classList.remove('hidden');
   if (l.kind==='confirmed') history.replaceState(null, '', '#' + l.id);
-  map.easeTo({ center:[l.lng, l.lat], zoom:Math.max(map.getZoom(), 16), padding:{ bottom:360 } });
+  if (map.getZoom() < 16) map.setZoom(16); map.panTo({ lat:l.lat, lng:l.lng }); map.panBy(0, 180);
 }
 // Marks (great / revisit / skip) and notes. Local cache always; shared Supabase table when configured.
 const sb = (C.supabaseUrl && C.supabaseKey && window.supabase) ? window.supabase.createClient(C.supabaseUrl, C.supabaseKey) : null;
@@ -151,10 +155,11 @@ function colorOf(l){ const m = marks.get(l.id); return m ? MARKCOLOR[m] : PIN; }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
 function setView(v){ view=v; document.querySelectorAll('.view').forEach(b=>b.classList.toggle('on', b.dataset.view===v)); closeCard(); refresh(); updateStatus(); fitVisible(); }
 function fitVisible(){
-  const pts = visible().map(l=>[l.lng,l.lat]); if (userPos) pts.push(userPos);
+  const pts = visible().map(l=>({ lat:l.lat, lng:l.lng })); if (userPos) pts.push({ lat:userPos[1], lng:userPos[0] });
   if (!pts.length) return;
-  const b = pts.reduce((bb,p)=>bb.extend(p), new maplibregl.LngLatBounds(pts[0], pts[0]));
-  map.fitBounds(b, { padding:{ top:90, bottom:200, left:40, right:40 }, maxZoom:14, duration:700 });
+  const b = new google.maps.LatLngBounds(); pts.forEach(p => b.extend(p));
+  map.fitBounds(b, { top:90, bottom:200, left:40, right:40 });
+  google.maps.event.addListenerOnce(map, 'idle', () => { if (map.getZoom() > 14) map.setZoom(14); });
 }
 function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
 const notes = {
