@@ -28,6 +28,20 @@
         "url": "https://www.google.com/maps?q=&layer=c&cbll=33.4272775,-111.9793728"
       },
       "added": "2026-11-07"
+    },
+    {
+      "id": "2299-w-obispo-ave-gilbert",
+      "name": "Office building \u2014 2299 W Obispo Ave",
+      "address": "2299 W Obispo Ave, Gilbert, AZ 85233",
+      "lat": 33.3620722,
+      "lng": -111.8392355,
+      "status": "vacant",
+      "note": "Reported vacant by Brandon (Nov 2026). Multi-story office with open surface parking in front, no gate at the Obispo Ave entrance. County parcel 302-24-372, ~6.7 ac, built 1997. Latest Street View is Nov 2024 \u2014 confirm on arrival.",
+      "source": {
+        "label": "Brandon \u2014 known vacant, Nov 2026",
+        "url": "https://www.google.com/maps?q=&layer=c&cbll=33.3620722,-111.8392355"
+      },
+      "added": "2026-11-07"
     }
   ]
 }
