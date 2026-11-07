@@ -25,12 +25,14 @@ a{color:inherit}
 .keyrow i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px;box-shadow:0 0 0 2px rgba(255,255,255,.25)}
 
 /* fabs */
-.fabs{position:fixed;right:14px;bottom:calc(var(--sab) + 196px);z-index:20}
-.fab{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);box-shadow:var(--shadow);transition:transform .15s}
+.fabs{position:fixed;right:14px;bottom:calc(var(--sab) + 196px);z-index:20;display:grid;gap:12px}
+.fab{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#fff;border:0;box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .15s}
 .fab:active{transform:scale(.94)}
-.fab svg{width:26px;height:26px;fill:var(--text)}
-.fab.active{background:linear-gradient(145deg,rgba(255,138,0,.95),rgba(255,179,71,.85));border-color:rgba(255,255,255,.5)}
-.fab.active svg{fill:#1a1200}
+.fab svg{width:26px;height:26px;fill:#3c4043}
+#btnLayers{background:#c9e6ee}
+#btnLayers svg{fill:#0b3d4a}
+.fab .dot{width:16px;height:16px;border-radius:50%;background:#1a73e8;box-shadow:0 0 0 7px #e8f0fe}
+.fab.active .dot{box-shadow:0 0 0 7px #d2e3fc}
 
 /* bottom dock */
 .bottom{position:fixed;left:12px;right:12px;bottom:calc(var(--sab) + 12px);z-index:20;padding:10px;border-radius:26px;background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);box-shadow:var(--shadow)}

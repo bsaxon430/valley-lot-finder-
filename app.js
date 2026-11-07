@@ -35,9 +35,11 @@ async function init(){
   map = new google.maps.Map($('map'), { center:{ lat:33.47, lng:-112.02 }, zoom:11, mapTypeId:'hybrid', disableDefaultUI:true, gestureHandling:'greedy', clickableIcons:false, maxZoom:20, minZoom:8, backgroundColor:'#0b0d12' });
   clusterer = new markerClusterer.MarkerClusterer({ map, markers:[], renderer:{ render({ count, position }){
     const r = count >= 50 ? 26 : count >= 10 ? 20 : 16;
-    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:PIN, fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#1a1200', fontSize:'12px', fontWeight:'700', fontFamily:'system-ui' } });
+    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:'#6b8d9e', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = () => locate(false);
+  $('btnLayers').onclick = () => { const sat = map.getMapTypeId() !== 'roadmap'; map.setMapTypeId(sat ? 'roadmap' : 'hybrid'); try { localStorage.setItem('vlf-maptype', sat ? 'roadmap' : 'hybrid'); } catch(e){} };
+  try { const mt = localStorage.getItem('vlf-maptype'); if (mt) map.setMapTypeId(mt); } catch(e){}
   $('btnNearest').onclick = nearest;
   document.querySelectorAll('.view').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('cClose').onclick = closeCard; $('listClose').onclick = () => $('list').classList.add('hidden'); $('navClose').onclick = () => $('nav').classList.add('hidden');
@@ -45,14 +47,26 @@ async function init(){
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
   await loadLots(); await syncShared(); setInterval(syncShared, 30000); locate(true); openFromHash();
 }
-const pinIcon = (color, sel) => ({ path:google.maps.SymbolPath.CIRCLE, scale: sel ? 12 : 9, fillColor:color, fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 });
+const GLYPH = { great:'<path d="M13 19.5l-3.6-3.6 1.6-1.6 2 2 4.9-4.9 1.6 1.6z" fill="#fff"/>', revisit:'<text x="16" y="21" text-anchor="middle" font-family="system-ui,Arial" font-weight="700" font-size="15" fill="#fff">?</text>', skip:'<path d="M11.5 11.5l9 9m0-9l-9 9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>', none:'<circle cx="16" cy="16" r="4.5" fill="#fff"/>' };
+const PINCOLOR = { great:'#34a853', revisit:'#f29900', skip:'#9aa0a6', none:'#6b8d9e' };
+const iconCache = {};
+function pinIcon(mark, sel){
+  const key = (mark||'none') + (sel?'!':'');
+  if (!iconCache[key]){
+    const c = PINCOLOR[mark||'none'];
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40"><path d="M16 39c-1 0-9.5-11-12.4-16.3A14 14 0 1 1 28.4 22.7C25.5 28 17 39 16 39z" fill="#fff"/><circle cx="16" cy="16" r="11.5" fill="${c}"/>${GLYPH[mark||'none']}</svg>`;
+    const sz = sel ? 46 : 36;
+    iconCache[key] = { url:'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg), scaledSize:new google.maps.Size(sz, sz*1.25), anchor:new google.maps.Point(sz/2, sz*1.25) };
+  }
+  return iconCache[key];
+}
 function refresh(){
   if (!clusterer) return;
   const list = [];
   for (const l of visible()){
     let m = markers.get(l.id);
     if (!m){ m = new google.maps.Marker({ position:{ lat:l.lat, lng:l.lng }, title:l.name }); m.addListener('click', () => openCard(l.id)); markers.set(l.id, m); }
-    m.setIcon(pinIcon(colorOf(l), selected===l.id)); m.setZIndex(selected===l.id ? 999 : 1);
+    m.setIcon(pinIcon(marks.get(l.id), selected===l.id)); m.setZIndex(selected===l.id ? 999 : 1);
     list.push(m);
   }
   clusterer.clearMarkers(true); clusterer.addMarkers(list);
@@ -98,7 +112,7 @@ function locate(silent){
     if (!navigator.geolocation){ if(!silent) toast('Location not supported'); return res(); }
     navigator.geolocation.getCurrentPosition(p => {
       userPos = [p.coords.longitude, p.coords.latitude];
-      const pos = { lat:userPos[1], lng:userPos[0] }; if (!userMarker){ userMarker = new google.maps.Marker({ map, position:pos, zIndex:2000, clickable:false, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:9, fillColor:'#3b82f6', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 } }); } else userMarker.setPosition(pos);
+      const pos = { lat:userPos[1], lng:userPos[0] }; if (!userMarker){ userMarker = new google.maps.Marker({ map, position:pos, zIndex:2000, clickable:false, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:9, fillColor:'#1a73e8', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 } }); } else userMarker.setPosition(pos);
       $('btnLocate').classList.add('active');
       if (!silent || !location.hash){ map.panTo(pos); if (map.getZoom() < 12.5) map.setZoom(13); }
       res();
