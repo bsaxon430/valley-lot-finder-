@@ -127,7 +127,7 @@ function lot(id){ return lots.find(l => l.id===id); }
 function openCard(id){
   const l = lot(id); if (!l) return; selected = id; refresh();
   $('list').classList.add('hidden'); $('nav').classList.add('hidden');
-  $('cBadge').textContent = LABEL[l.status] || l.status.toUpperCase(); $('cBadge').style.background = PIN;
+  $('cBadge').textContent = LABEL[l.status] || l.status.toUpperCase(); $('cBadge').style.background = PIN; $('cBadge').style.visibility = l.kind==='spot' ? 'hidden' : '';
   $('cName').textContent = l.name; $('cAddr').textContent = l.address;
   const d = dist(l); $('cMeta').textContent = [d!=null ? `${fmtMi(d)} away` : null, l.note].filter(Boolean).join(' · ');
   const hasSrc = !!(l.source && l.source.url); $('cSrc').style.display = hasSrc ? '' : 'none'; if (hasSrc){ $('cSrc').textContent = (l.source.label || 'Source') + ' ↗'; $('cSrc').href = l.source.url; }
@@ -194,7 +194,7 @@ function renderNotes(l){
 }
 // ---------- team spots (long-press on the map) ----------
 const spots = {
-  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:'spot', note:'Added by the team', source:{ label:'Search Google for this address', url:'https://www.google.com/search?q=' + encodeURIComponent((r.address||'') + ' for lease') }, added:r.created_at||null }; },
+  mk(r){ return { id:r.id, kind:'spot', name:r.name, address:r.address || `${(+r.lat).toFixed(5)}, ${(+r.lng).toFixed(5)}`, lat:+r.lat, lng:+r.lng, status:'spot', note:null, source:{ label:'Search Google for this address', url:'https://www.google.com/search?q=' + encodeURIComponent((r.address||'') + ' for lease') }, added:r.created_at||null }; },
   local(){ try { return JSON.parse(localStorage.getItem('vlf-spots')||'[]'); } catch(e){ return []; } },
   saveLocal(arr){ try { localStorage.setItem('vlf-spots', JSON.stringify(arr)); } catch(e){} },
   applyRemote(rows){
