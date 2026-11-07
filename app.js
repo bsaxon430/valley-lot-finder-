@@ -130,18 +130,13 @@ function renderNotes(l){
 function closeCard(){ $('card').classList.add('hidden'); selected=null; refresh(); history.replaceState(null,'',' '); }
 function setPhoto(l){
   const box = $('photo'); box.innerHTML = '<div class="photo-empty">Loading photo…</div>';
-  const aerial = () => { const img = new Image(); img.alt='Aerial view';
-    img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${l.lng-0.0012},${l.lat-0.0007},${l.lng+0.0012},${l.lat+0.0007}&bboxSR=4326&size=720,420&format=jpg&f=image`;
-    img.onload = () => { box.innerHTML=''; box.appendChild(img); box.insertAdjacentHTML('beforeend','<div class="tag">Aerial · © Esri</div>'); };
-    img.onerror = () => box.innerHTML = '<div class="photo-empty">No photo available</div>'; };
+  const show = (img, tag) => { box.innerHTML=''; box.appendChild(img); box.insertAdjacentHTML('beforeend', `<div class="tag">${tag}</div>`); };
+  const load = (src, tag, onfail) => { const img = new Image(); img.alt = tag; img.onload = () => show(img, tag); img.onerror = onfail; img.src = src; if (img.complete && img.naturalWidth) show(img, tag); };
+  const aerial = () => load(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${l.lng-0.0012},${l.lat-0.0007},${l.lng+0.0012},${l.lat+0.0007}&bboxSR=4326&size=720,420&format=jpg&f=image`, 'Aerial · © Esri', () => box.innerHTML = '<div class="photo-empty">No photo available</div>');
   if (!C.googleKey) return aerial();
-  const img = new Image(); img.alt = 'Street View';
-  img.src = `https://maps.googleapis.com/maps/api/streetview?size=720x420&location=${l.lat},${l.lng}&fov=90&source=outdoor&key=${encodeURIComponent(C.googleKey)}`;
-  // Google returns a gray placeholder when no imagery exists; check metadata first
   fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${l.lat},${l.lng}&source=outdoor&key=${encodeURIComponent(C.googleKey)}`).then(r=>r.json()).then(m => {
     if (m.status !== 'OK') return aerial();
-    img.onload = () => { box.innerHTML=''; box.appendChild(img); box.insertAdjacentHTML('beforeend', `<div class="tag">Street View${m.date?' · '+m.date:''} · may be outdated</div>`); };
-    img.onerror = aerial;
+    load(`https://maps.googleapis.com/maps/api/streetview?size=720x420&location=${l.lat},${l.lng}&fov=90&source=outdoor&key=${encodeURIComponent(C.googleKey)}`, `Street View${m.date?' · '+m.date:''} · may be outdated`, aerial);
   }).catch(aerial);
 }
 function openNav(l){
@@ -160,4 +155,12 @@ async function nearest(){
 }
 function openFromHash(){ const id = decodeURIComponent(location.hash.slice(1)); if (id && lot(id)) openCard(id); }
 
+// swipe down on a sheet to close it
+document.querySelectorAll('.sheet').forEach(sheet => {
+  let y0=null, dy=0;
+  sheet.addEventListener('touchstart', e => { const body = e.target.closest('.card-body,.listbody'); if (body && body.scrollTop > 0) return; y0 = e.touches[0].clientY; dy = 0; sheet.style.transition='none'; }, {passive:true});
+  sheet.addEventListener('touchmove', e => { if (y0==null) return; dy = Math.max(0, e.touches[0].clientY - y0); sheet.style.transform = `translateY(${dy}px)`; }, {passive:true});
+  sheet.addEventListener('touchend', () => { if (y0==null) return; sheet.style.transition=''; sheet.style.transform='';
+    if (dy > 90) { if (sheet.id==='card') closeCard(); else sheet.classList.add('hidden'); } y0=null; });
+});
 document.addEventListener('DOMContentLoaded', init);
