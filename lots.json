@@ -2352,6 +2352,706 @@
     "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/phoenix/"
    },
    "added": "2026-11-07"
+  },
+  {
+   "id": "77-s-val-vista-dr-gilbert",
+   "name": "Freestanding Former Bank Drive Thru Opportunity",
+   "address": "77 S Val Vista Dr, Gilbert, AZ",
+   "lat": 33.349156705064466,
+   "lng": -111.75499081711538,
+   "status": "forlease",
+   "note": "3,421 SF listed for lease (retail). Lot ~0.96 ac. County parcel 309-11-839. Street View 2021-02.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "920-south-gilbert-road-gilbert",
+   "name": "Retail building \u2013 920 South Gilbert Road",
+   "address": "920 S Gilbert Rd, Gilbert, AZ",
+   "lat": 33.332868445429796,
+   "lng": -111.79086207382143,
+   "status": "forlease",
+   "note": "4,022 SF listed for lease (retail). Lot ~0.9 ac. County parcel 302-82-970. Street View 2020-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "500-south-gilbert-road-gilbert",
+   "name": "Retail building \u2013 500 South Gilbert Road",
+   "address": "500 S Gilbert Rd, Gilbert, AZ",
+   "lat": 33.340864625920936,
+   "lng": -111.79030473402763,
+   "status": "forlease",
+   "note": "9,358 SF listed for lease (retail). Lot ~1.1 ac. County parcel 302-35-326. Street View 2020-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1845-east-baseline-road-gilbert",
+   "name": "Retail building \u2013 1845 East Baseline Road",
+   "address": "1845 E Baseline Rd, Gilbert, AZ",
+   "lat": 33.3774634480128,
+   "lng": -111.79102122526865,
+   "status": "forlease",
+   "note": "30,279 SF listed for lease (retail). Lot ~9.29 ac. County parcel 310-10-150. Street View 2022-06.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "706-north-mcqueen-road-gilbert",
+   "name": "Retail building \u2013 706 North McQueen Road",
+   "address": "706 N Mcqueen Rd, Gilbert, AZ",
+   "lat": 33.36275423077408,
+   "lng": -111.82571929384012,
+   "status": "forlease",
+   "note": "17,000 SF listed for lease (retail). Lot ~4.78 ac. County parcel 302-22-539. Street View 2022-06.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1150-north-fiesta-blvd-gilbert",
+   "name": "Office building \u2013 1150 North Fiesta Blvd",
+   "address": "1150 N Fiesta Blvd, Gilbert, AZ",
+   "lat": 33.367627092250764,
+   "lng": -111.83614246600655,
+   "status": "forlease",
+   "note": "87,232 SF listed for lease (office). Lot ~11.11 ac. County parcel 302-09-488. Street View 2024-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "2870-south-market-street-gilbert",
+   "name": "Retail building \u2013 2870 South Market Street",
+   "address": "2870 S Market St, Gilbert, AZ",
+   "lat": 33.29870357652432,
+   "lng": -111.74618982965096,
+   "status": "forlease",
+   "note": "5,171 SF listed for lease (retail). Lot ~3.74 ac. County parcel 304-46-912. Street View 2024-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1352-n-fiesta-blvd-gilbert",
+   "name": "Industrial building \u2013 1352 N Fiesta Blvd",
+   "address": "1352 N Fiesta Blvd, Gilbert, AZ",
+   "lat": 33.37369187536781,
+   "lng": -111.83698094029343,
+   "status": "forlease",
+   "note": "59,723 SF listed for lease (industrial). Lot ~5.13 ac. County parcel 302-09-501D. Street View 2025-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "2343-e-queen-creek-rd-gilbert",
+   "name": "Retail building \u2013 2343 E Queen Creek Rd",
+   "address": "2343 E Queen Creek Rd, Gilbert, AZ",
+   "lat": 33.262431404063406,
+   "lng": -111.73915265543114,
+   "status": "forlease",
+   "note": "31,764 SF listed for lease (retail). Lot ~5.43 ac. County parcel 304-71-044G. Street View 2024-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/gilbert"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "6739-west-cactus-road-peoria",
+   "name": "Retail building \u2013 6739 West Cactus Road",
+   "address": "6739 W Cactus Rd, Peoria, AZ",
+   "lat": 33.59554864357044,
+   "lng": -112.2034358342589,
+   "status": "forlease",
+   "note": "15,120 SF listed for lease (retail). Lot ~2.43 ac. County parcel 143-05-002W. Street View 2024-07.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/peoria"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "10140-north-91st-avenue-peoria",
+   "name": "Peoria Power Center - 10140 North 91st Avenue",
+   "address": "10140 N 91St Ave, Peoria, AZ",
+   "lat": 33.57687226984303,
+   "lng": -112.25634406263151,
+   "status": "forlease",
+   "note": "24,000 SF listed for lease (retail). Lot ~10.0 ac. County parcel 142-54-954. Street View 2024-07.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/peoria"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "7759-w-bell-rd-peoria",
+   "name": "Arrowhead Crossing",
+   "address": "7759 W Bell Rd, Peoria, AZ",
+   "lat": 33.63597968781204,
+   "lng": -112.22530287382456,
+   "status": "forlease",
+   "note": "23,796 SF listed for lease (retail). Lot ~5.61 ac. County parcel 200-53-243. Street View 2018-08.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/peoria"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "8375-west-thunderbird-road-peoria",
+   "name": "Thunderbird Crossing",
+   "address": "8375 W Thunderbird Rd, Peoria, AZ",
+   "lat": 33.608896406776466,
+   "lng": -112.23924508399772,
+   "status": "forlease",
+   "note": "11,334 SF listed for lease (retail). Lot ~3.92 ac. County parcel 200-79-972. Street View 2025-01.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/peoria"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "9802-n-91st-ave-peoria",
+   "name": "Reliance Loop 101 Commerce Center",
+   "address": "9802 N 91St Ave, Peoria, AZ",
+   "lat": 33.57365058045211,
+   "lng": -112.25645708856942,
+   "status": "forlease",
+   "note": "7,893 SF listed for lease (industrial). Lot ~4.43 ac. County parcel 142-54-961. Street View 2018-06.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/peoria"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "12036-n-67th-ave-peoria",
+   "name": "Childcare Center For Lease",
+   "address": "12036 N 67Th Ave, Peoria, AZ",
+   "lat": 33.59469373788577,
+   "lng": -112.20392033339681,
+   "status": "forlease",
+   "note": "3,600 SF listed for lease (retail). Lot ~3.36 ac. County parcel 143-05-893. Street View 2021-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/commercial-real-estate/us/az/peoria"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "11294-west-bell-road-surprise",
+   "name": "Bell Mar Plaza",
+   "address": "11294 W Bell Rd, Surprise, AZ",
+   "lat": 33.639767001509234,
+   "lng": -112.30386392908068,
+   "status": "forlease",
+   "note": "58,363 SF listed for lease (retail). Lot ~8.81 ac. County parcel 200-13-383. Street View 2019-01.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/surprise/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "15800-north-litchfield-road-surprise",
+   "name": "Office building \u2013 15800 North Litchfield Road",
+   "address": "15800 N Litchfield Rd, Surprise, AZ",
+   "lat": 33.62685961608491,
+   "lng": -112.36067568174674,
+   "status": "forlease",
+   "note": "15,000 SF listed for lease (office). Lot ~5.25 ac. County parcel 501-18-548. Street View 2024-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/surprise/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "855-north-107th-avenue-avondale",
+   "name": "Avondale 107 Industrial Complex",
+   "address": "855 N 107Th Ave, Avondale, AZ",
+   "lat": 33.45492308478751,
+   "lng": -112.28880353559761,
+   "status": "forlease",
+   "note": "40,000 SF listed for lease (industrial). Lot ~10.99 ac. County parcel 102-55-023. Street View 2026-09.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "11328-w-buckeye-rd-avondale",
+   "name": "Industrial Site for Lease in Avondale",
+   "address": "11328 W Buckeye Rd, Avondale, AZ",
+   "lat": 33.436075256067674,
+   "lng": -112.30245836200291,
+   "status": "forlease",
+   "note": "30,352 SF listed for lease (industrial). Lot ~12.15 ac. County parcel 101-01-008B. Street View 2026-08.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "10210-west-van-buren-street-avondale",
+   "name": "Industrial building \u2013 10210 West Van Buren Street",
+   "address": "10210 W Van Buren St, Avondale, AZ",
+   "lat": 33.45197451016072,
+   "lng": -112.2790179068913,
+   "status": "forlease",
+   "note": "161,515 SF listed for lease (industrial). Lot ~34.45 ac. County parcel 102-54-114. Street View 2026-08.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1777-s-99th-avenue-tolleson",
+   "name": "Industrial building \u2013 1777 S 99th Avenue",
+   "address": "1777 S 99Th Ave, Tolleson, AZ",
+   "lat": 33.43022783487443,
+   "lng": -112.26635588144347,
+   "status": "forlease",
+   "note": "54,059 SF listed for lease (industrial). Lot ~45.5 ac. County parcel 101-14-581. No Street View here \u2014 aerial shown.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1466-n-eliseo-c-felix-jr-way-avondale",
+   "name": "Industrial building \u2013 1466 N Eliseo C Felix Jr Way",
+   "address": "1466 N Eliseo C Felix Jr Way, Avondale, AZ",
+   "lat": 33.452804444433504,
+   "lng": -112.33738741052868,
+   "status": "forlease",
+   "note": "45,200 SF listed for lease (industrial). Lot ~2.46 ac. County parcel 500-02-112. Street View 2024-10.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "9920-w-van-buren-st-avondale",
+   "name": "Industrial building \u2013 9920 W Van Buren St",
+   "address": "9920 W Van Buren St, Tolleson, AZ",
+   "lat": 33.45066379517527,
+   "lng": -112.27312923000561,
+   "status": "forlease",
+   "note": "23,556 SF listed for lease (industrial). Lot ~1.06 ac. County parcel 102-54-097. Street View 2021-02.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "9820-west-lower-buckeye-road-tolleson",
+   "name": "Pecan Promenade",
+   "address": "9820 W Lower Buckeye Rd, Tolleson, AZ",
+   "lat": 33.42217629982821,
+   "lng": -112.26914324849524,
+   "status": "forlease",
+   "note": "30,000 SF listed for lease (industrial). Lot ~7.21 ac. County parcel 101-14-012. Street View 2024-06.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/industrial/us/az/avondale/"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "4030-e-thunderbird-rd-phoenix",
+   "name": "Paradise Plaza",
+   "address": "4030 E Thunderbird Rd, Phoenix, AZ",
+   "lat": 33.612392261701665,
+   "lng": -111.99405067086745,
+   "status": "forlease",
+   "note": "5,955 SF listed for lease (retail). Lot ~2.3 ac. County parcel 215-72-270C. Street View 2022-09.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "204-230-e-bell-road-phoenix",
+   "name": "Retail building \u2013 204-230 E. Bell Road",
+   "address": "204 E Bell Rd, Phoenix, AZ",
+   "lat": 33.64125467169112,
+   "lng": -112.07145163571029,
+   "status": "forlease",
+   "note": "21,137 SF listed for lease (retail). Lot ~4.54 ac. County parcel 208-11-001C. Street View 2022-06.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "5259-w-indian-school-rd-phoenix",
+   "name": "Former urgent care freestanding",
+   "address": "5259 W Indian School Rd, Phoenix, AZ",
+   "lat": 33.494396069958185,
+   "lng": -112.17279836878346,
+   "status": "forlease",
+   "note": "4,078 SF listed for lease (retail). Lot ~1.72 ac. County parcel 103-08-006N. Street View 2024-07.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "2601-east-indian-school-road-phoenix",
+   "name": "Retail building \u2013 2601 East Indian School Road",
+   "address": "2601 E Indian School Rd, Phoenix, AZ",
+   "lat": 33.49442013511796,
+   "lng": -112.02554529209978,
+   "status": "forlease",
+   "note": "12,668 SF listed for lease (retail). Lot ~1.18 ac. County parcel 119-03-076C. Street View 2016-06.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "615-west-deer-valley-drive-phoenix",
+   "name": "Retail building \u2013 615 West Deer Valley Drive",
+   "address": "615 W Deer Valley Dr, Phoenix, AZ",
+   "lat": 33.68318398719897,
+   "lng": -112.08101462872187,
+   "status": "forlease",
+   "note": "22,929 SF listed for lease (retail). Lot ~1.55 ac. County parcel 209-26-004. Street View 2022-04.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "5802-w-thomas-road-phoenix",
+   "name": "Retail building \u2013 5802 W Thomas Road",
+   "address": "5802 W Thomas Rd, Phoenix, AZ",
+   "lat": 33.48165906817395,
+   "lng": -112.18503665024816,
+   "status": "forlease",
+   "note": "15,800 SF listed for lease (retail). Lot ~7.48 ac. County parcel 103-10-101. Street View 2022-01.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "3514-west-peoria-avenue-phoenix",
+   "name": "Retail building \u2013 3514 West Peoria Avenue",
+   "address": "3514 W Peoria Ave, Phoenix, AZ",
+   "lat": 33.5831930697019,
+   "lng": -112.13524103953874,
+   "status": "forlease",
+   "note": "34,920 SF listed for lease (retail). Lot ~5.51 ac. County parcel 149-32-666F. Street View 2024-07.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "13636-north-tatum-blvd-phoenix",
+   "name": "Retail building \u2013 13636 North Tatum Blvd",
+   "address": "13636 N Tatum Blvd, Phoenix, AZ",
+   "lat": 33.6109204415235,
+   "lng": -111.97891060882021,
+   "status": "forlease",
+   "note": "13,000 SF listed for lease (retail). Lot ~2.22 ac. County parcel 167-09-001H. Street View 2022-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "5829-south-central-avenue-phoenix",
+   "name": "Retail building \u2013 5829 South Central Avenue",
+   "address": "5829 S Central Ave, Phoenix, AZ",
+   "lat": 33.39286838192075,
+   "lng": -112.07193537019376,
+   "status": "forlease",
+   "note": "5,200 SF listed for lease (retail). Lot ~4.08 ac. County parcel 113-43-056H. Street View 2022-09.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "4710-e-lone-mountain-rd-cave-creek",
+   "name": "NEC Cave Creek Rd & Lone Mountain Rd",
+   "address": "4710 E Lone Mountain Rd, Cave Creek, AZ",
+   "lat": 33.770722776339774,
+   "lng": -111.9804975663137,
+   "status": "forlease",
+   "note": "25,315 SF listed for lease (retail). Lot ~3.14 ac. County parcel 211-35-020. Street View 2023-02.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/retail/us/az/phoenix/?Page=2"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "4600-e-washington-street-phoenix",
+   "name": "Washington Corporate Center office",
+   "address": "4600 E Washington St, Phoenix, AZ",
+   "lat": 33.44884386375273,
+   "lng": -111.98376314345728,
+   "status": "forlease",
+   "note": "32,270 SF listed for lease (office). Lot ~2.88 ac. County parcel 124-10-044. Street View 2026-01.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "4500-east-cotton-center-blvd-phoenix",
+   "name": "Office building \u2013 4500 East Cotton Center Blvd",
+   "address": "4500 E Cotton Center Blvd, Phoenix, AZ",
+   "lat": 33.40431466622999,
+   "lng": -111.98336290321888,
+   "status": "forlease",
+   "note": "139,403 SF listed for lease (office). Lot ~12.03 ac. County parcel 123-06-004D. Street View 2019-03.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "2600-north-44th-street-phoenix",
+   "name": "The Grand on 44th office",
+   "address": "2600 N 44Th St, Phoenix, AZ",
+   "lat": 33.476785772749245,
+   "lng": -111.98820582039995,
+   "status": "forlease",
+   "note": "21,642 SF listed for lease (office). Lot ~1.61 ac. County parcel 126-02-038B. Street View 2020-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "4020-s-15th-ave-phoenix",
+   "name": "Office building \u2013 4020 S 15th Ave",
+   "address": "4020 S 15Th Ave, Phoenix, AZ",
+   "lat": 33.40958414773627,
+   "lng": -112.0921336104024,
+   "status": "forlease",
+   "note": "18,824 SF listed for lease (office). Lot ~3.13 ac. County parcel 105-53-011A. Street View 2022-09.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "9305-west-thomas-road-phoenix",
+   "name": "Office building \u2013 9305 West Thomas Road",
+   "address": "9305 W Thomas Rd, Phoenix, AZ",
+   "lat": 33.47799875130268,
+   "lng": -112.26037387012747,
+   "status": "forlease",
+   "note": "18,706 SF listed for lease (office). Lot ~0.76 ac. County parcel 102-34-021A. Street View 2020-05.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "120-north-44th-street-phoenix",
+   "name": "Office building \u2013 120 North 44th Street",
+   "address": "120 N 44Th St, Phoenix, AZ",
+   "lat": 33.450069978783844,
+   "lng": -111.98774547302476,
+   "status": "forlease",
+   "note": "21,396 SF listed for lease (office). Lot ~1.73 ac. County parcel 124-09-044K. Street View 2019-03.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "16610-n-black-canyon-highway-phoenix",
+   "name": "Bell 28 office",
+   "address": "16610 N Black Canyon Hwy, Phoenix, AZ",
+   "lat": 33.63724027024149,
+   "lng": -112.117219469305,
+   "status": "forlease",
+   "note": "43,229 SF listed for lease (office). Lot ~5.4 ac. County parcel 207-42-272. Street View 2021-02.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "3636-north-central-avenue-phoenix",
+   "name": "Security Title Plaza office",
+   "address": "3636 N Central Ave, Phoenix, AZ",
+   "lat": 33.490495553395675,
+   "lng": -112.07494086102419,
+   "status": "forlease",
+   "note": "72,590 SF listed for lease (office). Lot ~1.98 ac. County parcel 118-32-057. Street View 2026-09.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/az/phoenix/?Page=3"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "2114-west-7th-street-tempe",
+   "name": "Office building \u2013 2114 West 7th Street",
+   "address": "2114 W 7Th St, Tempe, AZ",
+   "lat": 33.42391242625506,
+   "lng": -111.9708436611314,
+   "status": "forlease",
+   "note": "37,140 SF listed for lease (office). Lot ~4.03 ac. County parcel 124-39-055A. Street View 2021-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1262-s-country-club-dr-mesa",
+   "name": "Multi-Use Plug and Play Spaces for Sublease in Mesa",
+   "address": "1262 S Country Club Dr, Mesa, AZ",
+   "lat": 33.392871551839626,
+   "lng": -111.8423339543418,
+   "status": "forlease",
+   "note": "30,000 SF listed for lease (retail). Lot ~1.13 ac. County parcel 134-22-001J. Street View 2017-12.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "3200-west-ray-road-chandler",
+   "name": "San Tan - 3200 West Ray Road office",
+   "address": "3200 W Ray Rd, Chandler, AZ",
+   "lat": 33.32147197553064,
+   "lng": -111.89722425325367,
+   "status": "forlease",
+   "note": "49,059 SF listed for lease (office). Lot ~8.58 ac. County parcel 301-63-804A. Street View 2024-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "827-w-grove-ave-mesa",
+   "name": "Office Building for Lease in Mesa",
+   "address": "827 W Grove Ave, Mesa, AZ",
+   "lat": 33.389716268603145,
+   "lng": -111.85023216923682,
+   "status": "forlease",
+   "note": "69,561 SF listed for lease (office). Lot ~5.09 ac. County parcel 134-23-017E. Street View 2025-11.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "350-west-washington-street-tempe",
+   "name": "Papago Gateway Center office",
+   "address": "350 W Washington St, Tempe, AZ",
+   "lat": 33.43800496342212,
+   "lng": -111.94476956973777,
+   "status": "forlease",
+   "note": "41,050 SF listed for lease (office). Lot ~5.01 ac. County parcel 124-22-016. Street View 2025-10.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1910-w-rio-salado-parkway-tempe",
+   "name": "Liberty Center at Rio Salado office",
+   "address": "1910 W Rio Salado Pkwy, Tempe, AZ",
+   "lat": 33.432316825181914,
+   "lng": -111.96781659006817,
+   "status": "forlease",
+   "note": "37,589 SF listed for lease (office). Lot ~9.5 ac. County parcel 124-78-020. Street View 2019-03.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "7420-south-kyrene-road-tempe",
+   "name": "Office building \u2013 7420 South Kyrene Road",
+   "address": "7420 S Kyrene Rd, Tempe, AZ",
+   "lat": 33.35052438604417,
+   "lng": -111.9469266558215,
+   "status": "forlease",
+   "note": "20,998 SF listed for lease (office). Lot ~5.53 ac. County parcel 301-90-025. Street View 2021-03.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "id": "1355-n-scottsdale-rd-scottsdale",
+   "name": "SkySong sublease office",
+   "address": "1355 N Scottsdale Rd, Scottsdale, AZ",
+   "lat": 33.46342781301069,
+   "lng": -111.9256181554638,
+   "status": "forlease",
+   "note": "26,058 SF listed for lease (office). Lot ~1.65 ac. County parcel 131-17-014P. Street View 2019-02.",
+   "source": {
+    "label": "CommercialCafe listing",
+    "url": "https://www.commercialcafe.com/office/us/phoenix-market/?Page=7"
+   },
+   "added": "2026-11-07"
   }
  ]
 }
