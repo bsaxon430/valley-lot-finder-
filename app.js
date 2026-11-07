@@ -28,8 +28,6 @@ const isAndroid = () => /Android/i.test(navigator.userAgent);
 
 async function init(){
   map = new maplibregl.Map({ container:'map', style:STYLE, center:[-112.02,33.47], zoom:10.3, attributionControl:false, maxZoom:19 });
-  map.addControl(new maplibregl.AttributionControl({ compact:true }), 'bottom-left');
-  map.once('load', () => setTimeout(() => document.querySelectorAll('.maplibregl-ctrl-attrib').forEach(e => { e.classList.remove('maplibregl-compact-show'); e.setAttribute('open', ''); e.removeAttribute('open'); }), 300));
   map.on('style.load', addLayers);
   map.on('click', 'pins', e => openCard(e.features[0].properties.id));
   map.on('click', 'clusters', e => { const f=e.features[0]; map.getSource('lots').getClusterExpansionZoom(f.properties.cluster_id).then(z => map.easeTo({ center:f.geometry.coordinates, zoom:z })); });
