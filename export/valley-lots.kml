@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Valley Lot Finder</name>
+<Style id="forlease"><IconStyle><color>ff00a5ff</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+<Style id="vacant"><IconStyle><color>ff2dc0fb</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+<Style id="abandoned"><IconStyle><color>ff5353ea</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+<Style id="closed"><IconStyle><color>ffa6a09a</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+<Placemark><name>Metro North Corporate Park — old GE / Honeywell campus</name><description>Abandoned
+13610 N Black Canyon Hwy, Phoenix, AZ 85029
+
+~750k sq ft of vacant office buildings on 40+ acres at the SWC of I-17 &amp; Thunderbird. GE tech campus in the 60s, then Honeywell. Sold Sept 2026 ($28.6M); new owner plans to demolish for a 3-building industrial park, so it may become a construction site.
+
+https://www.connectcre.com/stories/dimension-moving-ahead-on-3-building-n-phoenix-industrial-park/</description><styleUrl>#abandoned</styleUrl><Point><coordinates>-112.11873,33.60812,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building — 801 S 16th St</name><description>For lease
+801 S 16th St, Phoenix, AZ 85034
+
+&#x27;For lease — industrial space&#x27; sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.045611,33.441333,0</coordinates></Point></Placemark>
+<Placemark><name>Office building — 2211 S 47th St</name><description>Vacant
+2211 S 47th St, Phoenix, AZ 85034 (entrance on E Hilton Ave)
+
+Vacant office building. Gated entrance with arm barriers off E Hilton Ave; large covered parking lot, ~7.8 ac.</description><styleUrl>#vacant</styleUrl><Point><coordinates>-111.9793728,33.4272775,0</coordinates></Point></Placemark>
+<Placemark><name>Office building — 2299 W Obispo Ave</name><description>Vacant
+2299 W Obispo Ave, Gilbert, AZ 85233
+
+Vacant multi-story office. Open surface parking in front, no gate at the Obispo Ave entrance, ~6.7 ac.</description><styleUrl>#vacant</styleUrl><Point><coordinates>-111.8392355,33.3620722,0</coordinates></Point></Placemark>
+<Placemark><name>Former Sears — Metrocenter</name><description>Vacant
+9803 N Metro Pkwy W, Phoenix, AZ 85051
+
+Two-story Sears box closed 2020; still standing after the rest of Metrocenter Mall was demolished (2025). ~14.5 ac of empty striped parking around it. Owned by the Sears successor company, not part of the mall redevelopment.
+
+https://www.kjzz.org/business/2025-09-25/demo-of-phoenixs-metrocenter-mall-is-finally-done-see-what-the-the-metropolitan-will-look-like</description><styleUrl>#vacant</styleUrl><Point><coordinates>-112.123144,33.577375,0</coordinates></Point></Placemark>
+<Placemark><name>Former Kmart — 2526 W Northern Ave</name><description>Vacant
+2526 W Northern Ave, Phoenix, AZ 85051
+
+Kmart closed 2017; building still vacant with an &#x27;AVAILABLE&#x27; banner on the front. ~8.3 ac lot. County records show the City of Phoenix now owns the parcel.</description><styleUrl>#vacant</styleUrl><Point><coordinates>-112.114159,33.554224,0</coordinates></Point></Placemark>
+<Placemark><name>Former Fry&#x27;s Electronics — Tempe</name><description>Vacant
+2300 W Baseline Rd, Tempe, AZ 85283
+
+149,000 SF big box closed Feb 2021 when Fry&#x27;s Electronics shut down. ~15 ac site west of I-10 by Arizona Mills. A Costco Business Center conversion was proposed in 2022 but stalled. Confirm on arrival.
+
+https://www.abc15.com/news/business/costco-could-be-planning-a-new-business-center-in-east-valley</description><styleUrl>#vacant</styleUrl><Point><coordinates>-111.972106,33.379268,0</coordinates></Point></Placemark>
+<Placemark><name>Former Sears + auto center — Superstition Springs</name><description>Vacant
+6525 E Southern Ave, Mesa, AZ 85206 (south side of the mall)
+
+113,837 SF two-story Sears (closed 2018) plus 17,050 SF former auto center on ~12.7 ac, sold at auction as a redevelopment site. Apartments have been proposed for the land.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/redevelopment-opportunity-for-auction-in-mesa/</description><styleUrl>#vacant</styleUrl><Point><coordinates>-111.691772,33.389258,0</coordinates></Point></Placemark>
+<Placemark><name>Former Safeway — 32nd St &amp; Thunderbird</name><description>Closed
+3131 E Thunderbird Rd, Phoenix, AZ 85032
+
+Safeway closed this store in July 2025. Grocery box on a ~10 ac shopping-center parcel; other tenants in the center may still be open, so expect some traffic.
+
+https://www.abc15.com/news/state/safeway-albertsons-to-close-3-arizona-locations-including-2-in-phoenix</description><styleUrl>#closed</styleUrl><Point><coordinates>-112.014533,33.610249,0</coordinates></Point></Placemark>
+<Placemark><name>Former Safeway — 59th Ave &amp; Thunderbird</name><description>Closed
+5860 W Thunderbird Rd, Glendale, AZ 85306
+
+Safeway closed this store in July 2025. Grocery box on a ~9.6 ac shopping-center parcel; other tenants in the center may still be open.
+
+https://www.abc15.com/news/state/safeway-albertsons-to-close-3-arizona-locations-including-2-in-phoenix</description><styleUrl>#closed</styleUrl><Point><coordinates>-112.184261,33.612364,0</coordinates></Point></Placemark>
+<Placemark><name>Former movie theater — Bell Canyon Pavilions</name><description>For lease
+2730 W Bell Rd, Phoenix, AZ 85053
+
+Theater at the back of the Bell Canyon Pavilions center, closed since 2020; the 32,640 SF building is listed for lease. Shared center lot — quieter at the theater end.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/bell-canyon-pavilions-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.118762,33.642022,0</coordinates></Point></Placemark>
+<Placemark><name>HIGH-VISIBILITY FREESTANDING RETAIL BUILDING</name><description>For lease
+1101 W Guadalupe Rd, Mesa, AZ
+
+Whole building listed for lease (retail). Lot ~0.87 ac. County parcel 302-77-238H. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/high-visibility-freestanding-retail-building/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.85689346474324,33.36386467382906,0</coordinates></Point></Placemark>
+<Placemark><name>.94-AC PAD in Mesa</name><description>For lease
+5349 E Main St, Mesa, AZ
+
+40,946 SF listed for lease (retail). Lot ~0.95 ac. County parcel 141-51-297. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/94-ac-pad-in-mesa/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.71531681716267,33.41513458780508,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2807 North Power Road</name><description>For lease
+2807 N Power Rd, Mesa, AZ
+
+11,415 SF listed for lease (retail). Lot ~1.85 ac. County parcel 219-19-739. Street View 2022-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/2807-north-power-road-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.68321713875268,33.466869131904836,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 1535 E University Dr</name><description>For lease
+1535 E University Dr, Mesa, AZ
+
+12,536 SF listed for lease (retail). Lot ~0.74 ac. County parcel 138-06-146D. Street View 2025-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/1535-e-university-dr-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.79827717584068,33.42209697894175,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2009 N Stapley Dr</name><description>For lease
+2009 N Stapley Dr, Mesa, AZ
+
+13,969 SF listed for lease (retail). Lot ~1.93 ac. County parcel 136-07-001G. Street View 2024-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/2009-n-stapley-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.80416038934119,33.45204596104995,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 1911 W Broadway Rd</name><description>For lease
+1911 W Broadway Rd, Mesa, AZ
+
+5,000 SF listed for lease (retail). Lot ~2.07 ac. County parcel 134-30-001Y. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/1911-w-broadway-rd-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.87261122342254,33.40713999778753,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 1151 E Mckellips Rd</name><description>For lease
+1151 E Mckellips Rd, Mesa, AZ
+
+13,050 SF listed for lease (retail). Lot ~1.06 ac. County parcel 136-25-698N. Street View 2021-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/1151-e-mckellips-rd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.8054343194057,33.450950453207085,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 903-933 E Main St</name><description>For lease
+903 E Main St, Mesa, AZ
+
+9,200 SF listed for lease (retail). Lot ~1.93 ac. County parcel 138-18-066C. Street View 2022-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/mesa-matrix/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.81138047085398,33.414582562217454,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 6315 East Southern Avenue</name><description>For lease
+6315 E Southern Ave, Mesa, AZ
+
+21,320 SF listed for lease (retail). Lot ~6.04 ac. County parcel 141-54-041. Street View 2024-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/6315-east-southern-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.69499596973307,33.39263856608466,0</coordinates></Point></Placemark>
+<Placemark><name>Rural Rd &amp; Ray Rd NEC</name><description>For lease
+4950 W Ray Rd, Chandler, AZ
+
+25,106 SF listed for lease (retail). Lot ~13.3 ac. County parcel 308-02-132. Street View 2022-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/rural-rd-ray-rd-nec/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.92641646925358,33.32112426993709,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 485 North Juniper Drive</name><description>For lease
+485 N Juniper Dr, Chandler, AZ
+
+50,000 SF listed for lease (office). Lot ~7.57 ac. County parcel 301-90-660. Street View 2021-01.
+
+https://www.loopnet.com/property/485-n-juniper-dr-chandler-az-85226/04013-30190660</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.91511713442772,33.311738637020575,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2051 W Chandler Blvd</name><description>For lease
+2051 W Chandler Blvd, Chandler, AZ
+
+12,000 SF listed for lease (retail). Lot ~1.98 ac. County parcel 303-63-300. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/2051-w-chandler-blvd-3/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.8779620760021,33.30538457575395,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 930 E Pecos Rd</name><description>For lease
+930 E Pecos Rd, Chandler, AZ
+
+11,895 SF listed for lease (retail). Lot ~1.67 ac. County parcel 303-14-536. Street View 2021-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/930-e-pecos-rd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.82627738887429,33.29221215104427,0</coordinates></Point></Placemark>
+<Placemark><name>Rare, Free Standing, Right on the Road Single Tenant Restaurant</name><description>For lease
+1705 E Broadway Rd, Tempe, AZ
+
+4,976 SF listed for lease (retail). Lot ~0.87 ac. County parcel 133-31-001P. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/rare-free-standing-right-on-the-road-single-tenant-restaurant-available-for-sale-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.91154762819622,33.407089772221056,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 7810 S Priest Dr</name><description>For lease
+7810 S Priest Dr, Tempe, AZ
+
+100,000 SF listed for lease (retail). Lot ~3.6 ac. County parcel 301-54-976. Street View 2021-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/7810-s-priest-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.9649074293564,33.34656921999325,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 825 S 48th St</name><description>For lease
+825 S 48Th St, Tempe, AZ
+
+9,276 SF listed for lease (retail). Lot ~1.72 ac. County parcel 124-56-050A. Street View 2018-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/sec-sr-143-university-drive/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.97657412182903,33.42087496324153,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 1001 East Playa Del Norte Drive</name><description>For lease
+1001 E Playa Del Norte Dr, Tempe, AZ
+
+7,000 SF listed for lease (retail). Lot ~55.39 ac. County parcel 132-31-005C. Street View 2019-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/1001-e-playa-del-norte-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.92211354982844,33.43295688912969,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 1850 W Rio Salado Parkway</name><description>For lease
+1850 W Rio Salado Pkwy, Tempe, AZ
+
+38,081 SF listed for lease (office). Lot ~10.5 ac. County parcel 132-35-964. Street View 2022-04.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/liberty-center-at-rio-salado-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.90585044224255,33.430473914931106,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5105 W Thunderbird Rd</name><description>For lease
+5105 W Thunderbird Rd, Glendale, AZ
+
+4,028–37,026 SF listed for lease (retail). Lot ~0.85 ac. County parcel 200-75-935. Street View 2022-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/5105-w-thunderbird/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.1690995381943,33.61035346752755,0</coordinates></Point></Placemark>
+<Placemark><name>Freestanding Restaurant</name><description>For lease
+5161 W Thunderbird Rd, Glendale, AZ
+
+6,707 SF listed for lease (retail). Lot ~0.82 ac. County parcel 200-75-936B. Street View 2022-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/freestanding-restaurant/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.17065132633176,33.6103693615952,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5340 West Glendale Avenue</name><description>For lease
+5340 W Glendale Ave, Glendale, AZ
+
+10,005 SF listed for lease (retail). Lot ~2.6 ac. County parcel 147-17-063A. Street View 2022-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/5340-5346-west-glendale-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.17431741174622,33.53915711889701,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5957 W Northern Ave</name><description>For lease
+5957 W Northern Ave, Glendale, AZ
+
+6,021 SF listed for lease (retail). Lot ~1.66 ac. County parcel 143-41-003C. Street View 2021-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/5957-w-northern-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.18973409537921,33.552660379472236,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5880 West Bell Road</name><description>For lease
+5880 W Bell Rd, Glendale, AZ
+
+45,000 SF listed for lease (retail). Lot ~12.93 ac. County parcel 200-49-586D. Street View 2015-05.
+
+https://www.commercialsearch.com/commercial-property/us/az/glendale/glendale-market-square-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.18488394935332,33.6412416712695,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4932 W Colter St</name><description>For lease
+4932 W Colter St, Glendale, AZ
+
+152,298 SF listed for lease (industrial). Lot ~6.0 ac. County parcel 145-28-006C. Street View 2024-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/152-298-sf-building-for-sale-lease/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16605473649494,33.514141914681694,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 12445 W Glendale Ave</name><description>For lease
+12445 W Glendale Ave, Glendale, AZ
+
+54,450 SF listed for lease (industrial). Lot ~3.7 ac. County parcel 501-56-015V. Street View 2024-10.
+
+https://www.crexi.com/lease/properties/1135027/arizona-12445-w-glendale-ave</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.32756364872937,33.53564942078001,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5107 N 51st Ave</name><description>For lease
+5107 N 51St Ave, Glendale, AZ
+
+112,543 SF listed for lease (retail). Lot ~3.82 ac. County parcel 145-28-987. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/5107-n-51st-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16763999455934,33.51220041521485,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 7631 East Indian School Road</name><description>For lease
+7631 E Indian School Rd, Scottsdale, AZ
+
+13,750 SF listed for lease (retail). Lot ~0.88 ac. County parcel 130-26-001K. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/scottsdale/7631-east-indian-school-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.91604683033928,33.49442737765939,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 710 W Bell Rd</name><description>For lease
+710 W Bell Rd, Phoenix, AZ
+
+56,566 SF listed for lease (retail). Lot ~3.83 ac. County parcel 208-09-004T. Street View 2024-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/710-w-bell-rd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.08350745872514,33.64112976761681,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 17232 N 19th Ave</name><description>For lease
+17232 N 19Th Ave, Phoenix, AZ
+
+27,878 SF listed for lease (retail). Lot ~9.09 ac. County parcel 208-07-346. Street View 2025-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/17232-n-19th-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.10145732578744,33.64145642573561,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5400 E Carefree Hwy</name><description>For lease
+5400 E Carefree Hwy, Cave Creek, AZ
+
+13,813 SF listed for lease (retail). Lot ~2.8 ac. County parcel 211-47-006G. Street View 2023-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/carefree/5400-e-carefree-hwy/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96441320803206,33.79978675550331,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2820 W Dove Valley Rd</name><description>For lease
+2820 W Dove Valley Rd, Phoenix, AZ
+
+52,272 SF listed for lease (retail). Lot ~1.39 ac. County parcel 204-02-491. Street View 2019-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/north-valley-pkwy-dove-valley-rd-nwc-phoenix-az/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.12010239436151,33.78437687995068,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 601 S 55th Ave</name><description>For lease
+601 S 55Th Ave, Phoenix, AZ
+
+100,000 SF listed for lease (industrial). Lot ~4.78 ac. County parcel 104-20-026C. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/100-000-sf-freestanding-building-w-large-yard/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.17718192024091,33.441432996060605,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4101 W Van Buren St</name><description>For lease
+4101 W Van Buren St, Phoenix, AZ
+
+10,000 SF listed for lease (industrial). Lot ~1.92 ac. County parcel 106-16-007A. Street View 2026-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/4101-w-van-buren-st/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.14807598891103,33.45092201945678,0</coordinates></Point></Placemark>
+<Placemark><name>Prologis Phoenix Distribution Center</name><description>For lease
+555 S 65Th Ave, Phoenix, AZ
+
+44,944 SF listed for lease (industrial). Lot ~7.92 ac. County parcel 104-17-056. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/prologis-phoenix-distribution-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.19838864909293,33.44366756656726,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1615 East Elwood Street</name><description>For lease
+1615 E Elwood St, Phoenix, AZ
+
+14,400 SF listed for lease (industrial). Lot ~0.81 ac. County parcel 122-30-001A. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1615-east-elwood-street-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.04619316435884,33.41354698709451,0</coordinates></Point></Placemark>
+<Placemark><name>Southwest Industrial Center II</name><description>For lease
+7825 W Buckeye Rd, Phoenix, AZ
+
+221,558 SF listed for lease (industrial). Lot ~32.25 ac. County parcel 104-31-003. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/southwest-industrial-center-ii/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.2276654273523,33.43527499536181,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 11039 N Cave Creek Rd</name><description>For lease
+11039 N Cave Creek Rd, Phoenix, AZ
+
+82,764 SF listed for lease (industrial). Lot ~1.03 ac. County parcel 166-23-002L. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1-9-acre-ios-contractor-yard/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.04752159319207,33.58736556008892,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 6743 W Farmer Rd</name><description>For lease
+6743 W Farmer Rd, Phoenix, AZ
+
+21,396 SF listed for lease (industrial). Lot ~1.14 ac. County parcel 104-09-049. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/6743-w-farmer-rd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.20668585087563,33.44626224186974,0</coordinates></Point></Placemark>
+<Placemark><name>Southwest Industrial Center I</name><description>For lease
+7775 W Buckeye Rd, Phoenix, AZ
+
+214,205 SF listed for lease (industrial). Lot ~38.13 ac. County parcel 104-31-004. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/southwest-industrial-center-i/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.22350275417949,33.435313404345564,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial Space for Lease in Phoenix</name><description>For lease
+601 N 75Th Ave, Phoenix, AZ
+
+82,828 SF listed for lease (industrial). Lot ~19.54 ac. County parcel 102-42-004. Street View 2016-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/industrial-space-for-lease-in-phoenix/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.21877841401323,33.45614637354606,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2021 E Jones Ave</name><description>For lease
+2021 E Jones Ave, Phoenix, AZ
+
+94,885 SF listed for lease (industrial). Lot ~5.71 ac. County parcel 122-34-064. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2021-e-jones-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.0371621823807,33.40919023233483,0</coordinates></Point></Placemark>
+<Placemark><name>Centralized Contractor Yard</name><description>For lease
+423 S 54Th Pl, Phoenix, AZ
+
+38,000 SF listed for lease (industrial). Lot ~0.87 ac. County parcel 124-16-010. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/centralized-contractor-yard/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96440664679923,33.44306704133402,0</coordinates></Point></Placemark>
+<Placemark><name>Flex Industrial End-Cap Unit for Sublease</name><description>For lease
+4720 W Van Buren St, Phoenix, AZ
+
+39,517 SF listed for lease (industrial). Lot ~6.71 ac. County parcel 103-32-003. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/flex-industrial-end-cap-unit-for-sublease-in-phoenix/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16178853632618,33.45192275667013,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4455 W Camelback Road</name><description>For lease
+4455 W Camelback Rd, Phoenix, AZ
+
+148,689 SF listed for lease (industrial). Lot ~6.83 ac. County parcel 145-25-504. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/4455-w-camelback-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.15465338071502,33.508389391966475,0</coordinates></Point></Placemark>
+<Placemark><name>Estrella Commerce Park</name><description>For lease
+7175 W Sherman St, Phoenix, AZ
+
+60,000 SF listed for lease (industrial). Lot ~4.03 ac. County parcel 104-15-022. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/estrella-commerce-park-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.21467633280643,33.440410907205276,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial Warehouse for Sublease</name><description>For lease
+824 E University Dr, Phoenix, AZ
+
+77,912 SF listed for lease (industrial). Lot ~3.91 ac. County parcel 115-49-012A. Street View 2024-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/industrial-warehouse-for-sublease-in-phoenix-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.06240558799955,33.42383864023272,0</coordinates></Point></Placemark>
+<Placemark><name>Parc Pinnacle</name><description>For lease
+100 W Pinnacle Peak Rd, Phoenix, AZ
+
+52,166 SF listed for lease (industrial). Lot ~20.04 ac. County parcel 210-16-008. Street View 2025-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/parc-pinnacle-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.07645821792165,33.69923409369343,0</coordinates></Point></Placemark>
+<Placemark><name>Buckeye Distribution Center</name><description>For lease
+6825 W Buckeye Rd, Phoenix, AZ
+
+174,769 SF listed for lease (industrial). Lot ~20.94 ac. County parcel 104-29-004F. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/buckeye-logistics-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.20638965435133,33.43582228493859,0</coordinates></Point></Placemark>
+<Placemark><name>Van Buren Building</name><description>For lease
+4433 W Van Buren St, Phoenix, AZ
+
+10,414 SF listed for lease (industrial). Lot ~2.59 ac. County parcel 104-01-013. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/van-buren-building/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.15533808219575,33.450760984071216,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 236 E. Pima St.</name><description>For lease
+236 E Pima St, Phoenix, AZ
+
+29,242 SF listed for lease (industrial). Lot ~5.99 ac. County parcel 112-34-019F. Street View 2024-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/236-e-pima-st/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.0711244381226,33.43367878533975,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 3906 E Broadway Rd</name><description>For lease
+3906 E Broadway Rd, Phoenix, AZ
+
+11,818 SF listed for lease (industrial). Lot ~3.42 ac. County parcel 122-09-033. Street View 2018-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/3906-e-broadway-rd-bldg-b/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.99702451582078,33.408981238068506,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 3161 N 35th Avenue</name><description>For lease
+3161 N 35Th Ave, Phoenix, AZ
+
+19,368 SF listed for lease (industrial). Lot ~1.1 ac. County parcel 108-03-018A. Street View 2010-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/3161-n-35th-avenue-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.1337619209029,33.48606730218705,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial Redevelopment</name><description>For lease
+10004 N 26Th Dr, Phoenix, AZ
+
+12,863 SF listed for lease (industrial). Lot ~1.49 ac. County parcel 149-09-009. Street View 2021-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/industrial-redevelopment/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.11617783612539,33.5770809794068,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2255 W Desert Cove Ave</name><description>For lease
+2255 W Desert Cove Ave, Phoenix, AZ
+
+17,160 SF listed for lease (industrial). Lot ~4.03 ac. County parcel 149-08-015A. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2255-w-desert-cove-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.10629167945629,33.58497030487629,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4949 S 16th Street</name><description>For lease
+4949 S 16Th St, Phoenix, AZ
+
+88,324 SF listed for lease (industrial). Lot ~4.63 ac. County parcel 122-46-014K. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/4949-s-16th-street-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.0462497937125,33.40151719497897,0</coordinates></Point></Placemark>
+<Placemark><name>Van Buren Distribution Center</name><description>For lease
+236 N 48Th Ave, Phoenix, AZ
+
+11,520 SF listed for lease (industrial). Lot ~0.71 ac. County parcel 104-02-005P. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/van-buren-distribution-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16328310465258,33.45092666895998,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 3325 East Wier Avenue</name><description>For lease
+3325 E Wier Ave, Phoenix, AZ
+
+21,350 SF listed for lease (industrial). Lot ~1.23 ac. County parcel 122-72-078. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/3325-east-wier-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.00963586739097,33.40239588205762,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2018 N 23rd Avenue</name><description>For lease
+2018 N 23Rd Ave, Phoenix, AZ
+
+11,399 SF listed for lease (industrial). Lot ~0.92 ac. County parcel 110-50-019. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2018-2020-n-23rd-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.10894822525968,33.470456431853286,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4820 E McDowell Rd</name><description>For lease
+4820 E Mcdowell Rd, Phoenix, AZ
+
+9,759 SF listed for lease (industrial). Lot ~9.13 ac. County parcel 126-19-116. Street View 2019-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/4820-4926-e-mcdowell-rd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.97625842382718,33.46633695393997,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1313 N 25th Ave</name><description>For lease
+1313 N 25Th Ave, Phoenix, AZ
+
+10,645 SF listed for lease (industrial). Lot ~1.25 ac. County parcel 109-04-030N. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1313-n-25th-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.11223146422635,33.46272678617226,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 475 East Buckeye Road</name><description>For lease
+475 E Buckeye Rd, Phoenix, AZ
+
+64,240 SF listed for lease (industrial). Lot ~9.73 ac. County parcel 112-33-059J. Street View 2024-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/425-475-east-buckeye-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.06834933720988,33.43507979648737,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2222 W Peoria Ave</name><description>For lease
+2222 W Peoria Ave, Phoenix, AZ
+
+61,655 SF listed for lease (industrial). Lot ~3.78 ac. County parcel 149-08-004A. Street View 2019-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2222-w-peoria-ave-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.10596134969555,33.58292307616158,0</coordinates></Point></Placemark>
+<Placemark><name>Buckeye 75 Distribution Park</name><description>For lease
+7375 W Buckeye Rd, Phoenix, AZ
+
+32,529 SF listed for lease (industrial). Lot ~29.69 ac. County parcel 104-30-004. Street View 2018-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/buckeye-75-distribution-park-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.21887219111548,33.435243061231766,0</coordinates></Point></Placemark>
+<Placemark><name>Prologis Deer Valley Industrial Center I</name><description>For lease
+21420 N 15Th Ln, Phoenix, AZ
+
+31,034 SF listed for lease (industrial). Lot ~4.08 ac. County parcel 209-25-049. Street View 2024-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/lincoln-deer-valley/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.0938827806405,33.679101958063114,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2115 W Melinda Ln</name><description>For lease
+2115 W Melinda Ln, Phoenix, AZ
+
+91,476 SF listed for lease (industrial). Lot ~2.11 ac. County parcel 209-06-012. Street View 2025-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2115-w-melinda-ln/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.10489288838565,33.68146124957581,0</coordinates></Point></Placemark>
+<Placemark><name>Phoenix Commerce Center</name><description>For lease
+4422 S 38Th Pl, Phoenix, AZ
+
+59,914 SF listed for lease (industrial). Lot ~3.53 ac. County parcel 122-74-139. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/phoenix-commerce-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.99908403021885,33.40597831841656,0</coordinates></Point></Placemark>
+<Placemark><name>Lincoln Commerce Park II</name><description>For lease
+2115 S 11Th Ave, Phoenix, AZ
+
+35,000 SF listed for lease (industrial). Lot ~6.86 ac. County parcel 105-24-003. Street View 2019-04.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/lincoln-commerce-park-ii/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.08560024692241,33.428569032321505,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 825 E University Drive</name><description>For lease
+825 E University Dr, Phoenix, AZ
+
+50,361 SF listed for lease (industrial). Lot ~3.17 ac. County parcel 115-49-017. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/arizona-industrial-park-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.06195688971279,33.42255756306573,0</coordinates></Point></Placemark>
+<Placemark><name>South Valley Industrial</name><description>For lease
+3446 S 7Th St, Phoenix, AZ
+
+44,314 SF listed for lease (industrial). Lot ~1.84 ac. County parcel 113-10-039. Street View 2024-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/south-valley-industrial/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.06533199567987,33.414796587320424,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4022 South 20th Street</name><description>For lease
+4022 S 20Th St, Phoenix, AZ
+
+17,831 SF listed for lease (industrial). Lot ~3.43 ac. County parcel 122-38-152A. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/4022-south-20th-street/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.03913299935078,33.40929888587008,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2831 West Indian School Road</name><description>For lease
+2831 W Indian School Rd, Phoenix, AZ
+
+26,400 SF listed for lease (industrial). Lot ~1.74 ac. County parcel 108-01-009A. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2831-west-indian-school-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.12053064698979,33.49418364766009,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 200 S 49th Avenue</name><description>For lease
+200 S 49Th Ave, Phoenix, AZ
+
+114,871 SF listed for lease (industrial). Lot ~5.64 ac. County parcel 104-02-014C. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/200-s-49th-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16691947683817,33.445920375821785,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1410 E Van Buren St</name><description>For lease
+1410 E Van Buren St, Phoenix, AZ
+
+14,990 SF listed for lease (industrial). Lot ~0.89 ac. County parcel 116-18-087A. Street View 2025-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1410-e-van-buren-st/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.05148429963776,33.45176831229766,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 4055 S Sarival Ave</name><description>For lease
+4055 S Sarival Ave, Goodyear, AZ
+
+10,660 SF listed for lease (industrial). Lot ~2.59 ac. County parcel 500-06-321. Street View 2024-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/goodyear/4055-s-sarival-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.40843229417196,33.40952405433264,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 3510 East Atlanta Avenue</name><description>For lease
+3510 E Atlanta Ave, Phoenix, AZ
+
+31,079 SF listed for lease (industrial). Lot ~2.2 ac. County parcel 122-72-109D. Street View 2021-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/3510-east-atlanta-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.00572061959555,33.40187128002696,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 230 N 48th Ave</name><description>For lease
+230 N 48Th Ave, Phoenix, AZ
+
+35,102 SF listed for lease (industrial). Lot ~1.19 ac. County parcel 104-02-005Q. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/230-n-48th-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16327126616923,33.450153646787534,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2201 E. University Dr.</name><description>For lease
+2201 E University Dr, Phoenix, AZ
+
+12,326 SF listed for lease (industrial). Lot ~2.6 ac. County parcel 115-32-020. Street View 2024-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2201-2219-e-university-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.034965051188,33.42347613772679,0</coordinates></Point></Placemark>
+<Placemark><name>Former semiconductor lab industrial flex space</name><description>For lease
+8930 S Beck Ave, Tempe, AZ
+
+15,029 SF listed for lease (industrial). Lot ~7.33 ac. County parcel 301-60-975. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/100-hvac-former-semiconductor-lab-industrial-flex-space/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.95981911657812,33.33245106179217,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1606 East University Drive</name><description>For lease
+1606 E University Dr, Phoenix, AZ
+
+11,684 SF listed for lease (industrial). Lot ~3.74 ac. County parcel 115-29-046. Street View 2021-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1606-e-university-drive-108/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.04721679674923,33.424559228973884,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 9103 S Hardy Dr</name><description>For lease
+9103 S Hardy Dr, Tempe, AZ
+
+10,000 SF listed for lease (industrial). Lot ~1.24 ac. County parcel 301-60-003R. Street View 2016-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/9103-s-hardy-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.95344892369324,33.33099555252647,0</coordinates></Point></Placemark>
+<Placemark><name>Pursuit Park</name><description>For lease
+3204 S Signal Butte Rd, Mesa, AZ
+
+114,877 SF listed for lease (industrial). Lot ~64.49 ac. County parcel 304-01-992. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/pursuit-park/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.60634331785434,33.35539863135675,0</coordinates></Point></Placemark>
+<Placemark><name>HUB @ 202</name><description>For lease
+4310 S Sossaman Rd, Mesa, AZ
+
+43,485 SF listed for lease (industrial). Lot ~5.93 ac. County parcel 304-17-983. Street View 2023-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/hub-202/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.67164926468361,33.337573333083895,0</coordinates></Point></Placemark>
+<Placemark><name>The Twins Business Park</name><description>For lease
+1430 W 12Th Pl, Tempe, AZ
+
+8,521 SF listed for lease (industrial). Lot ~3.96 ac. County parcel 124-58-032C. Street View 2025-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/the-twins-business-park/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96429228341258,33.41606713452383,0</coordinates></Point></Placemark>
+<Placemark><name>Prologis Phoenix Distribution Center</name><description>For lease
+602 S 63Rd Ave, Phoenix, AZ
+
+168,165 SF listed for lease (industrial). Lot ~2.29 ac. County parcel 104-17-012. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/602-south-63rd-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.19603887850793,33.44260224430241,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial Space for Sublease in Glendale</name><description>For lease
+8900 N Sarival Ave, Waddell, AZ
+
+245,966 SF listed for lease (industrial). Lot ~54.38 ac. County parcel 501-05-581. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/industrial-space-for-sublease-in-glendale-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.41343184678584,33.564233054787515,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 705 South 94th Avenue</name><description>For lease
+705 S 94Th Ave, Tolleson, AZ
+
+100,000 SF listed for lease (industrial). Lot ~5.38 ac. County parcel 101-06-433D. Street View 2026-08.
+
+https://www.commercialcafe.com/commercial-property/us/az/tolleson/705-south-94th-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.26049096148931,33.43888309418942,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1733 West Parkside Lane</name><description>For lease
+1733 W Parkside Ln, Phoenix, AZ
+
+36,907 SF listed for lease (industrial). Lot ~1.54 ac. County parcel 209-02-104. Street View 2025-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1733-west-parkside-lane/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.09690569807323,33.69495123887176,0</coordinates></Point></Placemark>
+<Placemark><name>Coronado Commerceplex Phase IV</name><description>For lease
+1202 N 54Th Ave, Phoenix, AZ
+
+9,030–38,459 SF listed for lease (industrial). Lot ~7.97 ac. County parcel 103-27-061A. Street View 2016-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/coronado-commerceplex-phase-iv-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.17613939642649,33.46162323716645,0</coordinates></Point></Placemark>
+<Placemark><name>Commerce Center</name><description>For lease
+6965 S Priest Dr, Tempe, AZ
+
+17,872 SF listed for lease (industrial). Lot ~4.32 ac. County parcel 301-44-320. Street View 2019-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/commerce-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96195034974993,33.35684064556726,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial-Showroom Available</name><description>For lease
+407 S Price Rd, Tempe, AZ
+
+14,840 SF listed for lease (industrial). Lot ~2.0 ac. County parcel 135-39-003M. Street View 2025-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/industrial-showroom-available/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.8891030538058,33.42660565997649,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 8515 E Anderson Dr</name><description>For lease
+8515 E Anderson Dr, Scottsdale, AZ
+
+22,834 SF listed for lease (industrial). Lot ~4.78 ac. County parcel 215-07-212C. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/scottsdale/8515-e-anderson-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.89593233645377,33.643070059648636,0</coordinates></Point></Placemark>
+<Placemark><name>Luke Logistics Center Building C</name><description>For lease
+16800 W Glendale Ave, Litchfield Park, AZ
+
+389,760 SF listed for lease (industrial). Lot ~12.93 ac. County parcel 501-04-026. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/litchfield/luke-logistics-center-building-c/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.42093416014515,33.53828704413237,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2605 E Cessna Drive</name><description>For lease
+2605 E Cessna Dr, Chandler, AZ
+
+9,600 SF listed for lease (industrial). Lot ~2.2 ac. County parcel 303-31-326. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/2605-e-cessna-drive/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.79613717248658,33.27219453786945,0</coordinates></Point></Placemark>
+<Placemark><name>Sossaman Business Campus Building 8</name><description>For lease
+3337 S Sossaman Rd, Mesa, AZ
+
+49,552 SF listed for lease (industrial). Lot ~3.54 ac. County parcel 304-04-999. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-business-campus-building-8-3/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.66967412391585,33.354536667630235,0</coordinates></Point></Placemark>
+<Placemark><name>Sossaman Park 202 Building 5</name><description>For lease
+4638 S Sossaman Rd, Mesa, AZ
+
+182,606 SF listed for lease (industrial). Lot ~11.42 ac. County parcel 304-30-963. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-2-7/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.67359236224529,33.33127777843008,0</coordinates></Point></Placemark>
+<Placemark><name>Caliber Building A</name><description>For lease
+9595 N 79Th Ave, Peoria, AZ
+
+114,446 SF listed for lease (industrial). Lot ~9.15 ac. County parcel 142-13-024. Street View 2025-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/peoria/peoria-place-building-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.22795312710653,33.57210222734511,0</coordinates></Point></Placemark>
+<Placemark><name>Empire 101</name><description>For lease
+8850 W Sweetwater Ave, Peoria, AZ
+
+152,134 SF listed for lease (industrial). Lot ~11.24 ac. County parcel 200-80-978. Street View 2025-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/peoria/empire-101-4/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.25005183792733,33.60356986244916,0</coordinates></Point></Placemark>
+<Placemark><name>Summit at Surprise Building A</name><description>For lease
+12730 N Dysart Rd, Surprise, AZ
+
+41,485 SF listed for lease (industrial). Lot ~5.97 ac. County parcel 501-38-980. Street View 2025-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/surprise/summit-at-surprise-building-a/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.34287988018495,33.59934209344753,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 5811 S. 46th Ave.</name><description>For lease
+5811 S 46Th Ave, Laveen, AZ
+
+101,059 SF listed for lease (industrial). Lot ~2.32 ac. County parcel 104-76-004C. Street View 2025-08.
+
+https://www.commercialcafe.com/commercial-property/us/az/laveen/2-32-acre-ios-for-sale-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.15678961388073,33.39338649903362,0</coordinates></Point></Placemark>
+<Placemark><name>Northern 101 Commerce Center</name><description>For lease
+7860 N 106Th Ave, Glendale, AZ
+
+55,006 SF listed for lease (industrial). Lot ~20.21 ac. County parcel 142-59-986A. Street View 2025-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/northern-101-commerce-center-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.28833324767675,33.54874615320148,0</coordinates></Point></Placemark>
+<Placemark><name>Elliot Tech Center</name><description>For lease
+10560 E Elliot Rd, Mesa, AZ
+
+24,726 SF listed for lease (industrial). Lot ~10.71 ac. County parcel 304-15-928. Street View 2025-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/nwc-east-elliot-road-south-signal-butte-road-building-a/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.60505374833578,33.351044821353696,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 640 S 51st Avenue</name><description>For lease
+640 S 51St Ave, Phoenix, AZ
+
+27,922 SF listed for lease (industrial). Lot ~5.27 ac. County parcel 104-20-055A. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/640-s-51st-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.17042116916643,33.44032660143939,0</coordinates></Point></Placemark>
+<Placemark><name>TenSixty Interchange</name><description>For lease
+4415 S Wendler Dr, Tempe, AZ
+
+58,250 SF listed for lease (industrial). Lot ~4.54 ac. County parcel 123-25-066. Street View 2024-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/tensixty-interchange/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96902654773142,33.38466724703824,0</coordinates></Point></Placemark>
+<Placemark><name>Sossaman Park 202 Building 1</name><description>For lease
+4732 S Sossaman Rd, Mesa, AZ
+
+159,047 SF listed for lease (industrial). Lot ~13.01 ac. County parcel 304-30-968. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-7-6/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.67982488397104,33.3299105170592,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 15757 North 78th Street</name><description>For lease
+15757 N 78Th St, Scottsdale, AZ
+
+12,734 SF listed for lease (industrial). Lot ~1.74 ac. County parcel 215-47-080. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/scottsdale/15757-north-78th-street/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.91201303379316,33.62893221700162,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 2847 S 48th Street</name><description>For lease
+2847 S 48Th St, Tempe, AZ
+
+82,325 SF listed for lease (industrial). Lot ~5.76 ac. County parcel 123-28-170. Street View 2024-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/48th-alameda-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.97742149792849,33.398187365952474,0</coordinates></Point></Placemark>
+<Placemark><name>West Summit at Surprise Building 2</name><description>For lease
+12600 N Summit Way, Surprise, AZ
+
+165,647 SF listed for lease (industrial). Lot ~17.75 ac. County parcel 501-38-992. Street View 2024-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/surprise/west-summit-at-surprise-building-2-4/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.34840647067152,33.598331623924274,0</coordinates></Point></Placemark>
+<Placemark><name>Hamilton Commerce Center</name><description>For lease
+1205 N Eliseo C Felix Jr Way, Avondale, AZ
+
+16,640 SF listed for lease (industrial). Lot ~16.29 ac. County parcel 500-32-032A. Street View 2024-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/avondale/hamilton-commerce-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.33554082622118,33.44500273610567,0</coordinates></Point></Placemark>
+<Placemark><name>Warehouse Space for Lease in Tempe</name><description>For lease
+1721 W 10Th Pl, Tempe, AZ
+
+17,968 SF listed for lease (industrial). Lot ~2.41 ac. County parcel 124-60-022. Street View 2019-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/warehouse-space-for-lease-in-tempe/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96723160473827,33.41696766891861,0</coordinates></Point></Placemark>
+<Placemark><name>The Yard @ 2525</name><description>For lease
+2525 N 27Th Ave, Phoenix, AZ
+
+275,000 SF listed for lease (industrial). Lot ~21.7 ac. County parcel 110-48-023. Street View 2020-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/the-yard-2525-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.11578417323642,33.477110877983854,0</coordinates></Point></Placemark>
+<Placemark><name>Sossaman Park 202 Building 4</name><description>For lease
+4702 S Sossaman Rd, Mesa, AZ
+
+130,495 SF listed for lease (industrial). Lot ~10.36 ac. County parcel 304-30-964. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-3-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.6711781136987,33.33054277901415,0</coordinates></Point></Placemark>
+<Placemark><name>HUB 317</name><description>For lease
+317 S 48Th St, Phoenix, AZ
+
+114,703 SF listed for lease (industrial). Lot ~12.17 ac. County parcel 124-11-010. Street View 2013-04.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/hub-317/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.97683284722235,33.44430813978249,0</coordinates></Point></Placemark>
+<Placemark><name>Hopewell 67</name><description>For lease
+6800 W Van Buren St, Phoenix, AZ
+
+84,690 SF listed for lease (industrial). Lot ~10.29 ac. County parcel 102-41-001J. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/hopewell-67/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.2054990648258,33.45259361567416,0</coordinates></Point></Placemark>
+<Placemark><name>Sossaman Business Campus Building 3</name><description>For lease
+3321 S Sossaman Rd, Mesa, AZ
+
+29,800 SF listed for lease (industrial). Lot ~2.24 ac. County parcel 304-04-994. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-business-campus-building-3/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.66817959033372,33.35571114126839,0</coordinates></Point></Placemark>
+<Placemark><name>The Cubes at Glendale Building F</name><description>For lease
+7151 N Reems Rd, Glendale, AZ
+
+838,824 SF listed for lease (industrial). Lot ~108.08 ac. County parcel 501-50-002N. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/litchfield-park/the-cubes-at-glendale-building-f/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.38934638723899,33.537927048900194,0</coordinates></Point></Placemark>
+<Placemark><name>Gateway Technology Commerce Center</name><description>For lease
+7535 E Ray Rd, Mesa, AZ
+
+13,676 SF listed for lease (industrial). Lot ~9.77 ac. County parcel 304-30-040. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/gateway-technology-commerce-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.67127867391645,33.32631627657115,0</coordinates></Point></Placemark>
+<Placemark><name>Elliot Tech Center Building C</name><description>For lease
+10708 E Elliot Rd, Mesa, AZ
+
+88,999 SF listed for lease (industrial). Lot ~5.32 ac. County parcel 304-15-929. Street View 2025-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/nwc-east-elliot-road-south-signal-butte-road-building-c/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.60309385945729,33.35140249448913,0</coordinates></Point></Placemark>
+<Placemark><name>Harbor Park 107</name><description>For lease
+7676 N Glen Harbor Blvd, Glendale, AZ
+
+54,499 SF listed for lease (industrial). Lot ~5.34 ac. County parcel 142-59-006A. Street View 2025-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/harbor-park-107-building-2-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.28862647041535,33.5462358527698,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 20820 N 25th Pl</name><description>For lease
+20820 N 25Th Pl, Phoenix, AZ
+
+19,198 SF listed for lease (industrial). Lot ~1.54 ac. County parcel 213-11-135. Street View 2019-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/20820-20830-n-25th-pl/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.02850756918022,33.67594163307967,0</coordinates></Point></Placemark>
+<Placemark><name>Northern Parkway Logistics Hub Building 6</name><description>For lease
+12805 W Northern Ave, Glendale, AZ
+
+174,500 SF listed for lease (industrial). Lot ~2.0 ac. County parcel 501-53-012E. Street View 2024-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/glendale/marbella-west-building-6-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.33574677242916,33.549779063287495,0</coordinates></Point></Placemark>
+<Placemark><name>Chandler Connection</name><description>For lease
+2411 E Germann Rd, Chandler, AZ
+
+89,858 SF listed for lease (industrial). Lot ~16.88 ac. County parcel 303-31-226C. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/chandler-connection/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.80041027459053,33.27849390333837,0</coordinates></Point></Placemark>
+<Placemark><name>The HUB@202 Building 2D</name><description>For lease
+4232 S Sossaman Rd, Mesa, AZ
+
+136,334 SF listed for lease (industrial). Lot ~8.98 ac. County parcel 304-17-989. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/the-hub-at-202-building-2d/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.67488882704194,33.339062039845366,0</coordinates></Point></Placemark>
+<Placemark><name>The HUB@202 Building 2B</name><description>For lease
+4224 S Sossaman Rd, Mesa, AZ
+
+102,024 SF listed for lease (industrial). Lot ~5.63 ac. County parcel 304-17-987. Street View 2023-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/the-hub-at-202-building-2b/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.67224110543363,33.339042939377556,0</coordinates></Point></Placemark>
+<Placemark><name>Park 91</name><description>For lease
+1950 S 91St Ave, Tolleson, AZ
+
+23,850 SF listed for lease (industrial). Lot ~16.06 ac. County parcel 101-13-002C. Street View 2026-08.
+
+https://www.commercialcafe.com/commercial-property/us/az/tolleson/park-91-4/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.25641722178395,33.42934645051444,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 3167 W Armstrong Pl</name><description>For lease
+3167 W Armstrong Pl, Chandler, AZ
+
+68,421 SF listed for lease (industrial). Lot ~4.25 ac. County parcel 303-25-755. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/3167-w-armstrong-pl/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.89193992256847,33.27863538224626,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 8591 West Jefferson Street</name><description>For lease
+8591 W Jefferson St, Tolleson, AZ
+
+219,225 SF listed for lease (industrial). Lot ~10.33 ac. County parcel 101-11-058. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/tolleson/liberty-tolleson-center-8591-west-washington-street/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.24349460371172,33.44543775568235,0</coordinates></Point></Placemark>
+<Placemark><name>RideNow Powersports Corporate Headquarters</name><description>For lease
+6655 S Kyrene Rd, Tempe, AZ
+
+77,500 SF listed for lease (industrial). Lot ~9.73 ac. County parcel 301-47-748A. Street View 2025-11.
+
+https://www.loopnet.com/Listing/6655-S-Kyrene-Rd-Phoenix-AZ/31063638</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.94475840953704,33.359399602619845,0</coordinates></Point></Placemark>
+<Placemark><name>GEN 1 at GSQ</name><description>For lease
+15150 W Park Pl, Goodyear, AZ
+
+43,670 SF listed for lease (retail). Lot ~1.28 ac. County parcel 501-73-972. Street View 2024-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/goodyear/goodyear-civic-square-at-estrella-falls-office-building-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.38475451860336,33.46820513407805,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 3000 S 99th Ave</name><description>For lease
+3000 S 99Th Ave, Tolleson, AZ
+
+43,560 SF listed for lease (retail). Lot ~8.66 ac. County parcel 101-25-852. Street View 2017-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/tolleson/3000-s-99th-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.27402291230688,33.41978251003761,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1900 E Riverview Dr</name><description>For lease
+1900 E Riverview Dr, Phoenix, AZ
+
+33,578 SF listed for lease (industrial). Lot ~2.35 ac. County parcel 122-30-157. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/1900-e-riverview-dr/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.04095902703003,33.418981648870826,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 6121 West Van Buren Street</name><description>For lease
+6121 W Van Buren St, Phoenix, AZ
+
+100,619 SF listed for lease (retail). Lot ~3.93 ac. County parcel 104-05-017A. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/6121-6131-west-van-buren-street/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.19194312165853,33.45051686724108,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 302 E University Drive</name><description>For lease
+302 E University Dr, Phoenix, AZ
+
+27,059 SF listed for lease (industrial). Lot ~4.18 ac. County parcel 112-42-037B. Street View 2014-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/302-e-university-drive/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.06887654851218,33.424454364753295,0</coordinates></Point></Placemark>
+<Placemark><name>Freestanding Former Bank Drive Thru Opportunity</name><description>For lease
+77 S Val Vista Dr, Gilbert, AZ
+
+3,421 SF listed for lease (retail). Lot ~0.96 ac. County parcel 309-11-839. Street View 2021-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/freestanding-former-bank-drive-thru-opportunity/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.75499081711538,33.349156705064466,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 920 South Gilbert Road</name><description>For lease
+920 S Gilbert Rd, Gilbert, AZ
+
+4,022 SF listed for lease (retail). Lot ~0.9 ac. County parcel 302-82-970. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/920-south-gilbert-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.79086207382143,33.332868445429796,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 500 South Gilbert Road</name><description>For lease
+500 S Gilbert Rd, Gilbert, AZ
+
+9,358 SF listed for lease (retail). Lot ~1.1 ac. County parcel 302-35-326. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/500-south-gilbert-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.79030473402763,33.340864625920936,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 1845 East Baseline Road</name><description>For lease
+1845 E Baseline Rd, Gilbert, AZ
+
+30,279 SF listed for lease (retail). Lot ~9.29 ac. County parcel 310-10-150. Street View 2022-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/township-plaza-fry-s-marketplace/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.79102122526865,33.3774634480128,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 706 North McQueen Road</name><description>For lease
+706 N Mcqueen Rd, Gilbert, AZ
+
+17,000 SF listed for lease (retail). Lot ~4.78 ac. County parcel 302-22-539. Street View 2022-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/ethan-plaza/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.82571929384012,33.36275423077408,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 1150 North Fiesta Blvd</name><description>For lease
+1150 N Fiesta Blvd, Gilbert, AZ
+
+87,232 SF listed for lease (office). Lot ~11.11 ac. County parcel 302-09-488. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/1150-north-fiesta-blvd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.83614246600655,33.367627092250764,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2870 South Market Street</name><description>For lease
+2870 S Market St, Gilbert, AZ
+
+5,171 SF listed for lease (retail). Lot ~3.74 ac. County parcel 304-46-912. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/lube-facility-for-lease/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.74618982965096,33.29870357652432,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1352 N Fiesta Blvd</name><description>For lease
+1352 N Fiesta Blvd, Gilbert, AZ
+
+59,723 SF listed for lease (industrial). Lot ~5.13 ac. County parcel 302-09-501D. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/1352-n-fiesta-blvd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.83698094029343,33.37369187536781,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2343 E Queen Creek Rd</name><description>For lease
+2343 E Queen Creek Rd, Gilbert, AZ
+
+31,764 SF listed for lease (retail). Lot ~5.43 ac. County parcel 304-71-044G. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/gilbert/victory-plaza-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.73915265543114,33.262431404063406,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 6739 West Cactus Road</name><description>For lease
+6739 W Cactus Rd, Peoria, AZ
+
+15,120 SF listed for lease (retail). Lot ~2.43 ac. County parcel 143-05-002W. Street View 2024-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/peoria/6739-west-cactus-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.2034358342589,33.59554864357044,0</coordinates></Point></Placemark>
+<Placemark><name>Reliance Loop 101 Commerce Center</name><description>For lease
+9802 N 91St Ave, Peoria, AZ
+
+7,893 SF listed for lease (industrial). Lot ~4.43 ac. County parcel 142-54-961. Street View 2018-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/peoria/reliance-loop-101-commerce-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.25645708856942,33.57365058045211,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 15800 North Litchfield Road</name><description>For lease
+15800 N Litchfield Rd, Surprise, AZ
+
+15,000 SF listed for lease (office). Lot ~5.25 ac. County parcel 501-18-548. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/surprise/marketplace-at-the-city/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.36067568174674,33.62685961608491,0</coordinates></Point></Placemark>
+<Placemark><name>Avondale 107 Industrial Complex</name><description>For lease
+855 N 107Th Ave, Avondale, AZ
+
+40,000 SF listed for lease (industrial). Lot ~10.99 ac. County parcel 102-55-023. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/avondale/avondale-107th-building-a-b/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.28880353559761,33.45492308478751,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial Site for Lease in Avondale</name><description>For lease
+11328 W Buckeye Rd, Avondale, AZ
+
+30,352 SF listed for lease (industrial). Lot ~12.15 ac. County parcel 101-01-008B. Street View 2026-08.
+
+https://www.commercialcafe.com/commercial-property/us/az/avondale/industrial-site-for-sale-or-lease-in-avondale/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.30245836200291,33.436075256067674,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 10210 West Van Buren Street</name><description>For lease
+10210 W Van Buren St, Avondale, AZ
+
+161,515 SF listed for lease (industrial). Lot ~34.45 ac. County parcel 102-54-114. Street View 2026-08.
+
+https://www.commercialcafe.com/commercial-property/us/az/avondale/nwc-101st-avenue-van-buren-street-building-1-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.2790179068913,33.45197451016072,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1777 S 99th Avenue</name><description>For lease
+1777 S 99Th Ave, Tolleson, AZ
+
+54,059 SF listed for lease (industrial). Lot ~45.5 ac. County parcel 101-14-581. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/tolleson/go-99-6/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.26635588144347,33.43022783487443,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 1466 N Eliseo C Felix Jr Way</name><description>For lease
+1466 N Eliseo C Felix Jr Way, Avondale, AZ
+
+45,200 SF listed for lease (industrial). Lot ~2.46 ac. County parcel 500-02-112. Street View 2024-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/avondale/cascade-avondale/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.33738741052868,33.452804444433504,0</coordinates></Point></Placemark>
+<Placemark><name>Industrial building – 9920 W Van Buren St</name><description>For lease
+9920 W Van Buren St, Tolleson, AZ
+
+23,556 SF listed for lease (industrial). Lot ~1.06 ac. County parcel 102-54-097. Street View 2021-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/avondale/99th-ave-van-buren-st-nwc/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.27312923000561,33.45066379517527,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 204-230 E. Bell Road</name><description>For lease
+204 E Bell Rd, Phoenix, AZ
+
+21,137 SF listed for lease (retail). Lot ~4.54 ac. County parcel 208-11-001C. Street View 2022-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/3rd-bell-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.07145163571029,33.64125467169112,0</coordinates></Point></Placemark>
+<Placemark><name>Former urgent care freestanding</name><description>For lease
+5259 W Indian School Rd, Phoenix, AZ
+
+4,078 SF listed for lease (retail). Lot ~1.72 ac. County parcel 103-08-006N. Street View 2024-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/5259-w-indian-school-rd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.17279836878346,33.494396069958185,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 2601 East Indian School Road</name><description>For lease
+2601 E Indian School Rd, Phoenix, AZ
+
+12,668 SF listed for lease (retail). Lot ~1.18 ac. County parcel 119-03-076C. Street View 2016-06.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/2601-east-indian-school-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.02554529209978,33.49442013511796,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 615 West Deer Valley Drive</name><description>For lease
+615 W Deer Valley Dr, Phoenix, AZ
+
+22,929 SF listed for lease (retail). Lot ~1.55 ac. County parcel 209-26-004. Street View 2022-04.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/flight-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.08101462872187,33.68318398719897,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5802 W Thomas Road</name><description>For lease
+5802 W Thomas Rd, Phoenix, AZ
+
+15,800 SF listed for lease (retail). Lot ~7.48 ac. County parcel 103-10-101. Street View 2022-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/su-casa-shopping-center-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.18503665024816,33.48165906817395,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 3514 West Peoria Avenue</name><description>For lease
+3514 W Peoria Ave, Phoenix, AZ
+
+34,920 SF listed for lease (retail). Lot ~5.51 ac. County parcel 149-32-666F. Street View 2024-07.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/3514-3522-west-peoria-avenue/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.13524103953874,33.5831930697019,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 13636 North Tatum Blvd</name><description>For lease
+13636 N Tatum Blvd, Phoenix, AZ
+
+13,000 SF listed for lease (retail). Lot ~2.22 ac. County parcel 167-09-001H. Street View 2022-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/13636-north-tatum-blvd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.97891060882021,33.6109204415235,0</coordinates></Point></Placemark>
+<Placemark><name>Retail building – 5829 South Central Avenue</name><description>For lease
+5829 S Central Ave, Phoenix, AZ
+
+5,200 SF listed for lease (retail). Lot ~4.08 ac. County parcel 113-43-056H. Street View 2022-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/foothill-shopping-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.07193537019376,33.39286838192075,0</coordinates></Point></Placemark>
+<Placemark><name>NEC Cave Creek Rd &amp; Lone Mountain Rd</name><description>For lease
+4710 E Lone Mountain Rd, Cave Creek, AZ
+
+25,315 SF listed for lease (retail). Lot ~3.14 ac. County parcel 211-35-020. Street View 2023-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/cave-creek/nec-cave-creek-rd-lone-mountain-rd-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.9804975663137,33.770722776339774,0</coordinates></Point></Placemark>
+<Placemark><name>Washington Corporate Center office</name><description>For lease
+4600 E Washington St, Phoenix, AZ
+
+32,270 SF listed for lease (office). Lot ~2.88 ac. County parcel 124-10-044. Street View 2026-01.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/washington-corporate-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.98376314345728,33.44884386375273,0</coordinates></Point></Placemark>
+<Placemark><name>The Grand on 44th office</name><description>For lease
+2600 N 44Th St, Phoenix, AZ
+
+21,642 SF listed for lease (office). Lot ~1.61 ac. County parcel 126-02-038B. Street View 2020-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/camelhead-business-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.98820582039995,33.476785772749245,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 4020 S 15th Ave</name><description>For lease
+4020 S 15Th Ave, Phoenix, AZ
+
+18,824 SF listed for lease (office). Lot ~3.13 ac. County parcel 105-53-011A. Street View 2022-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/4020-s-15th-ave-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.0921336104024,33.40958414773627,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 9305 West Thomas Road</name><description>For lease
+9305 W Thomas Rd, Phoenix, AZ
+
+18,706 SF listed for lease (office). Lot ~0.76 ac. County parcel 102-34-021A. Street View 2020-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/estrella-medical-plaza-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.26037387012747,33.47799875130268,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 120 North 44th Street</name><description>For lease
+120 N 44Th St, Phoenix, AZ
+
+21,396 SF listed for lease (office). Lot ~1.73 ac. County parcel 124-09-044K. Street View 2019-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/airport-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.98774547302476,33.450069978783844,0</coordinates></Point></Placemark>
+<Placemark><name>Bell 28 office</name><description>For lease
+16610 N Black Canyon Hwy, Phoenix, AZ
+
+43,229 SF listed for lease (office). Lot ~5.4 ac. County parcel 207-42-272. Street View 2021-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/bell-28-9/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.117219469305,33.63724027024149,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 2114 West 7th Street</name><description>For lease
+2114 W 7Th St, Tempe, AZ
+
+37,140 SF listed for lease (office). Lot ~4.03 ac. County parcel 124-39-055A. Street View 2021-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/2114-w-7th-st/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.9708436611314,33.42391242625506,0</coordinates></Point></Placemark>
+<Placemark><name>Multi-Use Plug and Play Spaces for Sublease in Mesa</name><description>For lease
+1262 S Country Club Dr, Mesa, AZ
+
+30,000 SF listed for lease (retail). Lot ~1.13 ac. County parcel 134-22-001J. Street View 2017-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/multi-use-plug-and-play-spaces-for-sublease-in-mesa/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.8423339543418,33.392871551839626,0</coordinates></Point></Placemark>
+<Placemark><name>San Tan - 3200 West Ray Road office</name><description>For lease
+3200 W Ray Rd, Chandler, AZ
+
+49,059 SF listed for lease (office). Lot ~8.58 ac. County parcel 301-63-804A. Street View 2024-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/san-tan-corporate-center-i/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.89722425325367,33.32147197553064,0</coordinates></Point></Placemark>
+<Placemark><name>Office Building for Lease in Mesa</name><description>For lease
+827 W Grove Ave, Mesa, AZ
+
+69,561 SF listed for lease (office). Lot ~5.09 ac. County parcel 134-23-017E. Street View 2025-11.
+
+https://www.commercialcafe.com/commercial-property/us/az/mesa/827-w-grove-ave/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.85023216923682,33.389716268603145,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 7420 South Kyrene Road</name><description>For lease
+7420 S Kyrene Rd, Tempe, AZ
+
+20,998 SF listed for lease (office). Lot ~5.53 ac. County parcel 301-90-025. Street View 2021-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/tempe-commerce-park-7420-south-kyrene-road/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.9469266558215,33.35052438604417,0</coordinates></Point></Placemark>
+<Placemark><name>SkySong sublease office</name><description>For lease
+1355 N Scottsdale Rd, Scottsdale, AZ
+
+26,058 SF listed for lease (office). Lot ~1.65 ac. County parcel 131-17-014P. Street View 2019-02.
+
+https://www.commercialcafe.com/commercial-property/us/az/scottsdale/skysong-4-12/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.9256181554638,33.46342781301069,0</coordinates></Point></Placemark>
+<Placemark><name>The Cotton Center IV Building D</name><description>For lease
+4350 E Cotton Center Blvd, Phoenix, AZ
+
+57,108 SF listed for lease (industrial). Lot ~4.56 ac. County parcel 123-06-077A. Street View 2017-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/the-cotton-center-cotton-center-iv-building-d/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.98930952902742,33.40477721681269,0</coordinates></Point></Placemark>
+<Placemark><name>Phoenix Airport Center</name><description>For lease
+4717 E Hilton Ave, Phoenix, AZ
+
+30,406 SF listed for lease (industrial). Lot ~2.98 ac. County parcel 124-44-029C. Street View 2024-05.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/phoenix-airport-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.9807570448001,33.426167112263975,0</coordinates></Point></Placemark>
+<Placemark><name>Pioneer Pack Center</name><description>For lease
+2440 S 8Th Pl, Phoenix, AZ
+
+50,474 SF listed for lease (industrial). Lot ~2.43 ac. County parcel 115-49-007D. Street View 2019-04.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/pioneer-pack-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.06354806960717,33.42464147617797,0</coordinates></Point></Placemark>
+<Placemark><name>West 10 Business Center</name><description>For lease
+4703 W Brill St, Phoenix, AZ
+
+72,202 SF listed for lease (industrial). Lot ~7.73 ac. County parcel 103-31-012. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/west-10-business-center-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.16159370407296,33.4638808600743,0</coordinates></Point></Placemark>
+<Placemark><name>The Cubes at Mesa Gateway Building B</name><description>For lease
+6935 S Crismon Rd, Mesa, AZ
+
+269,500 SF listed for lease (industrial). Lot ~18.18 ac. County parcel 304-63-976. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/queen-creek/cube-at-mesa-gateway-building-b/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.6154709574026,33.28925740754821,0</coordinates></Point></Placemark>
+<Placemark><name>Freeport Center</name><description>For lease
+1002 S 56Th Ave, Phoenix, AZ
+
+36,111 SF listed for lease (industrial). Lot ~1.83 ac. County parcel 104-19-012. Street View 2025-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/freeport-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.18147850958199,33.43860106760384,0</coordinates></Point></Placemark>
+<Placemark><name>Chandler Airpark Technology Center Buildings A &amp; B</name><description>For lease
+2650 S Gilbert Rd, Chandler, AZ
+
+49,980–93,620 SF listed for lease (industrial). Lot ~13.78 ac. County parcel 303-31-770. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/the-hub-chandler-building-a/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.79131624651784,33.267426690174716,0</coordinates></Point></Placemark>
+<Placemark><name>Queens Crossing Bldg C</name><description>For lease
+850 E Queen Creek Rd, Chandler, AZ
+
+169,795 SF listed for lease (industrial). Lot ~11.95 ac. County parcel 303-33-992. No Street View here — aerial shown.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/queens-crossing-bldg-c/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.82712577549314,33.265006988864904,0</coordinates></Point></Placemark>
+<Placemark><name>Chandler Airpark Technology Center Buildings C &amp; D</name><description>For lease
+2600 S Gilbert Rd, Chandler, AZ
+
+60,037 SF listed for lease (industrial). Lot ~12.38 ac. County parcel 303-31-769. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/chandler-airpark-technology-center-phase-2/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.7912051321246,33.26912184229484,0</coordinates></Point></Placemark>
+<Placemark><name>Queens Crossing Building B</name><description>For lease
+800 E Queen Creek Rd, Chandler, AZ
+
+130,215 SF listed for lease (industrial). Lot ~11.81 ac. County parcel 303-33-991. Street View 2024-12.
+
+https://www.commercialcafe.com/commercial-property/us/az/chandler/schrader-farms-business-park-building-b/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.82694312408034,33.26333518196334,0</coordinates></Point></Placemark>
+<Placemark><name>Majestic Tolleson Center Bldg 2</name><description>For lease
+8711 W Jefferson St, Tolleson, AZ
+
+121,084 SF listed for lease (industrial). Lot ~12.25 ac. County parcel 101-12-735. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/tolleson/majestic-tolleson-center-bldg-2-1/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.24794397747883,33.4447223756056,0</coordinates></Point></Placemark>
+<Placemark><name>Office building – 4500 East Cotton Center Blvd</name><description>For lease
+4500 E Cotton Center Blvd, Phoenix, AZ
+
+139,403 SF listed for lease (office). Lot ~12.03 ac. County parcel 123-06-004D. Street View 2019-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/the-cotton-center-4500-east-cotton-center-blvd/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.98336290321888,33.40431466622999,0</coordinates></Point></Placemark>
+<Placemark><name>Security Title Plaza office</name><description>For lease
+3636 N Central Ave, Phoenix, AZ
+
+72,590 SF listed for lease (office). Lot ~1.98 ac. County parcel 118-32-057. Street View 2026-09.
+
+https://www.commercialcafe.com/commercial-property/us/az/phoenix/security-title-plaza/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-112.07494086102419,33.490495553395675,0</coordinates></Point></Placemark>
+<Placemark><name>Papago Gateway Center office</name><description>For lease
+350 W Washington St, Tempe, AZ
+
+41,050 SF listed for lease (office). Lot ~5.01 ac. County parcel 124-22-016. Street View 2025-10.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/papago-gateway-center/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.94476956973777,33.43800496342212,0</coordinates></Point></Placemark>
+<Placemark><name>Liberty Center at Rio Salado office</name><description>For lease
+1910 W Rio Salado Pkwy, Tempe, AZ
+
+37,589 SF listed for lease (office). Lot ~9.5 ac. County parcel 124-78-020. Street View 2019-03.
+
+https://www.commercialcafe.com/commercial-property/us/az/tempe/liberty-center-at-rio-salado-4/</description><styleUrl>#forlease</styleUrl><Point><coordinates>-111.96781659006817,33.432316825181914,0</coordinates></Point></Placemark>
+</Document></kml>
