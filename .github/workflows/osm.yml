@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: osm
   cancel-in-progress: false
@@ -25,3 +26,6 @@ jobs:
           git add osm.json
           git commit -m "Refresh OpenStreetMap lots"
           git push
+          gh workflow run pages.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
