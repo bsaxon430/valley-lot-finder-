@@ -10,7 +10,7 @@ const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', cl
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let map, lots = [], userPos = null, userMarker = null, selected = null, view = 'all', clusterer = null; const markers = new Map();
+let map, lots = [], userPos = null, userMarker = null, selected = null, view = 'all', clusterer = null, src = 'all'; const markers = new Map();
 const MARKCOLOR = { great:'#22c55e', revisit:'#facc15', skip:'#8b8f99' };
 let toastT; const toast = (m, ms=2800) => { const t=$('toast'); t.textContent=m; t.classList.remove('hidden'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.add('hidden'), ms); };
 const status = m => $('status').textContent = m;
