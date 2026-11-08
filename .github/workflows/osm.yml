@@ -1,0 +1,27 @@
+name: Refresh OpenStreetMap lots
+on:
+  schedule:
+    - cron: '17 9 * * *'   # daily, ~2:17am Phoenix
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: osm
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/fetch-osm.mjs
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- osm.json; then echo "no change"; exit 0; fi
+          git config user.name "osm-bot"
+          git config user.email "osm-bot@users.noreply.github.com"
+          git add osm.json
+          git commit -m "Refresh OpenStreetMap lots"
+          git push

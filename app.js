@@ -4,7 +4,6 @@
    Tap a pin → photo (Google Street View if a key is set, else aerial), address, NAVIGATE. */
 'use strict';
 const C = Object.assign({ googleKey:'', includeOsm:true }, window.VLF_CONFIG || {});
-const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const METRO = { s:33.20, w:-112.65, n:33.80, e:-111.50 };
 const PIN = '#ff8a00';
 const LABEL = { forlease:'FOR LEASE', vacant:'VACANT', abandoned:'ABANDONED', closed:'CLOSED', spot:'TEAM SPOT' };
@@ -86,29 +85,13 @@ async function loadLots(){
   if (C.includeOsm) loadOsm();
 }
 async function loadOsm(){
-  const b = `${METRO.s},${METRO.w},${METRO.n},${METRO.e}`;
-  const q = `[out:json][timeout:60];(nwr["shop"="vacant"](${b});nwr["disused:shop"](${b});nwr["disused:amenity"](${b});nwr["abandoned:shop"](${b});nwr["abandoned:amenity"](${b});nwr["abandoned:building"](${b});nwr["building"]["disused"="yes"](${b});nwr["building"]["abandoned"="yes"](${b});nwr["vacant"="yes"](${b});nwr["disused"="yes"]["shop"](${b}););out tags center;`;
-  for (const url of OVERPASS){
-    try {
-      const r = await fetch(url, { method:'POST', body:q }); if (!r.ok) continue;
-      const j = await r.json(); let n = 0;
-      j.elements.forEach(el => {
-        const t = el.tags || {}; const c = el.center || (el.lat!=null ? { lat:el.lat, lon:el.lon } : null); if (!c) return;
-        // only buildings / shops / businesses, not e.g. disused railways
-        const kind = t['disused:shop'] || t['abandoned:shop'] || t['disused:amenity'] || t['abandoned:amenity'] || t['abandoned:building'] || t.shop || t.building || t.amenity;
-        if (!kind || /railway|pipeline|canal|mine|quarry/.test(kind)) return;
-        const abandoned = !!(t['abandoned:shop']||t['abandoned:amenity']||t['abandoned:building']||t.abandoned==='yes');
-        const addr = [t['addr:housenumber'], t['addr:street']].filter(Boolean).join(' ');
-        lots.push({ id:'osm-'+el.type+el.id, kind:'osm', name:t.name || (t['old_name'] ? `Former ${t['old_name']}` : `${abandoned?'Abandoned':'Vacant'} ${String(kind).replace(/_/g,' ')}`),
-          address: addr ? `${addr}${t['addr:city']?', '+t['addr:city']:''}` : 'Address not mapped', lat:c.lat, lng:c.lon, status: abandoned?'abandoned':'vacant',
-          note: `Tagged on OpenStreetMap as ${abandoned?'abandoned':'vacant/disused'}${t['old_name']?' (formerly '+t['old_name']+')':''}. Community-mapped — confirm on site.`,
-          source:{ label:'OpenStreetMap (© OSM contributors, ODbL)', url:`https://www.openstreetmap.org/${el.type}/${el.id}` }, added:null });
-        n++;
-      });
-      refresh(); updateStatus(); return;
-    } catch(e){}
-  }
-  updateStatus();
+  // pre-fetched nightly by GitHub (scripts/fetch-osm.mjs) so this is instant
+  try {
+    const r = await fetch('osm.json', { cache:'no-cache' }); if (!r.ok) return;
+    const j = await r.json();
+    j.lots.forEach(l => lots.push(Object.assign({ kind:'osm', added:null }, l)));
+    refresh(); updateStatus();
+  } catch(e){}
 }
 
 // ---------- location ----------
