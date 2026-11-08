@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valley Lot Finder — Export</title>
+<style>
+  body{margin:0;background:#0f1117;color:#eef1f6;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:28px 18px;max-width:560px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}
+  p{color:#9aa3b2;line-height:1.5;margin:0 0 18px}
+  .btn{display:block;width:100%;box-sizing:border-box;border:0;border-radius:16px;padding:16px;font-size:16px;font-weight:800;margin:10px 0;cursor:pointer;background:#ff8a00;color:#1a1200}
+  .btn.alt{background:rgba(255,255,255,.1);color:#fff}
+  .btn:disabled{opacity:.45}
+  #status{font-size:14px;color:#9aa3b2;margin-top:14px;min-height:20px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
+  .stat{background:rgba(255,255,255,.06);border-radius:14px;padding:12px;text-align:center}
+  .stat b{display:block;font-size:22px}
+  .stat small{color:#9aa3b2;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  a{color:#ffb257}
+</style>
+</head>
+<body>
+<h1>Export all pins</h1>
+<p>Pulls everything live: the researched lots, the OpenStreetMap vacant/abandoned buildings, every spot the team dropped, plus the team's marks and notes.</p>
+<div class="stats">
+  <div class="stat"><b id="nLots">–</b><small>Researched</small></div>
+  <div class="stat"><b id="nOsm">–</b><small>OSM</small></div>
+  <div class="stat"><b id="nSpots">–</b><small>Team spots</small></div>
+</div>
+<button class="btn" id="csv" disabled>⬇ Download spreadsheet (CSV)</button>
+<button class="btn alt" id="kml" disabled>⬇ Download Google My Maps file (KML)</button>
+<div id="status">Loading…</div>
+<p style="margin-top:22px;font-size:13px">To make your own map: <a href="https://mymaps.google.com" target="_blank" rel="noopener">mymaps.google.com</a> → Create a new map → Import → upload the KML. Pins come in colored by status.</p>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+const C = window.VLF_CONFIG || {};
+const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
+const METRO = { s:33.20, w:-112.65, n:33.80, e:-111.50 };
+const LABEL = { forlease:'For lease', vacant:'Vacant', abandoned:'Abandoned', closed:'Closed' };
+const MARK = { great:'GREAT — totally empty', revisit:'REVISIT', skip:'SKIP' };
+const $ = id => document.getElementById(id);
+let rows = [];
+
+async function loadOsm(){
+  const b = `${METRO.s},${METRO.w},${METRO.n},${METRO.e}`;
+  const q = `[out:json][timeout:60];(nwr["shop"="vacant"](${b});nwr["disused:shop"](${b});nwr["disused:amenity"](${b});nwr["abandoned:shop"](${b});nwr["abandoned:amenity"](${b});nwr["abandoned:building"](${b});nwr["building"]["disused"="yes"](${b});nwr["building"]["abandoned"="yes"](${b});nwr["vacant"="yes"](${b});nwr["disused"="yes"]["shop"](${b}););out tags center;`;
+  for (const url of OVERPASS){
+    try {
+      const r = await fetch(url, { method:'POST', body:q }); if (!r.ok) continue;
+      const j = await r.json(); const out = [];
+      j.elements.forEach(el => {
+        const t = el.tags || {}; const c = el.center || (el.lat!=null ? { lat:el.lat, lon:el.lon } : null); if (!c) return;
+        const kind = t['disused:shop'] || t['abandoned:shop'] || t['disused:amenity'] || t['abandoned:amenity'] || t['abandoned:building'] || t.shop || t.building || t.amenity;
+        if (!kind || /railway|pipeline|canal|mine|quarry/.test(kind)) return;
+        const abandoned = !!(t['abandoned:shop']||t['abandoned:amenity']||t['abandoned:building']||t.abandoned==='yes');
+        const addr = [t['addr:housenumber'], t['addr:street']].filter(Boolean).join(' ');
+        out.push({ id:'osm-'+el.type+el.id, kind:'OpenStreetMap', name:t.name || (t['old_name'] ? `Former ${t['old_name']}` : `${abandoned?'Abandoned':'Vacant'} ${String(kind).replace(/_/g,' ')}`),
+          address: addr ? `${addr}${t['addr:city']?', '+t['addr:city']:''}` : '', lat:c.lat, lng:c.lon, status: abandoned?'abandoned':'vacant',
+          note: `Tagged on OpenStreetMap as ${abandoned?'abandoned':'vacant/disused'}${t['old_name']?' (formerly '+t['old_name']+')':''}`, source:`https://www.openstreetmap.org/${el.type}/${el.id}` });
+      });
+      return out;
+    } catch(e){}
+  }
+  return [];
+}
+
+async function load(){
+  const lots = (await (await fetch('../lots.json', { cache:'no-cache' })).json()).lots.map(l => ({ id:l.id, kind:'Researched', name:l.name, address:l.address, lat:l.lat, lng:l.lng, status:l.status, note:l.note||'', source:(l.source||{}).url||'' }));
+  $('nLots').textContent = lots.length; $('status').textContent = 'Loading OpenStreetMap + team data…';
+  let marks = new Map(), notes = new Map(), spots = [];
+  if (C.supabaseUrl && C.supabaseKey && window.supabase){
+    const sb = supabase.createClient(C.supabaseUrl, C.supabaseKey);
+    const [m, n, s] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('lot_id,text,created_at').order('created_at'), sb.from('spots').select('id,name,address,lat,lng,status,created_at') ]);
+    (m.data||[]).forEach(r => marks.set(r.lot_id, r.mark));
+    (n.data||[]).forEach(r => { if (!notes.has(r.lot_id)) notes.set(r.lot_id, []); notes.get(r.lot_id).push(r.text); });
+    spots = (s.data||[]).map(r => ({ id:r.id, kind:'Team spot', name:r.name, address:r.address||'', lat:+r.lat, lng:+r.lng, status:r.status||'', note:'', source:'' }));
+  }
+  const osm = await loadOsm();
+  $('nOsm').textContent = osm.length; $('nSpots').textContent = spots.length;
+  rows = [...lots, ...spots, ...osm].map(r => Object.assign(r, { mark: MARK[marks.get(r.id)] || '', teamNotes: (notes.get(r.id)||[]).join(' | ') }));
+  $('status').textContent = `${rows.length} pins ready.`;
+  $('csv').disabled = $('kml').disabled = false;
+}
+
+function dl(name, type, text){ const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); }
+const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+$('csv').onclick = () => {
+  const head = ['Name','Address','Status','Team mark','Team notes','Source type','Latitude','Longitude','Notes','Listing link','Google Maps link'];
+  const body = rows.map(r => [r.name, r.address, LABEL[r.status]||r.status, r.mark, r.teamNotes, r.kind, r.lat, r.lng, r.note, r.source, `https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}`].map(q).join(','));
+  dl('valley-lots-all.csv', 'text/csv', [head.join(','), ...body].join('\r\n'));
+};
+$('kml').onclick = () => {
+  const col = { forlease:'ff00a5ff', vacant:'ff2dc0fb', abandoned:'ff5353ea', closed:'ffa6a09a', '':'fff442a1' };
+  const k = ['<?xml version="1.0" encoding="UTF-8"?>','<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Valley Lot Finder — all pins</name>'];
+  for (const [s,c] of Object.entries(col)) k.push(`<Style id="s${s||'none'}"><IconStyle><color>${c}</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>`);
+  for (const r of rows){
+    const d = [LABEL[r.status]||r.status, r.address, r.mark && ('Team mark: '+r.mark), r.teamNotes && ('Team notes: '+r.teamNotes), r.note, r.source, 'Source: '+r.kind].filter(Boolean).join('\n');
+    k.push(`<Placemark><name>${esc(r.name)}</name><description>${esc(d)}</description><styleUrl>#s${r.status||'none'}</styleUrl><Point><coordinates>${r.lng},${r.lat},0</coordinates></Point></Placemark>`);
+  }
+  k.push('</Document></kml>'); dl('valley-lots-all.kml', 'application/vnd.google-earth.kml+xml', k.join('\n'));
+};
+load().catch(e => { $('status').textContent = 'Something failed loading: ' + e.message; });
+</script>
+</body>
+</html>

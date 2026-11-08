@@ -9,6 +9,7 @@ Pins live in `lots.json`. Street View photos use the key in `config.js` (restric
 Map imagery © Esri, Maxar, Earthstar Geographics. Street-level photos © Google. Roads and labels © Esri.
 
 ## Export the pins
+- **Everything, live** (researched + OpenStreetMap + team spots, marks and notes): https://bsaxon430.github.io/valley-lot-finder-/export/
 - Spreadsheet (CSV): https://bsaxon430.github.io/valley-lot-finder-/export/valley-lots.csv
 - Google My Maps / Google Earth (KML): https://bsaxon430.github.io/valley-lot-finder-/export/valley-lots.kml
 - Raw data (JSON): https://bsaxon430.github.io/valley-lot-finder-/lots.json
