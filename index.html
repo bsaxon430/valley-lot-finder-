@@ -13,13 +13,14 @@
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="icon" href="icons/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=39">
+<link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
 <div id="map"></div>
 
 <div class="top">
   <div class="brand">VALLEY LOT FINDER</div>
+  <a class="dl" href="export/" aria-label="Download all pins" title="Download all pins"><svg viewBox="0 0 24 24"><path d="M12 3v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3h2zM5 19h14v2H5z"/></svg></a>
 </div>
 
 <div class="fabs">
@@ -82,7 +83,7 @@
 <!-- Nearest list -->
 <div id="list" class="sheet hidden">
   <div class="grab"></div>
-  <div class="row pad"><div class="title">Nearest lots</div><div class="row gap"><a class="x exp" href="export/" aria-label="Export all pins" title="Export all pins">⬇</a><button id="listClose" class="x" aria-label="Close">✕</button></div></div>
+  <div class="row pad"><div class="title">Nearest lots</div><button id="listClose" class="x" aria-label="Close">✕</button></div>
   <div id="listBody" class="listbody"></div>
 </div>
 
@@ -97,7 +98,7 @@
 
 <script src="https://unpkg.com/@googlemaps/markerclusterer@2.5.3/dist/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="config.js?v=39"></script>
-<script src="app.js?v=39"></script>
+<script src="config.js?v=40"></script>
+<script src="app.js?v=40"></script>
 </body>
 </html>
