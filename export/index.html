@@ -67,7 +67,7 @@ async function loadOsm(){
 
 async function load(){
   const lots = (await (await fetch('../lots.json', { cache:'no-cache' })).json()).lots.map(l => ({ id:l.id, kind:'Researched', name:l.name, address:l.address, lat:l.lat, lng:l.lng, status:l.status, note:l.note||'', source:(l.source||{}).url||'' }));
-  $('nLots').textContent = lots.length; $('status').textContent = 'Loading OpenStreetMap + team data…';
+  $('nLots').textContent = lots.length; $('status').textContent = 'Loading team data + OpenStreetMap… (OSM can take up to a minute — hang tight)';
   let marks = new Map(), notes = new Map(), spots = [];
   if (C.supabaseUrl && C.supabaseKey && window.supabase){
     const sb = supabase.createClient(C.supabaseUrl, C.supabaseKey);
