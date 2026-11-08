@@ -37,8 +37,11 @@ async function init(){
     return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:'#a142f4', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = () => locate(false);
-  $('btnLayers').onclick = () => { const sat = map.getMapTypeId() !== 'roadmap'; map.setMapTypeId(sat ? 'roadmap' : 'hybrid'); try { localStorage.setItem('vlf-maptype', sat ? 'roadmap' : 'hybrid'); } catch(e){} };
-  try { const mt = localStorage.getItem('vlf-maptype'); if (mt) map.setMapTypeId(mt); } catch(e){}
+  $('btnLayers').onclick = () => { $('layers').classList.toggle('hidden'); syncLayersUI(); };
+  map.addListener('click', () => $('layers').classList.add('hidden'));
+  document.querySelectorAll('#layers [data-mt]').forEach(b => b.onclick = () => { map.setMapTypeId(b.dataset.mt); try { localStorage.setItem('vlf-maptype', b.dataset.mt); } catch(e){} syncLayersUI(); });
+  document.querySelectorAll('#layers [data-src]').forEach(b => b.onclick = () => { src = b.dataset.src; try { localStorage.setItem('vlf-src', src); } catch(e){} closeCard(); refresh(); updateStatus(); fitVisible(); syncLayersUI(); });
+  try { const mt = localStorage.getItem('vlf-maptype'); if (mt) map.setMapTypeId(mt); const s = localStorage.getItem('vlf-src'); if (s) src = s; } catch(e){}
   $('btnNearest').onclick = nearest;
   document.querySelectorAll('.view').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('cClose').onclick = closeCard; $('listClose').onclick = () => $('list').classList.add('hidden'); $('navClose').onclick = () => $('nav').classList.add('hidden');
@@ -165,7 +168,9 @@ async function syncShared(){
   } catch(e){}
 }
 function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
-function visible(){ return lots.filter(l => { const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
+function inSrc(l){ return src==='all' || (src==='osm' ? l.kind==='osm' : l.kind!=='osm'); }
+function visible(){ return lots.filter(l => { if (!inSrc(l)) return false; const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
+function syncLayersUI(){ const mt = map.getMapTypeId()==='roadmap' ? 'roadmap' : 'hybrid'; document.querySelectorAll('#layers [data-mt]').forEach(b => b.classList.toggle('on', b.dataset.mt===mt)); document.querySelectorAll('#layers [data-src]').forEach(b => b.classList.toggle('on', b.dataset.src===src)); }
 function colorOf(l){ return PINCOLOR[marks.get(l.id)||'none']; }
 function renderStatus(l){ const need = l.kind==='spot' && !l.status; $('cChoose').classList.toggle('hidden', !need); $('cStatus').classList.toggle('attn', need); document.querySelectorAll('#cStatus button').forEach(b => { b.classList.toggle('on', b.dataset.status===l.status); b.onclick = () => { const st = l.status===b.dataset.status ? null : b.dataset.status; spots.setStatus(l.id, st); $('cBadge').textContent = LABEL[st] || ''; $('cBadge').style.visibility = st ? '' : 'hidden'; renderStatus(l); }; }); }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
@@ -177,7 +182,7 @@ function fitVisible(){
   map.fitBounds(b, { top:90, bottom:200, left:40, right:40 });
   google.maps.event.addListenerOnce(map, 'idle', () => { if (map.getZoom() > 14) map.setZoom(14); });
 }
-function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>marks.get(l.id)!=='skip').length : marks.count(v); b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
+function updateStatus(){ const n=visible().length; status(view==='all' ? `${n} lots on the map` : `${n} ${ {great:'great', revisit:'to revisit', skip:'skipped'}[view] } lot${n===1?'':'s'}`); document.querySelectorAll('.view').forEach(b=>{ const v=b.dataset.view; const c = v==='all' ? lots.filter(l=>inSrc(l)&&marks.get(l.id)!=='skip').length : lots.filter(l=>inSrc(l)&&marks.get(l.id)===v).length; b.textContent = `${ {all:'ALL',great:'GREAT',revisit:'REVISIT',skip:'SKIPPED'}[v] } ${c}`; }); }
 const notes = {
   get(id){ return cache.notes[id] || []; },
   add(id, text){ const n = { t: Date.now(), text }; (cache.notes[id] = cache.notes[id] || []).push(n); persist();

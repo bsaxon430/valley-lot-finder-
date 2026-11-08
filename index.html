@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="icon" href="icons/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=41">
+<link rel="stylesheet" href="styles.css?v=42">
 </head>
 <body>
 <div id="map"></div>
@@ -21,6 +21,12 @@
 <div class="top">
   <div class="brand">VALLEY LOT FINDER</div>
   <a class="dl" href="export/" aria-label="Download all pins" title="Download all pins"><svg viewBox="0 0 24 24"><path d="M12 3v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3h2zM5 19h14v2H5z"/></svg></a>
+</div>
+
+<div id="layers" class="layers hidden">
+  <div class="lgroup"><div class="lhead">Map</div><div class="lrow"><button data-mt="hybrid">Satellite</button><button data-mt="roadmap">Map</button></div></div>
+  <div class="lgroup"><div class="lhead">Pins</div><div class="lrow"><button data-src="all">All</button><button data-src="ours">Ours</button><button data-src="osm">OpenStreetMap</button></div>
+  <div class="lhint">Ours = researched lots + spots we dropped. OpenStreetMap = buildings the public has tagged vacant/abandoned.</div></div>
 </div>
 
 <div class="fabs">
@@ -98,7 +104,7 @@
 
 <script src="https://unpkg.com/@googlemaps/markerclusterer@2.5.3/dist/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="config.js?v=41"></script>
-<script src="app.js?v=41"></script>
+<script src="config.js?v=42"></script>
+<script src="app.js?v=42"></script>
 </body>
 </html>

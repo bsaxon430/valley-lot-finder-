@@ -125,3 +125,11 @@ a{color:inherit}
 
 .top .dl{pointer-events:auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);box-shadow:var(--shadow)}
 .top .dl svg{width:20px;height:20px;fill:#fff}
+
+.layers{position:fixed;right:14px;bottom:calc(var(--sab) + 266px);z-index:21;width:min(300px,calc(100vw - 28px));background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);border-radius:20px;box-shadow:var(--shadow);padding:14px;display:grid;gap:12px}
+.layers.hidden{display:none}
+.lhead{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+.lrow{display:flex;gap:6px}
+.lrow button{flex:1;background:var(--glass2);border:1px solid var(--edge);border-radius:999px;padding:10px 4px;font-size:12px;font-weight:700;color:var(--text)}
+.lrow button.on{background:#fff;color:#111;border-color:#fff}
+.lhint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4}
