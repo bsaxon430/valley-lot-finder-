@@ -11,7 +11,18 @@
   .btn{display:block;width:100%;box-sizing:border-box;border:0;border-radius:16px;padding:16px;font-size:16px;font-weight:800;margin:10px 0;cursor:pointer;background:#ff8a00;color:#1a1200}
   .btn.alt{background:rgba(255,255,255,.1);color:#fff}
   .btn:disabled{opacity:.45}
-  #status{font-size:14px;color:#9aa3b2;margin-top:14px;min-height:20px}
+  #status{font-size:14px;color:#9aa3b2;margin-top:2px}
+.loading{display:flex;gap:14px;align-items:center;background:rgba(255,138,0,.12);border:1px solid rgba(255,138,0,.4);border-radius:16px;padding:14px;margin:6px 0 10px}
+.loading b{color:#ffb257;font-size:15px}
+.loading.done{background:rgba(52,168,83,.12);border-color:rgba(52,168,83,.5)} .loading.done b{color:#7ddc93}
+.spin{width:26px;height:26px;border-radius:50%;border:3px solid rgba(255,255,255,.15);border-top-color:#ff8a00;animation:spin .9s linear infinite;flex:none}
+.loading.done .spin{animation:none;border-color:#34a853;background:#34a853}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:16px}
+.bar i{display:block;height:100%;width:0;background:#ff8a00;transition:width .6s}
+.bar i.indet{width:40%;animation:slide 1.4s ease-in-out infinite}
+@keyframes slide{0%{margin-left:-40%}100%{margin-left:100%}}
+.btn:disabled{opacity:.35}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
   .stat{background:rgba(255,255,255,.06);border-radius:14px;padding:12px;text-align:center}
   .stat b{display:block;font-size:22px}
@@ -21,15 +32,15 @@
 </head>
 <body>
 <h1>Export all pins</h1>
-<p>Pulls everything live: the researched lots, the OpenStreetMap vacant/abandoned buildings, every spot the team dropped, plus the team's marks and notes.</p>
+<p>Pulls everything live: the researched lots, the OpenStreetMap vacant/abandoned buildings, every spot anyone dropped, plus all marks and notes.</p>
 <div class="stats">
   <div class="stat"><b id="nLots">–</b><small>Researched</small></div>
   <div class="stat"><b id="nOsm">–</b><small>OSM</small></div>
-  <div class="stat"><b id="nSpots">–</b><small>Team spots</small></div>
+  <div class="stat"><b id="nSpots">–</b><small>Dropped spots</small></div>
 </div>
-<button class="btn" id="csv" disabled>⬇ Download spreadsheet (CSV)</button>
-<button class="btn alt" id="kml" disabled>⬇ Download Google My Maps file (KML)</button>
-<div id="status">Loading…</div>
+<div id="loading" class="loading"><div class="spin"></div><div><b>Still loading…</b><div id="status">Starting…</div></div></div><div class="bar"><i id="bar"></i></div>
+<button class="btn" id="csv" disabled>Download spreadsheet (CSV)</button>
+<button class="btn alt" id="kml" disabled>Download Google My Maps file (KML)</button>
 <p style="margin-top:22px;font-size:13px">To make your own map: <a href="https://mymaps.google.com" target="_blank" rel="noopener">mymaps.google.com</a> → Create a new map → Import → upload the KML. Pins come in colored by status.</p>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
@@ -67,19 +78,20 @@ async function loadOsm(){
 
 async function load(){
   const lots = (await (await fetch('../lots.json', { cache:'no-cache' })).json()).lots.map(l => ({ id:l.id, kind:'Researched', name:l.name, address:l.address, lat:l.lat, lng:l.lng, status:l.status, note:l.note||'', source:(l.source||{}).url||'' }));
-  $('nLots').textContent = lots.length; $('status').textContent = 'Loading team data + OpenStreetMap… (OSM can take up to a minute — hang tight)';
+  $('nLots').textContent = lots.length; $('bar').style.width='25%'; $('status').textContent = 'Loading OpenStreetMap buildings… this can take up to a minute. Buttons unlock when it\'s done.';
   let marks = new Map(), notes = new Map(), spots = [];
   if (C.supabaseUrl && C.supabaseKey && window.supabase){
     const sb = supabase.createClient(C.supabaseUrl, C.supabaseKey);
     const [m, n, s] = await Promise.all([ sb.from('marks').select('lot_id,mark'), sb.from('notes').select('lot_id,text,created_at').order('created_at'), sb.from('spots').select('id,name,address,lat,lng,status,created_at') ]);
     (m.data||[]).forEach(r => marks.set(r.lot_id, r.mark));
     (n.data||[]).forEach(r => { if (!notes.has(r.lot_id)) notes.set(r.lot_id, []); notes.get(r.lot_id).push(r.text); });
-    spots = (s.data||[]).map(r => ({ id:r.id, kind:'Team spot', name:r.name, address:r.address||'', lat:+r.lat, lng:+r.lng, status:r.status||'', note:'', source:'' }));
+    spots = (s.data||[]).map(r => ({ id:r.id, kind:'Dropped spot', name:r.name, address:r.address||'', lat:+r.lat, lng:+r.lng, status:r.status||'', note:'', source:'' }));
   }
+  $('nSpots').textContent = spots.length; $('bar').style.width='45%'; $('bar').classList.add('indet');
   const osm = await loadOsm();
   $('nOsm').textContent = osm.length; $('nSpots').textContent = spots.length;
   rows = [...lots, ...spots, ...osm].map(r => Object.assign(r, { mark: MARK[marks.get(r.id)] || '', teamNotes: (notes.get(r.id)||[]).join(' | ') }));
-  $('status').textContent = `${rows.length} pins ready.`;
+  $('bar').classList.remove('indet'); $('bar').style.width='100%'; $('loading').classList.add('done'); $('loading').querySelector('b').textContent='Ready'; $('status').textContent = `${rows.length} pins loaded — pick a download below.`;
   $('csv').disabled = $('kml').disabled = false;
 }
 
@@ -88,7 +100,7 @@ const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
 const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
 $('csv').onclick = () => {
-  const head = ['Name','Address','Status','Team mark','Team notes','Source type','Latitude','Longitude','Notes','Listing link','Google Maps link'];
+  const head = ['Name','Address','Status','Mark','Notes from the app','Source type','Latitude','Longitude','Notes','Listing link','Google Maps link'];
   const body = rows.map(r => [r.name, r.address, LABEL[r.status]||r.status, r.mark, r.teamNotes, r.kind, r.lat, r.lng, r.note, r.source, `https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}`].map(q).join(','));
   dl('valley-lots-all.csv', 'text/csv', [head.join(','), ...body].join('\r\n'));
 };
@@ -97,12 +109,12 @@ $('kml').onclick = () => {
   const k = ['<?xml version="1.0" encoding="UTF-8"?>','<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Valley Lot Finder — all pins</name>'];
   for (const [s,c] of Object.entries(col)) k.push(`<Style id="s${s||'none'}"><IconStyle><color>${c}</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>`);
   for (const r of rows){
-    const d = [LABEL[r.status]||r.status, r.address, r.mark && ('Team mark: '+r.mark), r.teamNotes && ('Team notes: '+r.teamNotes), r.note, r.source, 'Source: '+r.kind].filter(Boolean).join('\n');
+    const d = [LABEL[r.status]||r.status, r.address, r.mark && ('Mark: '+r.mark), r.teamNotes && ('Notes from the app: '+r.teamNotes), r.note, r.source, 'Source: '+r.kind].filter(Boolean).join('\n');
     k.push(`<Placemark><name>${esc(r.name)}</name><description>${esc(d)}</description><styleUrl>#s${r.status||'none'}</styleUrl><Point><coordinates>${r.lng},${r.lat},0</coordinates></Point></Placemark>`);
   }
   k.push('</Document></kml>'); dl('valley-lots-all.kml', 'application/vnd.google-earth.kml+xml', k.join('\n'));
 };
-load().catch(e => { $('status').textContent = 'Something failed loading: ' + e.message; });
+load().catch(e => { $('loading').querySelector('b').textContent='Problem'; $('status').textContent = 'Something failed loading: ' + e.message; });
 </script>
 </body>
 </html>
