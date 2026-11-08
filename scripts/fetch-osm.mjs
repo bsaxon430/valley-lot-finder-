@@ -9,13 +9,17 @@ const b = `${METRO.s},${METRO.w},${METRO.n},${METRO.e}`;
 const q = `[out:json][timeout:180];(nwr["shop"="vacant"](${b});nwr["disused:shop"](${b});nwr["disused:amenity"](${b});nwr["abandoned:shop"](${b});nwr["abandoned:amenity"](${b});nwr["abandoned:building"](${b});nwr["building"]["disused"="yes"](${b});nwr["building"]["abandoned"="yes"](${b});nwr["vacant"="yes"](${b});nwr["disused"="yes"]["shop"](${b}););out tags center;`;
 
 let elements = null;
-for (const url of OVERPASS) {
-  try {
-    console.log('trying', url);
-    const r = await fetch(url, { method: 'POST', body: 'data=' + encodeURIComponent(q), headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, signal: AbortSignal.timeout(240000) });
-    if (!r.ok) { console.log('  status', r.status); continue; }
-    elements = (await r.json()).elements; break;
-  } catch (e) { console.log('  failed:', e.message); }
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+outer: for (let attempt = 0; attempt < 4 && !elements; attempt++) {
+  for (const url of OVERPASS) {
+    try {
+      console.log('trying', url, 'attempt', attempt + 1);
+      const r = await fetch(url, { method: 'POST', body: q, headers: { 'Content-Type': 'text/plain', 'User-Agent': 'valley-lot-finder/1.0 (github actions; nightly vacant-buildings refresh)' }, signal: AbortSignal.timeout(240000) });
+      if (!r.ok) { console.log('  status', r.status); continue; }
+      elements = (await r.json()).elements; break outer;
+    } catch (e) { console.log('  failed:', e.message); }
+  }
+  console.log('all mirrors busy, waiting 45s…'); await sleep(45000);
 }
 if (!elements) {
   console.error('All Overpass mirrors failed — keeping the previous osm.json');
