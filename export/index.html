@@ -23,6 +23,7 @@
 .bar i.indet{width:40%;animation:slide 1.4s ease-in-out infinite}
 @keyframes slide{0%{margin-left:-40%}100%{margin-left:100%}}
 .btn:disabled{opacity:.35}
+.why{font-size:12.5px;color:#9aa3b2;background:rgba(255,255,255,.04);border-radius:12px;padding:12px 14px;margin-top:4px}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
   .stat{background:rgba(255,255,255,.06);border-radius:14px;padding:12px;text-align:center}
   .stat b{display:block;font-size:22px}
@@ -41,6 +42,8 @@
 <div id="loading" class="loading"><div class="spin"></div><div><b>Still loading…</b><div id="status">Starting…</div></div></div><div class="bar"><i id="bar"></i></div>
 <button class="btn" id="csv" disabled>Download spreadsheet (CSV)</button>
 <button class="btn alt" id="kml" disabled>Download Google My Maps file (KML)</button>
+<button class="btn alt" id="geo" disabled>Download GeoJSON</button>
+<p class="why">Why the wait? The OpenStreetMap buildings aren't stored here — each time this page opens it asks OpenStreetMap's free public server to scan the whole Phoenix metro for vacant and abandoned buildings, and that server is shared by everyone in the world. Usually 20–60 seconds; longer when it's busy.</p>
 <p style="margin-top:22px;font-size:13px">To make your own map: <a href="https://mymaps.google.com" target="_blank" rel="noopener">mymaps.google.com</a> → Create a new map → Import → upload the KML. Pins come in colored by status.</p>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
@@ -88,11 +91,14 @@ async function load(){
     spots = (s.data||[]).map(r => ({ id:r.id, kind:'Dropped spot', name:r.name, address:r.address||'', lat:+r.lat, lng:+r.lng, status:r.status||'', note:'', source:'' }));
   }
   $('nSpots').textContent = spots.length; $('bar').style.width='45%'; $('bar').classList.add('indet');
-  const osm = await loadOsm();
+  const t0 = Date.now(); const EST = 45;
+  const tick = setInterval(() => { const s = Math.round((Date.now()-t0)/1000); const left = EST - s;
+    $('status').textContent = left > 0 ? `Loading OpenStreetMap buildings… about ${left}s left (usually 20–60s). Buttons unlock when it's done.` : `Loading OpenStreetMap buildings… ${s}s so far — their server is busy, hang tight. Buttons unlock when it's done.`; }, 1000);
+  const osm = await loadOsm(); clearInterval(tick);
   $('nOsm').textContent = osm.length; $('nSpots').textContent = spots.length;
   rows = [...lots, ...spots, ...osm].map(r => Object.assign(r, { mark: MARK[marks.get(r.id)] || '', teamNotes: (notes.get(r.id)||[]).join(' | ') }));
   $('bar').classList.remove('indet'); $('bar').style.width='100%'; $('loading').classList.add('done'); $('loading').querySelector('b').textContent='Ready'; $('status').textContent = `${rows.length} pins loaded — pick a download below.`;
-  $('csv').disabled = $('kml').disabled = false;
+  $('csv').disabled = $('kml').disabled = $('geo').disabled = false;
 }
 
 function dl(name, type, text){ const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); }
@@ -113,6 +119,11 @@ $('kml').onclick = () => {
     k.push(`<Placemark><name>${esc(r.name)}</name><description>${esc(d)}</description><styleUrl>#s${r.status||'none'}</styleUrl><Point><coordinates>${r.lng},${r.lat},0</coordinates></Point></Placemark>`);
   }
   k.push('</Document></kml>'); dl('valley-lots-all.kml', 'application/vnd.google-earth.kml+xml', k.join('\n'));
+};
+$('geo').onclick = () => {
+  const fc = { type:'FeatureCollection', features: rows.map(r => ({ type:'Feature', geometry:{ type:'Point', coordinates:[r.lng, r.lat] },
+    properties:{ id:r.id, name:r.name, address:r.address, status:LABEL[r.status]||r.status||null, mark:r.mark||null, notes_from_app:r.teamNotes||null, source_type:r.kind, notes:r.note||null, listing_url:r.source||null } })) };
+  dl('valley-lots-all.geojson', 'application/geo+json', JSON.stringify(fc, null, 1));
 };
 load().catch(e => { $('loading').querySelector('b').textContent='Problem'; $('status').textContent = 'Something failed loading: ' + e.message; });
 </script>
