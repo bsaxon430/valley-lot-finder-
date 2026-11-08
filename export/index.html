@@ -29,13 +29,24 @@
   .stat b{display:block;font-size:22px}
   .stat small{color:#9aa3b2;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
   a{color:#ffb257}
+  .pick{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px;margin-bottom:6px}
+  .phead{font-size:11px;font-weight:800;letter-spacing:.6px;color:#9aa3b2;text-transform:uppercase;margin-bottom:8px}
+  .prow{display:flex;gap:8px}
+  .prow button{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:11px;font-size:14px;font-weight:700;color:#fff}
+  .prow button.on{background:#fff;color:#111;border-color:#fff}
+  .pnote{font-size:12.5px;color:#9aa3b2;margin:10px 0 0;line-height:1.45}
   .back{display:inline-block;text-decoration:none;color:#fff;font-weight:700;font-size:15px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:10px 16px 10px 12px;margin-bottom:18px}
 </style>
 </head>
 <body>
 <a class="back" href="../">‹ Back to map</a>
 <h1>Export all pins</h1>
-<p>Pulls everything live: the researched lots, the OpenStreetMap vacant/abandoned buildings, every spot anyone dropped, plus all marks and notes.</p>
+<p>Downloads are built live from the map, so they include the latest marks, notes and dropped spots.</p>
+<div class="pick">
+  <div class="phead">What to include</div>
+  <div class="prow"><button data-pick="ours" class="on">Just ours</button><button data-pick="all">Everything</button></div>
+  <p id="pickNote" class="pnote"></p>
+</div>
 <div class="stats">
   <div class="stat"><b id="nLots">–</b><small>Researched</small></div>
   <div class="stat"><b id="nOsm">–</b><small>OSM</small></div>
@@ -53,7 +64,15 @@ const C = window.VLF_CONFIG || {};
 const LABEL = { forlease:'For lease', vacant:'Vacant', abandoned:'Abandoned', closed:'Closed' };
 const MARK = { great:'GREAT — totally empty', revisit:'REVISIT', skip:'SKIP' };
 const $ = id => document.getElementById(id);
-let rows = [];
+let rows = [], pick = 'ours';
+const NOTES = {
+  ours: 'The lots we researched ourselves (for-lease / vacant / abandoned buildings with empty parking lots) plus any spots our crew dropped on the map, with everyone\'s marks and notes.',
+  all: 'Just ours + ~200 extra buildings pulled from OpenStreetMap, a public map anyone can edit. Those weren\'t checked by us — some are for lease but sit in a shared lot next to businesses that are open, so not as good for testing. Treat them as leads, not confirmed spots.'
+};
+const picked = () => pick === 'all' ? rows : rows.filter(r => r.kind !== 'OpenStreetMap');
+const setPick = p => { pick = p; document.querySelectorAll('[data-pick]').forEach(b => b.classList.toggle('on', b.dataset.pick === p)); $('pickNote').textContent = NOTES[p]; if (rows.length) $('status').textContent = `${picked().length} pins ready — pick a download below.`; };
+document.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => setPick(b.dataset.pick));
+setPick('ours');
 
 async function loadOsm(){
   try { const j = await (await fetch('../osm.json', { cache:'no-cache' })).json();
@@ -76,7 +95,7 @@ async function load(){
   const osm = await loadOsm();
   $('nOsm').textContent = osm.length; $('nSpots').textContent = spots.length;
   rows = [...lots, ...spots, ...osm].map(r => Object.assign(r, { mark: MARK[marks.get(r.id)] || '', teamNotes: (notes.get(r.id)||[]).join(' | ') }));
-  $('bar').classList.remove('indet'); $('bar').style.width='100%'; $('loading').classList.add('done'); $('loading').querySelector('b').textContent='Ready'; const upd = (osm[0]||{}).updated; $('status').textContent = `${rows.length} pins loaded — pick a download below.` + (upd ? ` OSM data refreshed ${new Date(upd).toLocaleDateString()}.` : '');
+  $('bar').classList.remove('indet'); $('bar').style.width='100%'; $('loading').classList.add('done'); $('loading').querySelector('b').textContent='Ready'; const upd = (osm[0]||{}).updated; $('status').textContent = `${picked().length} pins ready — pick a download below.`;
   $('csv').disabled = $('kml').disabled = $('geo').disabled = false;
 }
 
@@ -86,23 +105,23 @@ const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 
 $('csv').onclick = () => {
   const head = ['Name','Address','Status','Mark','Notes from the app','Source type','Latitude','Longitude','Notes','Listing link','Google Maps link'];
-  const body = rows.map(r => [r.name, r.address, LABEL[r.status]||r.status, r.mark, r.teamNotes, r.kind, r.lat, r.lng, r.note, r.source, `https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}`].map(q).join(','));
-  dl('valley-lots-all.csv', 'text/csv', [head.join(','), ...body].join('\r\n'));
+  const body = picked().map(r => [r.name, r.address, LABEL[r.status]||r.status, r.mark, r.teamNotes, r.kind, r.lat, r.lng, r.note, r.source, `https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}`].map(q).join(','));
+  dl(`valley-lots-${pick}.csv`, 'text/csv', [head.join(','), ...body].join('\r\n'));
 };
 $('kml').onclick = () => {
   const col = { forlease:'ff00a5ff', vacant:'ff2dc0fb', abandoned:'ff5353ea', closed:'ffa6a09a', '':'fff442a1' };
   const k = ['<?xml version="1.0" encoding="UTF-8"?>','<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Valley Lot Finder — all pins</name>'];
   for (const [s,c] of Object.entries(col)) k.push(`<Style id="s${s||'none'}"><IconStyle><color>${c}</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>`);
-  for (const r of rows){
+  for (const r of picked()){
     const d = [LABEL[r.status]||r.status, r.address, r.mark && ('Mark: '+r.mark), r.teamNotes && ('Notes from the app: '+r.teamNotes), r.note, r.source, 'Source: '+r.kind].filter(Boolean).join('\n');
     k.push(`<Placemark><name>${esc(r.name)}</name><description>${esc(d)}</description><styleUrl>#s${r.status||'none'}</styleUrl><Point><coordinates>${r.lng},${r.lat},0</coordinates></Point></Placemark>`);
   }
-  k.push('</Document></kml>'); dl('valley-lots-all.kml', 'application/vnd.google-earth.kml+xml', k.join('\n'));
+  k.push('</Document></kml>'); dl(`valley-lots-${pick}.kml`, 'application/vnd.google-earth.kml+xml', k.join('\n'));
 };
 $('geo').onclick = () => {
-  const fc = { type:'FeatureCollection', features: rows.map(r => ({ type:'Feature', geometry:{ type:'Point', coordinates:[r.lng, r.lat] },
+  const fc = { type:'FeatureCollection', features: picked().map(r => ({ type:'Feature', geometry:{ type:'Point', coordinates:[r.lng, r.lat] },
     properties:{ id:r.id, name:r.name, address:r.address, status:LABEL[r.status]||r.status||null, mark:r.mark||null, notes_from_app:r.teamNotes||null, source_type:r.kind, notes:r.note||null, listing_url:r.source||null } })) };
-  dl('valley-lots-all.geojson', 'application/geo+json', JSON.stringify(fc, null, 1));
+  dl(`valley-lots-${pick}.geojson`, 'application/geo+json', JSON.stringify(fc, null, 1));
 };
 load().catch(e => { $('loading').querySelector('b').textContent='Problem'; $('status').textContent = 'Something failed loading: ' + e.message; });
 </script>
