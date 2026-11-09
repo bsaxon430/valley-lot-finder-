@@ -31,12 +31,22 @@ function loadGoogle(){
 }
 async function init(){
   await loadGoogle();
-  map = new google.maps.Map($('map'), { center:{ lat:33.47, lng:-112.02 }, zoom:11, mapTypeId:'hybrid', disableDefaultUI:true, gestureHandling:'greedy', clickableIcons:false, maxZoom:20, minZoom:8, backgroundColor:'#0b0d12' });
+  map = new google.maps.Map($('map'), { center:{ lat:33.47, lng:-112.02 }, zoom:11, mapTypeId:'hybrid', disableDefaultUI:true, gestureHandling:'greedy', clickableIcons:false, maxZoom:20, minZoom:8, backgroundColor:'#0b0d12',
+    mapId: C.mapId || 'DEMO_MAP_ID', renderingType: google.maps.RenderingType.VECTOR, headingInteractionEnabled: true, tiltInteractionEnabled: false });
   clusterer = new markerClusterer.MarkerClusterer({ map, markers:[], renderer:{ render({ count, position }){
     const r = count >= 50 ? 26 : count >= 10 ? 20 : 16;
     return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:'#a142f4', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
-  $('btnLocate').onclick = () => locate(false);
+  $('btnLocate').onclick = async () => {
+    startCompass();
+    if (follow && (map.getHeading()||0)) { map.setHeading(0); return; }
+    follow = true; $('btnLocate').classList.add('following');
+    await locate(false);
+    if (userPos){ map.panTo({ lat:userPos[1], lng:userPos[0] }); if (map.getZoom() < 15) map.setZoom(16); }
+  };
+  map.addListener('dragstart', () => { if (follow){ follow = false; $('btnLocate').classList.remove('following'); } });
+  $('btnCompass').onclick = () => map.setHeading(0);
+  map.addListener('heading_changed', () => { const h = map.getHeading()||0; $('btnCompass').classList.toggle('hidden', Math.abs(((h+180)%360)-180) < 1); $('btnCompass').firstElementChild.style.transform = `rotate(${-h}deg)`; drawBeam(); });
   $('btnLayers').onclick = () => { $('layers').classList.toggle('hidden'); syncLayersUI(); };
   map.addListener('click', () => $('layers').classList.add('hidden'));
   document.querySelectorAll('#layers [data-mt]').forEach(b => b.onclick = () => { map.setMapTypeId(b.dataset.mt); try { localStorage.setItem('vlf-maptype', b.dataset.mt); } catch(e){} syncLayersUI(); });
@@ -98,16 +108,64 @@ async function loadOsm(){
 }
 
 // ---------- location ----------
+// ---------- live location (follows you while driving) ----------
+let watchId = null, follow = false, devHeading = null, gpsHeading = null, beamMarker = null, firstFix = [], panned = false, compassOn = false, beamRaf = 0;
+function onFix(p){
+  userPos = [p.coords.longitude, p.coords.latitude];
+  const pos = { lat:userPos[1], lng:userPos[0] };
+  const spd = p.coords.speed, hd = p.coords.heading;
+  if (spd != null && spd > 2 && hd != null && !isNaN(hd)) gpsHeading = hd; else if (spd != null && spd < 0.8) gpsHeading = null;
+  if (!userMarker){ userMarker = new google.maps.Marker({ map, position:pos, zIndex:2001, clickable:false, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:9, fillColor:'#1a73e8', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 } }); }
+  else userMarker.setPosition(pos);
+  if (beamMarker) beamMarker.setPosition(pos);
+  drawBeam();
+  $('btnLocate').classList.add('active');
+  if (follow) map.panTo(pos);
+  else if (!panned && !location.hash){ panned = true; map.panTo(pos); if (map.getZoom() < 12.5) map.setZoom(13); }
+  panned = true;
+  const waiting = firstFix; firstFix = []; waiting.forEach(f => f());
+}
+function startWatch(silent){
+  if (watchId !== null || !navigator.geolocation) return;
+  watchId = navigator.geolocation.watchPosition(onFix, err => {
+    if (err.code === 1){ navigator.geolocation.clearWatch(watchId); watchId = null; if (!silent) toast('Location permission denied'); }
+    const waiting = firstFix; firstFix = []; waiting.forEach(f => f());
+  }, { enableHighAccuracy:true, maximumAge:0, timeout:20000 });
+}
 function locate(silent){
   return new Promise(res => {
     if (!navigator.geolocation){ if(!silent) toast('Location not supported'); return res(); }
-    navigator.geolocation.getCurrentPosition(p => {
-      userPos = [p.coords.longitude, p.coords.latitude];
-      const pos = { lat:userPos[1], lng:userPos[0] }; if (!userMarker){ userMarker = new google.maps.Marker({ map, position:pos, zIndex:2000, clickable:false, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:9, fillColor:'#1a73e8', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 } }); } else userMarker.setPosition(pos);
-      $('btnLocate').classList.add('active');
-      if (!silent || !location.hash){ map.panTo(pos); if (map.getZoom() < 12.5) map.setZoom(13); }
-      res();
-    }, err => { if(!silent) toast(err.code===1 ? 'Location permission denied' : 'Could not get location'); res(); }, { enableHighAccuracy:true, timeout:12000, maximumAge:30000 });
+    if (userPos && watchId !== null) return res();
+    firstFix.push(res); startWatch(silent);
+    setTimeout(() => { const i = firstFix.indexOf(res); if (i >= 0){ firstFix.splice(i, 1); if (!silent && !userPos) toast('Could not get location'); res(); } }, 15000);
+  });
+}
+// heading: GPS course while moving (best in a car), phone compass when standing still
+function startCompass(){
+  if (compassOn) return; compassOn = true;
+  const h = e => {
+    let hd = (e.webkitCompassHeading != null) ? e.webkitCompassHeading : (e.absolute && e.alpha != null ? 360 - e.alpha : null);
+    if (hd == null) return;
+    hd = (hd + ((screen.orientation && screen.orientation.angle) || window.orientation || 0) + 360) % 360;
+    devHeading = hd; drawBeam();
+  };
+  try {
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function'){
+      DeviceOrientationEvent.requestPermission().then(s => { if (s === 'granted') window.addEventListener('deviceorientation', h); }).catch(() => {});
+    } else { window.addEventListener('deviceorientationabsolute', h); window.addEventListener('deviceorientation', h); }
+  } catch(e){}
+}
+const BEAM = 'M0 0 L-15 -40 A43 43 0 0 1 15 -40 Z';
+function drawBeam(){
+  if (beamRaf) return;
+  beamRaf = requestAnimationFrame(() => { beamRaf = 0;
+    if (!userPos) return;
+    const hd = gpsHeading != null ? gpsHeading : devHeading;
+    if (hd == null){ if (beamMarker) beamMarker.setVisible(false); return; }
+    const rot = (hd - (map.getHeading()||0) + 360) % 360;
+    const icon = { path:BEAM, fillColor:'#1a73e8', fillOpacity:0.28, strokeWeight:0, scale:1, rotation:rot, anchor:new google.maps.Point(0,0) };
+    if (!beamMarker) beamMarker = new google.maps.Marker({ map, position:{ lat:userPos[1], lng:userPos[0] }, zIndex:2000, clickable:false, icon });
+    else { beamMarker.setIcon(icon); beamMarker.setVisible(true); }
   });
 }
 

@@ -137,3 +137,9 @@ a{color:inherit}
 .lrow.grid2{display:grid;grid-template-columns:1fr 1fr}
 
 #btnLayers svg{width:28px;height:28px}
+
+#btnLocate.following{background:#1a73e8}
+#btnLocate.following .dot{background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.35)}
+.compass{position:fixed;right:14px;top:calc(var(--sat) + 66px);z-index:20;width:42px;height:42px;border-radius:50%;border:0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.35);display:grid;place-items:center}
+.compass.hidden{display:none}
+.compass svg{width:24px;height:24px;transition:transform .15s}
