@@ -1,0 +1,38 @@
+name: Closed-business sweep (Google Places)
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: probe or sweep
+        default: probe
+      max_calls:
+        description: hard cap on Google requests
+        default: '3000'
+permissions:
+  contents: write
+concurrency:
+  group: places
+  cancel-in-progress: false
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search Google Places
+        env:
+          PLACES_KEY: ${{ secrets.PLACES_KEY }}
+          MODE: ${{ inputs.mode }}
+          MAX_CALLS: ${{ inputs.max_calls }}
+        run: python3 scripts/places-sweep.py
+      - name: Save results to the places-data branch
+        if: inputs.mode == 'sweep'
+        run: |
+          mkdir -p /tmp/out && cp closed-places.json /tmp/out/
+          git config user.name "places-bot"; git config user.email "places-bot@users.noreply.github.com"
+          git fetch origin places-data || true
+          git switch --orphan places-data-tmp
+          git rm -rf --quiet . || true
+          cp /tmp/out/closed-places.json .
+          git add closed-places.json && git commit -m "Closed-business sweep $(date -u +%F)"
+          git push -f origin HEAD:places-data
