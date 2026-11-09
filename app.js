@@ -133,6 +133,8 @@ function openCard(id){
   document.querySelectorAll('.marks button').forEach(b => b.onclick = () => {
     const v = b.dataset.mark; const cur = marks.get(l.id); const next = cur===v ? null : v;
     // skipping asks why first (shared, chained, fenced...), and the reason is saved as a note everyone sees
+    // a pin someone dropped by long-press that gets skipped was probably a mistake: delete it outright, no reason/notes kept
+    if (next==='skip' && l.kind==='spot'){ spots.remove(l.id); toast('Dropped spot deleted'); return; }
     if (next==='skip'){ $('skipWhy').classList.toggle('hidden'); return; }
     $('skipWhy').classList.add('hidden'); applyMark(next);
   });
@@ -217,6 +219,8 @@ const spots = {
   },
   remove(id){
     lots = lots.filter(l => l.id!==id); spots.saveLocal(spots.local().filter(r=>r.id!==id));
+    delete cache.marks[id]; delete cache.notes[id]; persist();
+    if (sb) { sb.from('marks').delete().eq('lot_id', id).then(()=>{}); sb.from('notes').delete().eq('lot_id', id).then(()=>{}); }
     const m = markers.get(id); if (m){ clusterer.removeMarker(m, true); m.setMap(null); markers.delete(id); }
     closeCard(); refresh(); updateStatus();
     if (sb) sb.from('spots').delete().eq('id', id).then(({error}) => { if (error) toast('Shared delete failed'); });
