@@ -133,8 +133,8 @@ function openCard(id){
   document.querySelectorAll('.marks button').forEach(b => b.onclick = () => {
     const v = b.dataset.mark; const cur = marks.get(l.id); const next = cur===v ? null : v;
     // skipping asks why first (shared, chained, fenced...), and the reason is saved as a note everyone sees
-    // a pin someone dropped by long-press that gets skipped was probably a mistake: delete it outright, no reason/notes kept
-    if (next==='skip' && l.kind==='spot'){ spots.remove(l.id); toast('Dropped spot deleted'); return; }
+    // a pin someone added by long-press that gets skipped was probably a mistake: delete it outright, no reason/notes kept
+    if (next==='skip' && l.kind==='spot'){ spots.remove(l.id); toast('Spot deleted'); return; }
     if (next==='skip'){ $('skipWhy').classList.toggle('hidden'); return; }
     $('skipWhy').classList.add('hidden'); applyMark(next);
   });
