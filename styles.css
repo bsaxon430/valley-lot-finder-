@@ -144,7 +144,7 @@ a{color:inherit}
 .compass.hidden{display:none}
 .compass svg{width:24px;height:24px;transition:transform .15s}
 
-.layers{max-height:calc(100vh - var(--sab) - 300px);overflow-y:auto}
+.layers{max-height:calc(100vh - var(--sat) - var(--sab) - 350px);max-height:calc(100dvh - var(--sat) - var(--sab) - 350px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .nlist{display:grid;gap:6px}
 .nlist button{display:block;width:100%;text-align:left;background:var(--glass2);border:1px solid var(--edge);border-radius:14px;padding:10px 12px;color:var(--text)}
 .nlist .nt{font-size:13.5px;line-height:1.35}
