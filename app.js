@@ -47,7 +47,7 @@ async function init(){
   map.addListener('dragstart', () => { if (follow){ follow = false; $('btnLocate').classList.remove('following'); } });
   $('btnCompass').onclick = () => map.setHeading(0);
   map.addListener('heading_changed', () => { const h = map.getHeading()||0; $('btnCompass').classList.toggle('hidden', Math.abs(((h+180)%360)-180) < 1); $('btnCompass').firstElementChild.style.transform = `rotate(${-h}deg)`; drawBeam(); });
-  $('btnLayers').onclick = () => { $('layers').classList.toggle('hidden'); syncLayersUI(); };
+  $('btnLayers').onclick = () => { $('layers').classList.toggle('hidden'); syncLayersUI(); renderAllNotes(); };
   map.addListener('click', () => $('layers').classList.add('hidden'));
   document.querySelectorAll('#layers [data-mt]').forEach(b => b.onclick = () => { map.setMapTypeId(b.dataset.mt); try { localStorage.setItem('vlf-maptype', b.dataset.mt); } catch(e){} syncLayersUI(); });
   document.querySelectorAll('#layers [data-src]').forEach(b => b.onclick = () => { src = b.dataset.src; try { localStorage.setItem('vlf-src', src); } catch(e){} closeCard(); refresh(); updateStatus(); fitVisible(); syncLayersUI(); });
@@ -230,6 +230,25 @@ async function syncShared(){
 function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
 function inSrc(l){ return src==='all' || (src==='whole' ? !!l.whole : src==='osm' ? l.kind==='osm' : l.kind!=='osm'); }
 function visible(){ return lots.filter(l => { if (!inSrc(l)) return false; const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
+// every note on every lot, newest first; tap one to jump to that lot
+function renderAllNotes(){
+  const rows = [];
+  for (const [id, list] of Object.entries(cache.notes)) { const l = lot(id); if (!l) continue; (list||[]).forEach(n => rows.push({ id, name: l.name, text: n.text, t: n.t })); }
+  rows.sort((a, b) => b.t - a.t);
+  $('notesHead').textContent = rows.length ? `Notes (${rows.length})` : 'Notes';
+  $('notesList').innerHTML = rows.length ? rows.map(r => `<button data-id="${esc(r.id)}"><span class="nt">${esc(r.text)}</span><span class="nw">${esc(r.name)} · ${new Date(r.t).toLocaleDateString([], {month:'short', day:'numeric'})}</span></button>`).join('') : '<div class="empty">No notes yet</div>';
+  $('notesList').querySelectorAll('button').forEach(b => b.onclick = () => {
+    $('layers').classList.add('hidden'); const id = b.dataset.id, l = lot(id);
+    // make sure the pin is actually on the map (right tab + pin set) before opening it
+    if (l && !visible().some(x => x.id === id)) {
+      if (!inSrc(l)) { src = 'all'; try { localStorage.setItem('vlf-src', src); } catch(e){} }
+      const m = marks.get(id); view = m || 'all';
+      document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.dataset.view === view));
+      refresh(); updateStatus();
+    }
+    openCard(id);
+  });
+}
 function syncLayersUI(){ const mt = map.getMapTypeId()==='roadmap' ? 'roadmap' : 'hybrid'; document.querySelectorAll('#layers [data-mt]').forEach(b => b.classList.toggle('on', b.dataset.mt===mt)); document.querySelectorAll('#layers [data-src]').forEach(b => b.classList.toggle('on', b.dataset.src===src)); }
 function colorOf(l){ return PINCOLOR[marks.get(l.id)||'none']; }
 function renderStatus(l){ const need = l.kind==='spot' && !l.status; $('cChoose').classList.toggle('hidden', !need); $('cStatus').classList.toggle('attn', need); document.querySelectorAll('#cStatus button').forEach(b => { b.classList.toggle('on', b.dataset.status===l.status); b.onclick = () => { const st = l.status===b.dataset.status ? null : b.dataset.status; spots.setStatus(l.id, st); $('cBadge').textContent = LABEL[st] || ''; $('cBadge').style.visibility = st ? '' : 'hidden'; renderStatus(l); }; }); }
