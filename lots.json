@@ -13,7 +13,8 @@
     "label": "Connect CRE \u2014 Dimension industrial park plan (Jul 2026)",
     "url": "https://www.connectcre.com/stories/dimension-moving-ahead-on-3-building-n-phoenix-industrial-park/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "801-s-16th-st-phoenix",
@@ -24,7 +25,8 @@
    "status": "forlease",
    "note": "'For lease \u2014 industrial space' sign on the fence along E Grant St. Large fenced industrial lot, ~24 ac.",
    "source": null,
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2211-s-47th-st-phoenix",
@@ -35,7 +37,8 @@
    "status": "vacant",
    "note": "Vacant office building. Gated entrance with arm barriers off E Hilton Ave; large covered parking lot, ~7.8 ac.",
    "source": null,
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2299-w-obispo-ave-gilbert",
@@ -46,7 +49,8 @@
    "status": "vacant",
    "note": "Vacant multi-story office. Open surface parking in front, no gate at the Obispo Ave entrance, ~6.7 ac.",
    "source": null,
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "sears-metrocenter-phoenix",
@@ -60,7 +64,8 @@
     "label": "KJZZ, Sept 2025 \u2014 Metrocenter demo done, Sears still standing",
     "url": "https://www.kjzz.org/business/2025-09-25/demo-of-phoenixs-metrocenter-mall-is-finally-done-see-what-the-the-metropolitan-will-look-like"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "kmart-2526-w-northern-phoenix",
@@ -71,7 +76,8 @@
    "status": "vacant",
    "note": "Kmart closed 2017; building still vacant with an 'AVAILABLE' banner on the front. ~8.3 ac lot. County records show the City of Phoenix now owns the parcel.",
    "source": null,
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "frys-electronics-2300-w-baseline-tempe",
@@ -85,7 +91,8 @@
     "label": "ABC15 \u2014 Costco plan for former Fry's (2022)",
     "url": "https://www.abc15.com/news/business/costco-could-be-planning-a-new-business-center-in-east-valley"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "sears-superstition-springs-mesa",
@@ -155,7 +162,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/high-visibility-freestanding-retail-building/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "5349-e-main-st-mesa",
@@ -295,7 +303,8 @@
     "label": "LoopNet listing",
     "url": "https://www.loopnet.com/property/485-n-juniper-dr-chandler-az-85226/04013-30190660"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2051-w-chandler-blvd-chandler",
@@ -337,7 +346,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/rare-free-standing-right-on-the-road-single-tenant-restaurant-available-for-sale-2/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7810-s-priest-dr-tempe",
@@ -365,7 +375,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/sec-sr-143-university-drive/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1001-east-playa-del-norte-drive-tempe",
@@ -421,7 +432,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/freestanding-restaurant/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "5340-west-glendale-avenue-glendale",
@@ -477,7 +489,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/152-298-sf-building-for-sale-lease/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "12445-w-glendale-ave-glendale",
@@ -491,7 +504,8 @@
     "label": "Crexi listing",
     "url": "https://www.crexi.com/lease/properties/1135027/arizona-12445-w-glendale-ave"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "5107-n-51st-ave-glendale",
@@ -505,7 +519,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/5107-n-51st-ave/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7631-east-indian-school-road-scottsdale",
@@ -519,7 +534,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/scottsdale/7631-east-indian-school-road/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "710-w-bell-rd-phoenix",
@@ -533,7 +549,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/710-w-bell-rd/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "17232-n-19th-ave-phoenix",
@@ -589,7 +606,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/100-000-sf-freestanding-building-w-large-yard/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4101-w-van-buren-st-phoenix",
@@ -631,7 +649,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/1615-east-elwood-street-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7825-west-buckeye-road-phoenix",
@@ -673,7 +692,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/6743-w-farmer-rd/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7775-west-buckeye-road-phoenix",
@@ -715,7 +735,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2021-e-jones-ave/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "423-s-54th-place-phoenix",
@@ -729,7 +750,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/centralized-contractor-yard/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4720-w-van-buren-st-phoenix",
@@ -757,7 +779,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/4455-w-camelback-road/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7175-w-sherman-street-phoenix",
@@ -771,7 +794,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/estrella-commerce-park-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "824-e-university-dr-phoenix",
@@ -869,7 +893,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/3161-n-35th-avenue-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "10004-n-26th-dr-phoenix",
@@ -911,7 +936,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/4949-s-16th-street-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "236-n-48th-avenue-phoenix",
@@ -925,7 +951,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/van-buren-distribution-center-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "3325-east-wier-avenue-phoenix",
@@ -939,7 +966,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/3325-east-wier-avenue/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2018-n-23rd-avenue-phoenix",
@@ -953,7 +981,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2018-2020-n-23rd-avenue/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4820-e-mcdowell-rd-phoenix",
@@ -981,7 +1010,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/1313-n-25th-ave/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "475-east-buckeye-road-phoenix",
@@ -1009,7 +1039,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2222-w-peoria-ave-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7375-w-buckeye-road-phoenix",
@@ -1051,7 +1082,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2115-w-melinda-ln/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4422-south-38th-place-phoenix",
@@ -1065,7 +1097,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/phoenix-commerce-center/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2115-s-11th-avenue-phoenix",
@@ -1093,7 +1126,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/arizona-industrial-park-2/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "3446-s-7th-street-phoenix",
@@ -1135,7 +1169,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2831-west-indian-school-road/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "200-s-49th-avenue-phoenix",
@@ -1149,7 +1184,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/200-s-49th-avenue/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1410-e-van-buren-st-phoenix",
@@ -1163,7 +1199,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/1410-e-van-buren-st/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4055-s-sarival-ave-goodyear",
@@ -1191,7 +1228,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/3510-east-atlanta-avenue/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "230-n-48th-ave-phoenix",
@@ -1205,7 +1243,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/230-n-48th-ave/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2201-e-university-dr-phoenix",
@@ -1317,7 +1356,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/602-south-63rd-avenue/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "8900-n-sarival-ave-glendale",
@@ -1345,7 +1385,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tolleson/705-south-94th-avenue/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1733-west-parkside-lane-phoenix",
@@ -1359,7 +1400,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/1733-west-parkside-lane/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1202-n-54th-avenue-phoenix",
@@ -1429,7 +1471,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/litchfield/luke-logistics-center-building-c/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2605-e-cessna-drive-chandler",
@@ -1457,7 +1500,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-business-campus-building-8-3/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4638-south-sossaman-road-mesa",
@@ -1471,7 +1515,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-2-7/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "9595-north-79th-avenue-peoria",
@@ -1485,7 +1530,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/peoria/peoria-place-building-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "8850-west-sweetwater-avenue-peoria",
@@ -1499,7 +1545,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/peoria/empire-101-4/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "12730-north-dysart-road-surprise",
@@ -1527,7 +1574,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/laveen/2-32-acre-ios-for-sale-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7860-north-106th-ave-glendale",
@@ -1583,7 +1631,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/tensixty-interchange/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4732-south-sossaman-road-mesa",
@@ -1597,7 +1646,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-7-6/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "15757-north-78th-street-scottsdale",
@@ -1611,7 +1661,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/scottsdale/15757-north-78th-street/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2847-s-48th-street-tempe",
@@ -1625,7 +1676,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/48th-alameda-2/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "12600-north-summit-way-surprise",
@@ -1639,7 +1691,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/surprise/west-summit-at-surprise-building-2-4/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1205-n-eliseo-c-felix-jr-way-avondale",
@@ -1681,7 +1734,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/the-yard-2525-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4702-south-sossaman-road-mesa",
@@ -1695,7 +1749,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-202-industrial-park-building-3-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "317-s-48th-street-phoenix",
@@ -1709,7 +1764,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/hub-317/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "6800-w-van-buren-street-phoenix",
@@ -1737,7 +1793,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/sossaman-business-campus-building-3/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7151-n-reems-rd-litchfield-park",
@@ -1779,7 +1836,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/nwc-east-elliot-road-south-signal-butte-road-building-c/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7676-north-glen-harbor-blvd-glendale",
@@ -1793,7 +1851,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/harbor-park-107-building-2-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "20820-n-25th-pl-phoenix",
@@ -1821,7 +1880,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/glendale/marbella-west-building-6-2/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2411-east-germann-road-chandler",
@@ -1849,7 +1909,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/the-hub-at-202-building-2d/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4224-south-sossaman-road-mesa",
@@ -1863,7 +1924,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/the-hub-at-202-building-2b/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1950-s-91st-avenue-tolleson",
@@ -1891,7 +1953,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/3167-w-armstrong-pl/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "8591-west-jefferson-street-tolleson",
@@ -1905,7 +1968,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tolleson/liberty-tolleson-center-8591-west-washington-street/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "6655-south-kyrene-road-tempe",
@@ -1933,7 +1997,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/goodyear/goodyear-civic-square-at-estrella-falls-office-building-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "3000-s-99th-ave-tolleson",
@@ -1961,7 +2026,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/1900-e-riverview-dr/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "6121-west-van-buren-street-phoenix",
@@ -1975,7 +2041,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/6121-6131-west-van-buren-street/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "302-e-university-drive-phoenix",
@@ -2003,7 +2070,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/freestanding-former-bank-drive-thru-opportunity/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "920-south-gilbert-road-gilbert",
@@ -2101,7 +2169,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/gilbert/1352-n-fiesta-blvd/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2343-e-queen-creek-rd-gilbert",
@@ -2227,7 +2296,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/avondale/cascade-avondale/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "9920-w-van-buren-st-avondale",
@@ -2241,7 +2311,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/avondale/99th-ave-van-buren-st-nwc/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "204-230-e-bell-road-phoenix",
@@ -2283,7 +2354,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/2601-east-indian-school-road/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "615-west-deer-valley-drive-phoenix",
@@ -2423,7 +2495,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/estrella-medical-plaza-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "120-north-44th-street-phoenix",
@@ -2451,7 +2524,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/bell-28-9/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2114-west-7th-street-tempe",
@@ -2465,7 +2539,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/2114-w-7th-st/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1262-s-country-club-dr-mesa",
@@ -2493,7 +2568,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/san-tan-corporate-center-i/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "827-w-grove-ave-mesa",
@@ -2507,7 +2583,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/mesa/827-w-grove-ave/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "7420-south-kyrene-road-tempe",
@@ -2549,7 +2626,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/the-cotton-center-cotton-center-iv-building-d/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4717-e-hilton-ave-phoenix",
@@ -2591,7 +2669,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/west-10-business-center-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "6935-south-crismon-road-mesa",
@@ -2605,7 +2684,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/queen-creek/cube-at-mesa-gateway-building-b/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1002-s-56th-ave-phoenix",
@@ -2619,7 +2699,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/phoenix/freeport-center/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2650-south-gilbert-road-chandler",
@@ -2647,7 +2728,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/queens-crossing-bldg-c/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "2600-south-gilbert-road-chandler",
@@ -2675,7 +2757,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/chandler/schrader-farms-business-park-building-b/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "8711-w-jefferson-st-tolleson",
@@ -2689,7 +2772,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tolleson/majestic-tolleson-center-bldg-2-1/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "4500-east-cotton-center-blvd-phoenix",
@@ -2731,7 +2815,8 @@
     "label": "CommercialCafe listing",
     "url": "https://www.commercialcafe.com/commercial-property/us/az/tempe/papago-gateway-center/"
    },
-   "added": "2026-11-07"
+   "added": "2026-11-07",
+   "whole": true
   },
   {
    "id": "1910-w-rio-salado-parkway-tempe",

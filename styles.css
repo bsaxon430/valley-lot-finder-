@@ -133,3 +133,5 @@ a{color:inherit}
 .lrow button{flex:1;background:var(--glass2);border:1px solid var(--edge);border-radius:999px;padding:10px 4px;font-size:12px;font-weight:700;color:var(--text)}
 .lrow button.on{background:#fff;color:#111;border-color:#fff}
 .lhint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+.lrow.grid2{display:grid;grid-template-columns:1fr 1fr}

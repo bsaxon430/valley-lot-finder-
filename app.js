@@ -168,7 +168,7 @@ async function syncShared(){
   } catch(e){}
 }
 function renderMarksAndNotes(id){ const l = lot(id); if (!l) return; renderMarks(l); renderNotes(l); }
-function inSrc(l){ return src==='all' || (src==='osm' ? l.kind==='osm' : l.kind!=='osm'); }
+function inSrc(l){ return src==='all' || (src==='whole' ? !!l.whole : src==='osm' ? l.kind==='osm' : l.kind!=='osm'); }
 function visible(){ return lots.filter(l => { if (!inSrc(l)) return false; const m = marks.get(l.id); return view==='all' ? m!=='skip' : m===view; }); }
 function syncLayersUI(){ const mt = map.getMapTypeId()==='roadmap' ? 'roadmap' : 'hybrid'; document.querySelectorAll('#layers [data-mt]').forEach(b => b.classList.toggle('on', b.dataset.mt===mt)); document.querySelectorAll('#layers [data-src]').forEach(b => b.classList.toggle('on', b.dataset.src===src)); }
 function colorOf(l){ return PINCOLOR[marks.get(l.id)||'none']; }
