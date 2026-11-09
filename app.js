@@ -71,6 +71,10 @@ async function init(){
 }
 const GLYPH = { great:'<path d="M13 19.5l-3.6-3.6 1.6-1.6 2 2 4.9-4.9 1.6 1.6z" fill="#fff"/>', revisit:'<text x="16" y="21" text-anchor="middle" font-family="system-ui,Arial" font-weight="700" font-size="15" fill="#3b2a00">?</text>', skip:'<path d="M11.5 11.5l9 9m0-9l-9 9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>', none:'<circle cx="16" cy="16" r="4.5" fill="#fff"/>' };
 const PINCOLOR = { great:'#34a853', revisit:'#fbc02d', skip:'#3c4043', none:'#a142f4' };
+// how a note reads: "Skipped:" always follows the lot's CURRENT mark, never what was typed
+const noteText = (id, text) => { const t = String(text||'').replace(/^skipped:\s*/i, ''); return marks.get(id)==='skip' ? 'Skipped: ' + t : t; };
+const markBadge = id => { const m = marks.get(id); if (!m) return ''; const ch = { great:'✓', revisit:'?', skip:'✕' }[m]; return `<i class="mb mb-${m}">${ch}</i>`; };
+const SRCHINT = { ours:'Our researched lots, including spots added on the map.', whole:'Whole building empty and the parking lot isn\'t shared with other businesses.', osm:'Buildings the public has tagged vacant / abandoned on OpenStreetMap.', all:'Everything: ours plus OpenStreetMap.' };
 const iconCache = {};
 function pinIcon(mark, sel){
   const key = (mark||'none') + (sel?'!':'');
@@ -241,7 +245,7 @@ function renderAllNotes(){
   for (const [id, list] of Object.entries(cache.notes)) { const l = lot(id); if (!l) continue; (list||[]).forEach(n => rows.push({ id, name: l.name, text: n.text, t: n.t })); }
   rows.sort((a, b) => b.t - a.t);
   $('notesHead').textContent = rows.length ? `Notes (${rows.length})` : 'Notes';
-  $('notesList').innerHTML = rows.length ? rows.map(r => `<button data-id="${esc(r.id)}"><span class="nt">${esc(r.text)}</span><span class="nw">${esc(r.name)} · ${new Date(r.t).toLocaleDateString([], {month:'short', day:'numeric'})}</span></button>`).join('') : '<div class="empty">No notes yet</div>';
+  $('notesList').innerHTML = rows.length ? rows.map(r => `<button data-id="${esc(r.id)}"><span class="nt">${markBadge(r.id)}${esc(noteText(r.id, r.text))}</span><span class="nw">${esc(r.name)} · ${new Date(r.t).toLocaleDateString([], {month:'short', day:'numeric'})}</span></button>`).join('') : '<div class="empty">No notes yet</div>';
   $('notesList').querySelectorAll('button').forEach(b => b.onclick = () => {
     $('layers').classList.add('hidden'); const id = b.dataset.id, l = lot(id);
     // make sure the pin is actually on the map (right tab + pin set) before opening it
@@ -254,7 +258,7 @@ function renderAllNotes(){
     openCard(id);
   });
 }
-function syncLayersUI(){ const mt = map.getMapTypeId()==='roadmap' ? 'roadmap' : 'hybrid'; document.querySelectorAll('#layers [data-mt]').forEach(b => b.classList.toggle('on', b.dataset.mt===mt)); document.querySelectorAll('#layers [data-src]').forEach(b => b.classList.toggle('on', b.dataset.src===src)); }
+function syncLayersUI(){ $('srcHint').textContent = SRCHINT[src] || ''; const mt = map.getMapTypeId()==='roadmap' ? 'roadmap' : 'hybrid'; document.querySelectorAll('#layers [data-mt]').forEach(b => b.classList.toggle('on', b.dataset.mt===mt)); document.querySelectorAll('#layers [data-src]').forEach(b => b.classList.toggle('on', b.dataset.src===src)); }
 function colorOf(l){ return PINCOLOR[marks.get(l.id)||'none']; }
 function renderStatus(l){ const need = l.kind==='spot' && !l.status; $('cChoose').classList.toggle('hidden', !need); $('cStatus').classList.toggle('attn', need); document.querySelectorAll('#cStatus button').forEach(b => { b.classList.toggle('on', b.dataset.status===l.status); b.onclick = () => { const st = l.status===b.dataset.status ? null : b.dataset.status; spots.setStatus(l.id, st); $('cBadge').textContent = LABEL[st] || ''; $('cBadge').style.visibility = st ? '' : 'hidden'; renderStatus(l); }; }); }
 function renderMarks(l){ const m = marks.get(l.id); document.querySelectorAll('.marks button').forEach(b => b.classList.toggle('on', b.dataset.mark===m)); }
@@ -276,7 +280,7 @@ const notes = {
 };
 function renderNotes(l){
   const list = notes.get(l.id);
-  $('cNotes').innerHTML = list.slice().reverse().map(n => `<div><span>${esc(n.text)}<small>${new Date(n.t).toLocaleDateString()} ${new Date(n.t).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small></span><button class="nx" data-t="${n.t}" aria-label="Delete note">✕</button></div>`).join('');
+  $('cNotes').innerHTML = list.slice().reverse().map(n => `<div><span>${esc(noteText(l.id, n.text))}<small>${new Date(n.t).toLocaleDateString()} ${new Date(n.t).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small></span><button class="nx" data-t="${n.t}" aria-label="Delete note">✕</button></div>`).join('');
   $('cNotes').querySelectorAll('.nx').forEach(b => b.onclick = () => { notes.remove(l.id, Number(b.dataset.t)); renderNotes(l); });
 }
 // ---------- team spots (long-press on the map) ----------

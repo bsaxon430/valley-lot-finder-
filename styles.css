@@ -156,3 +156,8 @@ a{color:inherit}
 .ntoggle[aria-expanded="true"]::after{transform:rotate(90deg)}
 .nlist.hidden{display:none}
 .nlist{margin-top:8px}
+
+.mb{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;margin-right:8px;font-style:normal;font-size:11px;font-weight:900;vertical-align:-3px;color:#fff;border:1.5px solid #fff}
+.mb-great{background:#34a853}.mb-revisit{background:#fbc02d;color:#3b2a00}.mb-skip{background:#3c4043}
+.lhint{margin-top:6px}
+.layers{padding-bottom:16px}
