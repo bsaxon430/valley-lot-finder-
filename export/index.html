@@ -24,7 +24,8 @@
 @keyframes slide{0%{margin-left:-40%}100%{margin-left:100%}}
 .btn:disabled{opacity:.35}
 .why{font-size:12.5px;color:#9aa3b2;background:rgba(255,255,255,.04);border-radius:12px;padding:12px 14px;margin-top:4px}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:18px 0}
+  .stat.skip b{color:#9aa0a6}
   .stat{background:rgba(255,255,255,.06);border-radius:14px;padding:12px;text-align:center}
   .stat b{display:block;font-size:22px}
   .stat small{color:#9aa3b2;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
@@ -41,7 +42,7 @@
 <body>
 <a class="back" href="../">‹ Back to map</a>
 <h1>Export all pins</h1>
-<p>Downloads are built live from the map, so they include the latest marks, notes and dropped spots. Lots marked SKIP are left out.</p>
+<p>Live — pulled from the shared map the moment this page opens, so it includes marks, notes and dropped spots from seconds ago. Lots marked SKIP are left out.</p>
 <div class="pick">
   <div class="phead">What to include</div>
   <div class="prow"><button data-pick="ours" class="on">Just ours</button><button data-pick="all">Everything</button></div>
@@ -51,6 +52,7 @@
   <div class="stat"><b id="nLots">–</b><small>Researched</small></div>
   <div class="stat"><b id="nOsm">–</b><small>OSM</small></div>
   <div class="stat"><b id="nSpots">–</b><small>Dropped spots</small></div>
+  <div class="stat skip"><b id="nSkip">–</b><small>Skipped · left out</small></div>
 </div>
 <div id="loading" class="loading"><div class="spin"></div><div><b>Still loading…</b><div id="status">Starting…</div></div></div><div class="bar"><i id="bar"></i></div>
 <button class="btn" id="csv" disabled>Download spreadsheet (CSV)</button>
@@ -71,7 +73,7 @@ const NOTES = {
 };
 // lots marked SKIP are no good, so they never make it into a download
 const picked = () => rows.filter(r => (pick === 'all' || r.kind !== 'OpenStreetMap') && r.mark !== MARK.skip);
-const setPick = p => { pick = p; document.querySelectorAll('[data-pick]').forEach(b => b.classList.toggle('on', b.dataset.pick === p)); $('pickNote').textContent = NOTES[p]; if (rows.length) $('status').textContent = `${picked().length} pins ready — pick a download below.`; };
+const setPick = p => { if (rows.length) $('nSkip').textContent = rows.filter(r => (p === 'all' || r.kind !== 'OpenStreetMap') && r.mark === MARK.skip).length; pick = p; document.querySelectorAll('[data-pick]').forEach(b => b.classList.toggle('on', b.dataset.pick === p)); $('pickNote').textContent = NOTES[p]; if (rows.length) $('status').textContent = `${picked().length} pins ready — pick a download below.`; };
 document.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => setPick(b.dataset.pick));
 setPick('ours');
 
@@ -96,7 +98,7 @@ async function load(){
   const osm = await loadOsm();
   $('nOsm').textContent = osm.length; $('nSpots').textContent = spots.length;
   rows = [...lots, ...spots, ...osm].map(r => Object.assign(r, { mark: MARK[marks.get(r.id)] || '', teamNotes: (notes.get(r.id)||[]).join(' | ') }));
-  $('bar').classList.remove('indet'); $('bar').style.width='100%'; $('loading').classList.add('done'); $('loading').querySelector('b').textContent='Ready'; const upd = (osm[0]||{}).updated; $('status').textContent = `${picked().length} pins ready — pick a download below.`;
+  $('bar').classList.remove('indet'); $('bar').style.width='100%'; $('loading').classList.add('done'); $('loading').querySelector('b').textContent='Ready'; const upd = (osm[0]||{}).updated; $('status').textContent = `${picked().length} pins ready — pick a download below.`; setPick(pick);
   $('csv').disabled = $('kml').disabled = $('geo').disabled = false;
 }
 
