@@ -39,13 +39,15 @@ async function init(){
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = async () => {
     startCompass();
-    // second tap: back to normal — stop following, north up
-    if (follow) { follow = false; $('btnLocate').classList.remove('following'); if (map.getHeading()) map.setHeading(0); return; }
-    follow = true; $('btnLocate').classList.add('following');
+    // each tap toggles the direction rays; the map always re-centers and follows you
+    beamOn = !beamOn; $('btnLocate').classList.toggle('following', beamOn);
+    if (!beamOn && map.getHeading()) map.setHeading(0);
+    drawBeam();
+    follow = true;
     await locate(false);
     if (userPos){ map.panTo({ lat:userPos[1], lng:userPos[0] }); if (map.getZoom() < 15) map.setZoom(16); }
   };
-  map.addListener('dragstart', () => { if (follow){ follow = false; $('btnLocate').classList.remove('following'); } });
+  map.addListener('dragstart', () => { follow = false; });
   $('btnCompass').onclick = () => map.setHeading(0);
   map.addListener('heading_changed', () => { const h = map.getHeading()||0; $('btnCompass').classList.toggle('hidden', Math.abs(((h+180)%360)-180) < 1); $('btnCompass').firstElementChild.style.transform = `rotate(${-h}deg)`; drawBeam(); });
   $('btnLayers').onclick = () => {
@@ -119,7 +121,7 @@ async function loadOsm(){
 
 // ---------- location ----------
 // ---------- live location (follows you while driving) ----------
-let watchId = null, follow = false, devHeading = null, gpsHeading = null, beamMarker = null, firstFix = [], panned = false, compassOn = false, beamRaf = 0;
+let watchId = null, follow = false, beamOn = false, devHeading = null, gpsHeading = null, beamMarker = null, firstFix = [], panned = false, compassOn = false, beamRaf = 0;
 function onFix(p){
   userPos = [p.coords.longitude, p.coords.latitude];
   const pos = { lat:userPos[1], lng:userPos[0] };
@@ -171,7 +173,7 @@ function drawBeam(){
   beamRaf = requestAnimationFrame(() => { beamRaf = 0;
     if (!userPos) return;
     const hd = gpsHeading != null ? gpsHeading : devHeading;
-    if (hd == null){ if (beamMarker) beamMarker.setVisible(false); return; }
+    if (hd == null || !beamOn){ if (beamMarker) beamMarker.setVisible(false); return; }
     const rot = (hd - (map.getHeading()||0) + 360) % 360;
     const icon = { path:BEAM, fillColor:'#1a73e8', fillOpacity:0.28, strokeWeight:0, scale:1, rotation:rot, anchor:new google.maps.Point(0,0) };
     if (!beamMarker) beamMarker = new google.maps.Marker({ map, position:{ lat:userPos[1], lng:userPos[0] }, zIndex:2000, clickable:false, icon });
