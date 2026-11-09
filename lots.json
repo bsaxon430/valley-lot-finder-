@@ -2,6 +2,156 @@
  "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link. Photos come from Google Street View and may be older than the status \u2014 the photo date is shown on the card.",
  "lots": [
   {
+   "id": "6806-e-brown-rd-mesa",
+   "name": "Car wash (temporarily closed)",
+   "address": "6806 E Brown Rd, Mesa, AZ 85207",
+   "lat": 33.437424,
+   "lng": -111.683476,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~0.8 ac lot, not in a shopping center. County parcel 218-04-087A. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=15989281726010408545&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "44-n-32nd-st-phoenix",
+   "name": "Christie's Cabaret (temporarily closed)",
+   "address": "44 N 32nd St, Phoenix, AZ 85034",
+   "lat": 33.448962,
+   "lng": -112.013513,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Own building plus its own parking parcel, ~1.7 ac total, not in a shopping center. County parcels 121-66-037B / 121-66-019A. Drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://www.google.com/maps/search/?api=1&query=Christie%27s+Cabaret+44+N+32nd+St+Phoenix"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "903-monroe-ave-buckeye",
+   "name": "The Kitch'n (temporarily closed)",
+   "address": "903 Monroe Ave, Buckeye, AZ 85396",
+   "lat": 33.370156,
+   "lng": -112.577509,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~0.5 ac lot, not in a shopping center. County parcel 400-24-005C. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=10658242629779546910&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "3802-e-indian-school-rd-phoenix",
+   "name": "Gooder Goods (temporarily closed)",
+   "address": "3802 E Indian School Rd, Phoenix, AZ 85018",
+   "lat": 33.495501,
+   "lng": -111.999548,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~0.7 ac lot, not in a shopping center. County parcel 170-32-137. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=17262864530856703009&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "2845-n-52nd-st-phoenix",
+   "name": "Carpe Diem Southern Grill (temporarily closed)",
+   "address": "2845 N 52nd St, Phoenix, AZ 85008",
+   "lat": 33.479432,
+   "lng": -111.968924,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~0.8 ac lot, not in a shopping center. County parcel 126-25-062A. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=3829682908874319457&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "612-e-germann-rd-gilbert",
+   "name": "Uncle Bear's Brewery (temporarily closed)",
+   "address": "612 E Germann Rd, Gilbert, AZ 85297",
+   "lat": 33.280532,
+   "lng": -111.776485,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~1.4 ac lot, not in a shopping center. County parcel 304-55-414. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=3966402072306324006&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "1395-n-higley-rd-gilbert",
+   "name": "Whataburger (temporarily closed)",
+   "address": "1395 N Higley Rd, Gilbert, AZ 85234",
+   "lat": 33.375541,
+   "lng": -111.721684,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~1.5 ac lot, not in a shopping center. County parcel 313-12-933. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=7132779783318128894&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "2651-s-avondale-blvd-avondale",
+   "name": "Superstar Car Wash (temporarily closed)",
+   "address": "2651 S Avondale Blvd, Avondale, AZ 85323",
+   "lat": 33.421676,
+   "lng": -112.30602,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~1.6 ac lot, not in a shopping center. County parcel 101-54-939. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=10020564609716105567&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "3801-s-central-ave-phoenix",
+   "name": "Hint of Soul (temporarily closed)",
+   "address": "3801 S Central Ave, Phoenix, AZ 85040",
+   "lat": 33.412251,
+   "lng": -112.073243,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~1.1 ac lot, not in a shopping center. County parcel 113-11-021A. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=6870263932044912558&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
+   "id": "22034-n-19th-ave-phoenix",
+   "name": "Flightline Bar & Grill (temporarily closed)",
+   "address": "22034 N 19th Ave, Phoenix, AZ 85027",
+   "lat": 33.686801,
+   "lng": -112.100204,
+   "status": "closed",
+   "note": "Google Maps lists this as temporarily closed (Nov 2026). Standalone building on its own ~1.1 ac lot, not in a shopping center. County parcel 209-05-012K. Could be a remodel or about to reopen \u2014 drive by first.",
+   "source": {
+    "label": "Temporarily closed (Google)",
+    "url": "https://maps.google.com/?cid=15977352428878290238&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
    "id": "711-e-indian-school-rd-phoenix",
    "name": "Former CVS \u2014 7th St & Indian School",
    "address": "711 E Indian School Rd, Phoenix, AZ 85014",
