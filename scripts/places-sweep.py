@@ -30,6 +30,26 @@ def run(q, rect, pages=3):
         if not tok: break
     return out, bool(tok)
 
+def nearby(types, lat, lng, radius=1500, rank='DISTANCE'):
+    global calls
+    calls += 1
+    body = {'includedTypes': types, 'maxResultCount': 20, 'rankPreference': rank,
+            'locationRestriction': {'circle': {'center': {'latitude': lat, 'longitude': lng}, 'radius': radius}}}
+    req = urllib.request.Request('https://places.googleapis.com/v1/places:searchNearby', data=json.dumps(body).encode(),
+        headers={'Content-Type': 'application/json', 'X-Goog-Api-Key': K, 'X-Goog-FieldMask': FM.replace(',nextPageToken', '')})
+    try: return json.load(urllib.request.urlopen(req, timeout=30)).get('places', [])
+    except urllib.error.HTTPError as e: print('HTTP', e.code, e.read()[:300].decode(errors='replace')); return []
+
+if MODE == 'probe2':
+    tot = collections.Counter()
+    for (lat, lng) in [(33.47, -112.07), (33.50, -112.11), (33.42, -111.94), (33.39, -111.84), (33.61, -112.12)]:
+        for t in (['restaurant'], ['bank'], ['store']):
+            ps = nearby(t, lat, lng)
+            c = collections.Counter(p.get('businessStatus') for p in ps); tot.update(c)
+            closed = [((p.get('displayName') or {}).get('text'), p.get('businessStatus')) for p in ps if p.get('businessStatus') != 'OPERATIONAL']
+            print(lat, lng, t, dict(c), closed[:5])
+    print('TOTAL', dict(tot), 'calls used:', calls); sys.exit(0)
+
 if MODE == 'probe':
     rect = {'low': {'latitude': 33.44, 'longitude': -112.10}, 'high': {'latitude': 33.50, 'longitude': -112.02}}
     for q in ['restaurant', 'closed restaurant', 'permanently closed', 'bank']:
