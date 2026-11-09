@@ -35,7 +35,7 @@ async function init(){
     mapId: C.mapId || 'DEMO_MAP_ID', renderingType: google.maps.RenderingType.VECTOR, headingInteractionEnabled: true, tiltInteractionEnabled: false });
   clusterer = new markerClusterer.MarkerClusterer({ map, markers:[], renderer:{ render({ count, position }){
     const r = count >= 50 ? 26 : count >= 10 ? 20 : 16;
-    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor:'#a142f4', fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color:'#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
+    return new google.maps.Marker({ position, zIndex: 1000 + count, icon:{ path:google.maps.SymbolPath.CIRCLE, scale:r, fillColor: view==='all' ? PINCOLOR.none : PINCOLOR[view], fillOpacity:1, strokeColor:'#ffffff', strokeWeight:3 }, label:{ text:String(count), color: view==='revisit' ? '#3b2a00' : '#ffffff', fontSize:'13px', fontWeight:'700', fontFamily:'system-ui' } });
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = async () => {
     startCompass();
