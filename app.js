@@ -39,7 +39,8 @@ async function init(){
   } }, onClusterClick:(e, cluster, m) => { const b = cluster.bounds; m.fitBounds(b, 60); } });
   $('btnLocate').onclick = async () => {
     startCompass();
-    if (follow && (map.getHeading()||0)) { map.setHeading(0); return; }
+    // second tap: back to normal — stop following, north up
+    if (follow) { follow = false; $('btnLocate').classList.remove('following'); if (map.getHeading()) map.setHeading(0); return; }
     follow = true; $('btnLocate').classList.add('following');
     await locate(false);
     if (userPos){ map.panTo({ lat:userPos[1], lng:userPos[0] }); if (map.getZoom() < 15) map.setZoom(16); }
@@ -206,7 +207,14 @@ function openCard(id){
     $('skipWhy').classList.add('hidden'); applyMark(next);
   });
   document.querySelectorAll('#skipWhy button').forEach(b => b.onclick = () => {
-    $('skipWhy').classList.add('hidden'); if (b.dataset.why) { notes.add(l.id, 'Skipped: ' + b.dataset.why); renderNotes(l); } applyMark('skip');
+    $('skipWhy').classList.add('hidden');
+    if (b.dataset.why) {
+      // don't stack a second identical reason — the existing note just picks up the Skipped label from the mark
+      const plain = s => String(s||'').replace(/^skipped:\s*/i, '').trim().toLowerCase();
+      if (!notes.get(l.id).some(n => plain(n.text) === plain(b.dataset.why))) notes.add(l.id, 'Skipped: ' + b.dataset.why);
+      renderNotes(l);
+    }
+    applyMark('skip');
   });
   renderNotes(l); $('noteForm').onsubmit = e => { e.preventDefault(); const t = $('noteText').value.trim(); if (!t) return; notes.add(l.id, t); $('noteText').value=''; renderNotes(l); };
   setPhoto(l);
