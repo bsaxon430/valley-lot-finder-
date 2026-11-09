@@ -2,6 +2,21 @@
  "_about": "Candidate lots shown on the map. status: forlease | vacant | abandoned | closed. Each entry has a source link. Photos come from Google Street View and may be older than the status \u2014 the photo date is shown on the card.",
  "lots": [
   {
+   "id": "711-e-indian-school-rd-phoenix",
+   "name": "Former CVS \u2014 7th St & Indian School",
+   "address": "711 E Indian School Rd, Phoenix, AZ 85014",
+   "lat": 33.494204,
+   "lng": -112.064459,
+   "status": "closed",
+   "note": "Closed CVS, Aug 2025. Freestanding drugstore on its own ~1.3 ac lot, not part of a shopping center. County parcel 118-04-086A. Closure news is old, so check nobody has moved in.",
+   "source": {
+    "label": "KTAR \u2014 CVS closing (Jul 2025)",
+    "url": "https://ktar.com/arizona-business/cvs-pharmacy-phoenix-closing"
+   },
+   "added": "2026-11-08",
+   "whole": true
+  },
+  {
    "id": "13610-n-black-canyon-hwy-phoenix",
    "name": "Metro North Corporate Park \u2014 old GE / Honeywell campus",
    "address": "13610 N Black Canyon Hwy, Phoenix, AZ 85029",
