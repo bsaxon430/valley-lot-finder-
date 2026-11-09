@@ -288,10 +288,19 @@ function setupLongPress(){
   spots.local().forEach(r => lots.push(spots.mk(r)));
   let t = null, start = null;
   const cancel = () => { clearTimeout(t); t = null; };
-  // overlay gives us pixel → lat/lng for raw touch events
-  const ov = new google.maps.OverlayView(); ov.onAdd = ov.draw = ov.onRemove = () => {}; ov.setMap(map);
+  // pixel → lat/lng done by hand (Web Mercator) so it stays right when the map is rotated
   const el = $('map');
-  const toLatLng = (x, y) => { const p = ov.getProjection(); if (!p) return null; const r = el.getBoundingClientRect(); return p.fromContainerPixelToLatLng(new google.maps.Point(x - r.left, y - r.top)); };
+  const toLatLng = (x, y) => {
+    const r = el.getBoundingClientRect(), c = map.getCenter(); if (!c) return null;
+    const scale = 256 * Math.pow(2, map.getZoom()), h = (map.getHeading() || 0) * Math.PI / 180;
+    const dx = x - r.left - r.width / 2, dy = y - r.top - r.height / 2;
+    const wx = dx * Math.cos(h) - dy * Math.sin(h), wy = dx * Math.sin(h) + dy * Math.cos(h);
+    const s = Math.sin(c.lat() * Math.PI / 180);
+    const cx = (c.lng() + 180) / 360 * scale, cy = (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * scale;
+    const px = cx + wx, py = cy + wy;
+    const lng = px / scale * 360 - 180, n = Math.PI - 2 * Math.PI * py / scale;
+    return new google.maps.LatLng(180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))), lng);
+  };
   const arm = (x, y) => { cancel(); start = [x, y]; t = setTimeout(() => { t = null; const ll = toLatLng(x, y); if (ll) beginAdd(ll); }, 600); };
   el.addEventListener('touchstart', e => { if (e.touches.length===1) arm(e.touches[0].clientX, e.touches[0].clientY); else cancel(); }, { passive:true });
   el.addEventListener('touchmove', e => { if (!t || !start) return; const dx = e.touches[0].clientX-start[0], dy = e.touches[0].clientY-start[1]; if (dx*dx+dy*dy > 100) cancel(); }, { passive:true });
