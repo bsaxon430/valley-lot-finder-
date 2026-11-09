@@ -126,7 +126,7 @@ a{color:inherit}
 .top .dl{pointer-events:auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);box-shadow:var(--shadow)}
 .top .dl svg{width:20px;height:20px;fill:#fff}
 
-.layers{position:fixed;right:14px;bottom:calc(var(--sab) + 266px);z-index:21;width:min(300px,calc(100vw - 28px));background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);border-radius:20px;box-shadow:var(--shadow);padding:14px;display:grid;gap:12px}
+.layers{position:fixed;right:14px;bottom:calc(var(--sab) + 328px);z-index:21;width:min(300px,calc(100vw - 28px));background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--edge2);border-radius:20px;box-shadow:var(--shadow);padding:14px;display:grid;gap:12px}
 .layers.hidden{display:none}
 .lhead{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
 .lrow{display:flex;gap:6px}
@@ -144,7 +144,7 @@ a{color:inherit}
 .compass.hidden{display:none}
 .compass svg{width:24px;height:24px;transition:transform .15s}
 
-.layers{max-height:calc(100vh - var(--sat) - var(--sab) - 350px);max-height:calc(100dvh - var(--sat) - var(--sab) - 350px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.layers{max-height:calc(100vh - var(--sat) - var(--sab) - 400px);max-height:calc(100dvh - var(--sat) - var(--sab) - 400px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .nlist{display:grid;gap:6px}
 .nlist button{display:block;width:100%;text-align:left;background:var(--glass2);border:1px solid var(--edge);border-radius:14px;padding:10px 12px;color:var(--text)}
 .nlist .nt{font-size:13.5px;line-height:1.35}
