@@ -1,6 +1,6 @@
 // Minimal app-shell cache. Live data (tiles, photos, shared marks) is always fetched from the network.
-const CACHE = 'vlf-shell-v55';
-const SHELL = ['./', './index.html', './styles.css?v=55', './app.js?v=55', './config.js?v=55', './lots.json', './manifest.webmanifest', './icons/icon-192.png'];
+const CACHE = 'vlf-shell-v56';
+const SHELL = ['./', './index.html', './styles.css?v=56', './app.js?v=56', './config.js?v=56', './lots.json', './manifest.webmanifest', './icons/icon-192.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

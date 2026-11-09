@@ -48,6 +48,7 @@ async function init(){
   $('btnCompass').onclick = () => map.setHeading(0);
   map.addListener('heading_changed', () => { const h = map.getHeading()||0; $('btnCompass').classList.toggle('hidden', Math.abs(((h+180)%360)-180) < 1); $('btnCompass').firstElementChild.style.transform = `rotate(${-h}deg)`; drawBeam(); });
   $('btnLayers').onclick = () => { $('layers').classList.toggle('hidden'); syncLayersUI(); renderAllNotes(); };
+  $('notesHead').onclick = () => { const open = $('notesList').classList.toggle('hidden') === false; $('notesHead').setAttribute('aria-expanded', open); if (open) $('notesHead').scrollIntoView({ block:'start', behavior:'smooth' }); };
   map.addListener('click', () => $('layers').classList.add('hidden'));
   document.querySelectorAll('#layers [data-mt]').forEach(b => b.onclick = () => { map.setMapTypeId(b.dataset.mt); try { localStorage.setItem('vlf-maptype', b.dataset.mt); } catch(e){} syncLayersUI(); });
   document.querySelectorAll('#layers [data-src]').forEach(b => b.onclick = () => { src = b.dataset.src; try { localStorage.setItem('vlf-src', src); } catch(e){} closeCard(); refresh(); updateStatus(); fitVisible(); syncLayersUI(); });
