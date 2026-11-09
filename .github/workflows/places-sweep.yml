@@ -26,7 +26,7 @@ jobs:
           MAX_CALLS: ${{ inputs.max_calls }}
         run: python3 scripts/places-sweep.py
       - name: Save results to the places-data branch
-        if: inputs.mode == 'sweep'
+        if: inputs.mode == 'sweep' || inputs.mode == 'nearby'
         run: |
           mkdir -p /tmp/out && cp closed-places.json /tmp/out/
           git config user.name "places-bot"; git config user.email "places-bot@users.noreply.github.com"

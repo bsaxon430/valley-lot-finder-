@@ -40,6 +40,38 @@ def nearby(types, lat, lng, radius=1500, rank='DISTANCE'):
     try: return json.load(urllib.request.urlopen(req, timeout=30)).get('places', [])
     except urllib.error.HTTPError as e: print('HTTP', e.code, e.read()[:300].decode(errors='replace')); return []
 
+if MODE == 'nearby':
+    import math
+    S, W, N, E = 33.20, -112.65, 33.80, -111.50
+    R = 1500; step_lat = 2.4 / 111.0; step_lng = 2.4 / (111.0 * math.cos(math.radians(33.5)))
+    GROUPS = [
+      ['bar', 'night_club', 'bank', 'pharmacy', 'drugstore', 'car_dealer', 'gym', 'supermarket', 'grocery_store', 'department_store', 'furniture_store',
+       'hardware_store', 'home_improvement_store', 'movie_theater', 'bowling_alley', 'event_venue', 'banquet_hall', 'wedding_venue', 'car_wash',
+       'auto_parts_store', 'sporting_goods_store', 'electronics_store', 'discount_store', 'warehouse_store', 'shopping_mall', 'church'],
+      ['restaurant', 'fast_food_restaurant', 'mexican_restaurant', 'american_restaurant', 'steak_house', 'seafood_restaurant', 'pizza_restaurant',
+       'breakfast_restaurant', 'chinese_restaurant', 'sports_bar' if False else 'bar_and_grill'],
+    ]
+    found = {}; seen = 0; lat = S
+    centers = []
+    while lat <= N:
+        lng = W
+        while lng <= E: centers.append((round(lat, 5), round(lng, 5))); lng += step_lng
+        lat += step_lat
+    print('circles', len(centers), 'groups', len(GROUPS))
+    for gi, types in enumerate(GROUPS):
+        for (la, ln) in centers:
+            if calls >= MAX_CALLS: break
+            ps = nearby(types, la, ln, R, 'DISTANCE'); seen += len(ps)
+            for p in ps:
+                st = p.get('businessStatus')
+                if st in ('CLOSED_PERMANENTLY', 'CLOSED_TEMPORARILY') and p['id'] not in found:
+                    loc = p.get('location', {})
+                    found[p['id']] = {'place_id': p['id'], 'name': (p.get('displayName') or {}).get('text', ''), 'address': p.get('formattedAddress', ''),
+                        'lat': loc.get('latitude'), 'lng': loc.get('longitude'), 'status': st, 'type': p.get('primaryType', ''), 'types': p.get('types', []), 'maps': p.get('googleMapsUri', '')}
+        print(f'group {gi}: calls {calls}, closed so far {len(found)}')
+    json.dump(sorted(found.values(), key=lambda x: x['place_id']), open('closed-places.json', 'w'), indent=1)
+    print('DONE calls', calls, 'seen', seen, 'closed', len(found), dict(collections.Counter(v['status'] for v in found.values()))); sys.exit(0)
+
 if MODE == 'probe2':
     tot = collections.Counter()
     for (lat, lng) in [(33.47, -112.07), (33.50, -112.11), (33.42, -111.94), (33.39, -111.84), (33.61, -112.12)]:
